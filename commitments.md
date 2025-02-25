@@ -93,5 +93,6 @@ Vid behov konsulteras Jenni.
 Uppdateringar i kontraktet ska ske i samförstånd. 
 
 ## Underskrivet av
-Therese Nielsen
-Emelie Wiberg 
+Therese Nielsen,
+Emelie Wiberg,
+Frida Nordenlöw
