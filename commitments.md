@@ -96,3 +96,4 @@ Uppdateringar i kontraktet ska ske i samförstånd.
 Therese Nielsen,
 Emelie Wiberg,
 Frida Nordenlöw
+Elin Nilsson
