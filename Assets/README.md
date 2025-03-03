@@ -137,11 +137,13 @@ Begin your journey to luxury at Poseidon’s Retreat, a one-of-a-kind underwater
 
 #### If package available:
 
-"Success! Your selected package is available. Click ‘Continue’ to finalize your reservation."
+Congratulations!
+Your selected package is available. Click ‘Continue’ to finalize your reservation.
 
 #### If package is unavailable
 
-"This package is currently unavailable on your selected dates. Try adjusting your search."
+We are sorry!
+This package is currently unavailable on your selected dates. Try adjusting your search."
 
 ### Complete your booking
 
