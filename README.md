@@ -1,8 +1,21 @@
 ## Design team
 
+Frida Nordenlöv
+
+Therese Nielsen
+
+Elin Nilsson
+
+Emelie Wiberg
+
+## Development team
+
 @JanisSeibutis
+
 @Yuliia-fed23
+
 @SarahSu92
+
 @Maria-jon
 
 # Design Choices for Poseidon’s Retreat
