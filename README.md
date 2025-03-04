@@ -1,23 +1,39 @@
-## Design team
+# poseidon-resorts
 
-Frida Nordenlöv
+This template should help get you started developing with Vue 3 in Vite.
 
-Therese Nielsen
+## Recommended IDE Setup
 
-Elin Nilsson
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
-Emelie Wiberg
+## Type Support for `.vue` Imports in TS
 
-## Development team
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
 
-@JanisSeibutis
+## Customize configuration
 
-@Yuliia-fed23
+See [Vite Configuration Reference](https://vite.dev/config/).
 
-@SarahSu92
+## Project Setup
 
-@Maria-jon
+```sh
+npm install
+```
 
-# Design Choices for Poseidon’s Retreat
+### Compile and Hot-Reload for Development
 
-The design of Poseidon’s Retreat is inspired by nature and the ocean, reflecting its unique underwater location in the Atlantic. The goal is to create a sense of **underwater serenity** while maintaining a sophisticated and refined atmosphere.
+```sh
+npm run dev
+```
+
+### Type-Check, Compile and Minify for Production
+
+```sh
+npm run build
+```
+
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+npm run lint
+```
