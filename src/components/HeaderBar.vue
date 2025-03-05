@@ -15,7 +15,12 @@ function toggleMenu() {
       <img src="@/assets/Icon-burger.svg">
     </button>
   </div>
-  <div v-if="menuOpen">Menu</div>
+  <div class="menu-overlay" v-if="menuOpen">
+    <a href="">Home</a>
+    <a href="">About us</a>
+    <a href="">Our packages</a>
+    <a href="">Book now</a>
+  </div>
 </template>
 
 
@@ -30,6 +35,7 @@ function toggleMenu() {
   position: sticky;
   top: 0;
   padding-right: $margin-medium;
+  z-index: 999;
 }
 
 .hamburger {
@@ -45,4 +51,21 @@ button {
   background-color: transparent;
 }
 
+.menu-overlay {
+  width: 50vw;
+  height: 100vh;
+  background-color: $color-primary-medium;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 50%;
+  top: 0;
+  z-index: 990;
+}
+
+a {
+  color: $color-white;
+}
 </style>
