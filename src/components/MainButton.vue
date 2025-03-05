@@ -18,5 +18,10 @@ button {
   border: none;
   height: 38px;
   width: fit-content;
+
+  &:hover {
+    background-color: $color-secondary-red-dark;
+    font-size: 1.125rem;
+  }
 }
 </style>
