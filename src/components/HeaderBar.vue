@@ -1,14 +1,21 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 
+let menuOpen = ref(false);
+
+function toggleMenu() {
+  menuOpen.value = !menuOpen.value;
+}
 </script>
 
 <template>
   <div class="wrapper">
     <img src="@/assets/Logotype_Poseidons-retreat.svg">
-    <button class="hamburger">
+    <button class="hamburger" @click="toggleMenu">
       <img src="@/assets/Icon-burger.svg">
     </button>
   </div>
+  <div v-if="menuOpen">Menu</div>
 </template>
 
 
