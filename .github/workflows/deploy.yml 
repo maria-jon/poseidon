@@ -1,12 +1,14 @@
 name: Deploy Vue to GitHub Pages
+
 on:
   push:
     branches:
-      - main # Change to your default branch if needed
+      - development  # This will trigger the workflow when you push to the 'development' branch
 
 jobs:
   build_vue:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -25,5 +27,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages # Deployment branch
-          folder: dist
+          branch: gh-pages  # The branch where your site is deployed (you can change this if needed)
+          folder: dist      # The build folder that gets deployed
