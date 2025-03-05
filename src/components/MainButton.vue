@@ -20,6 +20,7 @@ button {
   width: fit-content;
   transition: all 0.2s ease-in-out;
   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25); // x: 0, y: 1, blur: 1, spread: 0
+  padding: 0.5rem 1rem;
 
   &:hover {
     background-color: $color-secondary-red-dark;
