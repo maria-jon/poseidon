@@ -1,31 +1,40 @@
-name: Deploy Vue to GitHub Pages
+name: Publish Pages
 
 on:
   push:
-    branches:
-      - feat/skapa-array-med-packages  # This will trigger the workflow when you push to the 'development' branch
+    branches: [development]
 
 jobs:
-  build_vue:
+  build:
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Setup NodeJS
+        uses: actions/setup-node@v4
         with:
-          node-version: 20.10.0 # Ensure this matches your project’s Node version
+          node-version: 20
 
-      - name: Install dependencies
-        run: npm install
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+        id: setup
 
-      - name: Build project
-        run: npm run build
+      - name: Build Pages
+        run: |
+          npm clean-install
+          npm run build
+        env:
+          VITE_BASE_URL: "${{steps.setup.outputs.base_url}}"
 
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          branch: feat/skapa-array-med-packages  # The branch where your site is deployed (you can change this if needed)
-          folder: dist      # The build folder that gets deployed
+          path: dist
+
+      - name: Deploy Pages
+        uses: actions/deploy-pages@v4
