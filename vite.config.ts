@@ -12,5 +12,12 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "@/style/_variables.scss";`,
+      },
+    },
+  },
   base: '/fed24d-grafiska-verktyg-elddvargskejsarna/',
 })

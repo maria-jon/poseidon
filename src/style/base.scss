@@ -1,0 +1,74 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}
+
+body {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  color: $color-black;
+}
+
+h1 {
+  font-family: 'Merriweather', 'Times New Roman', Times, serif;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h2 {
+  font-family: 'Merriweather', 'Times New Roman', Times, serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+h3 {
+  font-family: 'Merriweather', 'Times New Roman', Times, serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+h4 {
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+h5 {
+  font-size: 1.375rem;
+  font-weight: 600;
+}
+
+h6 {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.info {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+a {
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: none;
+}
+
+a:hover {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: underline;
+}
+
