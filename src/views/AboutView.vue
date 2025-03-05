@@ -5,7 +5,7 @@ import MainButton from '@/components/MainButton.vue'
 <template>
   <div class="about">
     <h1>This is an about page</h1>
-    <MainButton />
+    <MainButton label="Text här" />
   </div>
 </template>
 
