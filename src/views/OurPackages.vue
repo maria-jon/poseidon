@@ -5,3 +5,5 @@ import HeaderBar from '@/components/HeaderBar.vue'
 <template>
   <HeaderBar />
 </template>
+
+<style scoped lang="scss"></style>
