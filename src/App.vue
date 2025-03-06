@@ -2,6 +2,7 @@
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
 import HeaderBar from './components/HeaderBar.vue';
+
 </script>
 
 <template>
@@ -18,6 +19,7 @@ import HeaderBar from './components/HeaderBar.vue';
       </nav>
     </div>
   </header>
+  
 
   <RouterView />
 </template>
