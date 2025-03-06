@@ -85,4 +85,11 @@ button {
 a {
   color: $color-white;
 }
+
+@media only screen and (min-width: 1024px) {
+  .menu-overlay {
+    flex-direction: row;
+    background-color: $color-primary-dark;
+  }
+}
 </style>
