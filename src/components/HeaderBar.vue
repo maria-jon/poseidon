@@ -12,7 +12,7 @@ function toggleMenu() {
   <div class="wrapper">
     <img class="logo" role="img" width="491" height="77" loading="lazy" alt="Poseidons retreat logo" src="@/assets/Logotype_Poseidons-retreat.svg">
     <button class="hamburger" @click="toggleMenu">
-      <img src="@/assets/Icon-burger.svg">
+      <span class="material-symbols-outlined">menu</span>
     </button>
   </div>
   <div class="menu-overlay" v-if="menuOpen">
@@ -44,16 +44,26 @@ function toggleMenu() {
 }
 
 .hamburger {
-  height: 42px;
-  width: 54px;
+  height: 50px;
+  width: 50px;
   border: 1px solid $color-error-red;
   display: flex;
   justify-content: center;
   align-self: center;
+  margin-left: $margin-small;
 }
+
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  color: $color-white;
+  font-size: 3rem;
+  align-self: flex-start;
+}
+
 
 button {
   background-color: transparent;
+  padding: 0;
 }
 
 .menu-overlay {
