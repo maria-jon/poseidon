@@ -6,9 +6,9 @@ import PopupConfirmation from '@/components/PopupConfirmation.vue'
 <template>
   <HeaderBar />
   <PopupConfirmation
-    header="We are sorry!"
-    text="This package is currently unavailable on your selected dates. Try adjusting your search."
-    label="Close"
+    header="Congratulations!"
+    text="Your selected package is available. Click ‘Continue’ to finalize your reservation."
+    label="Continue"
     width="200px"
   />
 </template>
