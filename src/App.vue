@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
-import HeroSection from './components/HeroSection.vue';
+
 </script>
 
 <template>
@@ -17,7 +17,7 @@ import HeroSection from './components/HeroSection.vue';
       </nav>
     </div>
   </header>
-  <HeroSection />
+  
 
   <RouterView />
 </template>
