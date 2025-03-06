@@ -5,79 +5,78 @@ import ines from '../assets/Images/Komprimerad package-ines_2560x1440_jpg (1).jp
 import thesiren from '../assets/Images/Komprimerad package-the-siren_2560x1440_jpg (1).jpg'
 import poseidontemple from '../assets/Images/Komprimerad package-poseidons-temple_2560x1440_jpg (1).jpg'
 
-document.addEventListener("DOMContentLoaded", () => {
-  const sliderContainer: HTMLElement | null = document.querySelector(".slider-container");
-  const slider: HTMLElement | null = document.querySelector(".slider");
-  const images: NodeListOf<HTMLImageElement> = document.querySelectorAll(".slider img");
+  document.addEventListener('DOMContentLoaded', () => {
+  const sliderContainer: HTMLElement | null = document.querySelector('.slider-container')
+  const slider: HTMLElement | null = document.querySelector('.slider')
+  const images: NodeListOf<HTMLImageElement> = document.querySelectorAll('.slider img')
 
-  if (!sliderContainer || !slider || images.length === 0) return;
+  if (!sliderContainer || !slider || images.length === 0) return
 
-  // Skapa pilarna dynamiskt så att de finns på alla bilder
-  const leftArrow = document.createElement("button");
-  leftArrow.classList.add("arrow", "left");
-  leftArrow.innerHTML = "&#9665;"; // Vänsterpil
+  //left arrow
+  const leftArrow = document.createElement('button')
+  leftArrow.classList.add('arrow', 'left')
+  leftArrow.innerHTML = '&#9665;' 
 
-  const rightArrow = document.createElement("button");
-  rightArrow.classList.add("arrow", "right");
-  rightArrow.innerHTML = "&#9655;"; // Högerpil
+  //Right arrow
+  const rightArrow = document.createElement('button')
+  rightArrow.classList.add('arrow', 'right')
+  rightArrow.innerHTML = '&#9655;' 
 
-  // Lägg till pilarna i slider-container
-  sliderContainer.appendChild(leftArrow);
-  sliderContainer.appendChild(rightArrow);
+  
+  sliderContainer.appendChild(leftArrow)
+  sliderContainer.appendChild(rightArrow)
 
-  let currentIndex: number = 0;
-  let autoSlideInterval: number;
+  let currentIndex: number = 0
+  let autoSlideInterval: number
 
-  // Uppdatera bildpositionen
+  
   const updateSlider = (): void => {
-    slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-  };
+    slider.style.transform = `translateX(-${currentIndex * 100}%)`
+  }
 
-  // Visa nästa bild
+  
   const showNextImage = (): void => {
-    currentIndex = (currentIndex + 1) % images.length;
-    updateSlider();
-  };
+    currentIndex = (currentIndex + 1) % images.length
+    updateSlider()
+  }
 
-  // Visa föregående bild
+ 
   const showPrevImage = (): void => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    updateSlider();
-  };
+    currentIndex = (currentIndex - 1 + images.length) % images.length
+    updateSlider()
+  }
 
-  // Starta automatisk bildväxling
+  
   const startAutoSlide = (): void => {
-    stopAutoSlide();
-    autoSlideInterval = window.setInterval(showNextImage, 5000); // Byt bild var 5:e sekund
-  };
+    stopAutoSlide()
+    autoSlideInterval = window.setInterval(showNextImage, 5000) // change image every 5 seconds
+  }
 
-  // Stoppa automatisk bildväxling
+  
   const stopAutoSlide = (): void => {
-    clearInterval(autoSlideInterval);
-  };
+    clearInterval(autoSlideInterval)
+  }
 
-  // Starta om autoslide vid klick
+  
   const restartAutoSlide = (): void => {
-    stopAutoSlide();
-    startAutoSlide();
-  };
+    stopAutoSlide()
+    startAutoSlide()
+  }
 
-  // Lägg till eventlisteners för pilarna
-  rightArrow.addEventListener("click", () => {
-    showNextImage();
-    restartAutoSlide();
-  });
+  
+  rightArrow.addEventListener('click', () => {
+    showNextImage()
+    restartAutoSlide()
+  })
 
-  leftArrow.addEventListener("click", () => {
-    showPrevImage();
-    restartAutoSlide();
-  });
+  leftArrow.addEventListener('click', () => {
+    showPrevImage()
+    restartAutoSlide()
+  })
 
-  // Starta automatisk bildväxling vid sidans laddning
-  startAutoSlide();
-});
-
-
+  
+  startAutoSlide()
+})
 </script>
 
 <template>
@@ -109,15 +108,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
   <h3>Discover Our<br />Underwater Stays</h3>
 
+  <!-- Mobile and Tablet-->
   <div class="slider-container">
     <div class="slider">
       <img :src="thebluelagoon" class="retreat" width="500" height="400" />
       <img :src="ines" class="retreat" width="500" height="400" />
       <img :src="thesiren" class="retreat" width="500" height="400" />
       <img :src="poseidontemple" class="retreat" width="500" height="400" />
-      
     </div>
   </div>
+
+  <!-- Desktopversion-->
+  <div class="image-grid">
+  <div class="image-box">
+    <img :src="thebluelagoon" alt="The Blue Lagoon" />
+    <p class="image-label">The Blue Lagoon</p>
+  </div>
+  <div class="image-box">
+    <img :src="ines" alt="Ines Suite" />
+    <p class="image-label">Ines Suite</p>
+  </div>
+  <div class="image-box">
+    <img :src="thesiren" alt="The Siren" />
+    <p class="image-label">The Siren</p>
+  </div>
+  <div class="image-box">
+    <img :src="poseidontemple" alt="Poseidon's Temple" />
+    <p class="image-label">Poseidon's Temple</p>
+  </div>
+</div>
+
 </template>
 
 <style scoped>
@@ -139,7 +159,7 @@ body {
 .titleone {
   font-size: 2rem;
   font-family: 'Merriweather', serif;
-  font-weight: 700; /* 700 = Bold */
+  font-weight: 700; 
   line-height: 1.2;
   color: #efedeb;
   position: absolute;
@@ -148,7 +168,7 @@ body {
 .titletwo {
   font-size: 2rem;
   font-family: 'Merriweather', serif;
-  font-weight: 700; /* 700 = Bold */
+  font-weight: 700; 
   line-height: 1.2;
   color: #efedeb;
   position: absolute;
@@ -214,28 +234,120 @@ h3 {
   margin-top: 10px;
 }
 
-/* Style for the container */
 .slider-container {
   width: 100%;
   overflow: hidden;
   margin: auto;
-  max-width: 600px;
   position: relative;
 }
 
-/* Style for the slider */
 .slider {
   display: flex;
   transition: transform 0.5s ease;
   width: 100%;
 }
 
-/* Style for each image */
 .slider img {
   width: 100%;
   height: auto;
   object-fit: cover;
 }
 
+@media (min-width: 320px) {
+  .slider-container {
+  display: block; 
+}
+.image-grid {
+  display: none; 
+}
+}
 
+@media (min-width: 768px) {
+  .titleone {
+  font-size: 3rem;
+}
+.titletwo {
+  font-size: 3rem;
+  padding-top: 90px;
+}
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  text-align: left; 
+}
+.text {
+  max-width: 500px; 
+}
+.aboutbtn {
+  margin-left: 130px;
+}
+.book {
+  margin-top: 220px;
+  font-size: 1rem;
+}
+h3 {
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+.image-grid {
+  display: none; 
+}
+
+}
+@media (min-width: 1024px){
+  .herosection {
+  height: 75vh;
+}
+.slider-container {
+    display: none; 
+  }
+  .image-grid {
+    display: flex; 
+  }
+
+.aboutbtn {
+  margin-left: 500px;
+}
+.book {
+  margin-top: 230px;
+  font-size: 1rem;
+}
+.image-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #688272;
+}
+
+.image-box {
+  width: 350px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative; 
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-label {
+  position: absolute;
+  bottom: 0; 
+  left: 0; 
+  width: 100%; 
+  background: rgba(0, 0, 0, 0.7); 
+  color: white;
+  font-size: 18px; 
+  padding: 10px 15px; 
+  text-align: right;
+  font-family: 'Merriweather', serif;
+}
+}
 </style>
