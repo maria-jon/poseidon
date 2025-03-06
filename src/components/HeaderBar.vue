@@ -1,29 +1,36 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from 'vue'
 
-let menuOpen = ref(false);
+const menuOpen = ref(false)
 
 function toggleMenu() {
-  menuOpen.value = !menuOpen.value;
+  menuOpen.value = !menuOpen.value
 }
 </script>
 
 <template>
   <div class="wrapper">
-    <img class="logo" role="img" width="491" height="77" loading="lazy" alt="Poseidons retreat logo" src="@/assets/Logotype_Poseidons-retreat.svg">
+    <img
+      class="logo"
+      role="img"
+      width="491"
+      height="77"
+      loading="lazy"
+      alt="Poseidons retreat logo"
+      src="@/assets/Logotype_Poseidons-retreat.svg"
+    />
     <button class="hamburger" @click="toggleMenu">
       <span class="material-symbols-outlined" v-if="menuOpen">close</span>
       <span class="material-symbols-outlined" v-else>menu</span>
     </button>
   </div>
   <div class="menu-overlay" v-if="menuOpen">
-    <a href="">Home</a>
-    <a href="">About us</a>
-    <a href="">Our packages</a>
-    <a href="">Book now</a>
+    <RouterLink to="/">Home</RouterLink>
+    <RouterLink to="/about">About us</RouterLink>
+    <RouterLink to="/packages">Our packages</RouterLink>
+    <RouterLink to="/booking">Book now</RouterLink>
   </div>
 </template>
-
 
 <style lang="scss" scoped>
 .wrapper {
@@ -59,7 +66,6 @@ function toggleMenu() {
   font-size: 3rem;
   align-self: flex-start;
 }
-
 
 button {
   background-color: transparent;
