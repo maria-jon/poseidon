@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import OurPackages from '@/views/OurPackages.vue'
-import BookNow from '@/views/BookNow.vue'
+import PrivacyView from '@/views/PrivacyView.vue'
+import PackagesView from '@/views/PackagesView.vue'
+import BookingView from '@/views/BookingView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,12 +23,17 @@ const router = createRouter({
     {
       path: '/packages',
       name: 'packages',
-      component: OurPackages,
+      component: PackagesView,
     },
     {
       path: '/booking',
       name: 'booking',
-      component: BookNow,
+      component: BookingView,
+    },
+    {
+      path: '/privacy',
+      name: 'privacy-policy',
+      component: PrivacyView,
     },
   ],
 })
