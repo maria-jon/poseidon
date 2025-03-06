@@ -18,7 +18,7 @@ import HeaderBar from './components/HeaderBar.vue';
         <RouterLink to="/about">About</RouterLink>
       </nav>
     </div>
-  </header> -->
+  </header> 
   
 
   <RouterView />
