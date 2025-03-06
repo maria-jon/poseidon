@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import AboutUs from '@/components/AboutUs.vue';
+import AboutUs from '@/components/AboutUs.vue'
 </script>
 
 <template>
@@ -8,6 +8,4 @@ import AboutUs from '@/components/AboutUs.vue';
   </main>
 </template>
 
-<style>
-
-</style>
+<style></style>
