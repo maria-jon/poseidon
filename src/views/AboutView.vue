@@ -1,12 +1,9 @@
 <script setup lang="ts">
-import MainButton from '@/components/MainButton.vue'
+
 </script>
 
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-    <MainButton label="Text här" />
-  </div>
+  
 </template>
 
 <style>
