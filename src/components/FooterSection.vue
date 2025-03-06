@@ -26,30 +26,34 @@ import FooterIcons from "./footerIcons/FooterIcons.vue";
 
 <style lang="scss">
 @import '/src/style/variables.scss';
-footer {
+.menu-footer {
   background-color: $color-primary-medium;
   color: #fff;
-  height: 200px;
+  min-height: 200px;
+  width: 100vw;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
   background-origin: border-box;
   margin-top: 3rem;
+  overflow: visible;
+  .menu-container {
+    margin-bottom: 1rem;
+  }
   ul {
     list-style: none;
     margin-top: 1rem;
     margin-bottom: 1rem;
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
+    padding: 0;
    }
     .menu-list a {
     color: #fff;
     display: inline-block;
     font-size: 1.3rem;
-    padding-left: 0.6rem;
     &:hover {
       color: $color-primary-light;
       text-decoration: none;
@@ -75,5 +79,15 @@ footer {
         text-decoration: underline;
     }
   }
+}
+
+@media (max-width: 768px) {
+  .menu-footer ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+    min-height: 200px;
+   }
+  
 }
 </style>

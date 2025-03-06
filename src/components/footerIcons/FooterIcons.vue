@@ -31,6 +31,7 @@ import FooterSection from './components/FooterSection.vue'
   display: flex;
   justify-content: center;
   gap: 10px;
+  margin-top: 1rem;
 }
 .icon {
   width: 45px;
@@ -41,5 +42,11 @@ import FooterSection from './components/FooterSection.vue'
 .icon:hover {
   transform: scale(1.1);
   fill: $color-primary-light;
+}
+
+@media (max-width: 600px) {
+  .footer-icons{
+    margin: 10px;
+  }
 }
 </style>
