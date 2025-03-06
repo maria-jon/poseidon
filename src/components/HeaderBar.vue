@@ -10,7 +10,7 @@ function toggleMenu() {
 
 <template>
   <div class="wrapper">
-    <img src="@/assets/Logotype_Poseidons-retreat.svg">
+    <img class="logo" role="img" width="491" height="77" loading="lazy" alt="Poseidons retreat logo" src="@/assets/Logotype_Poseidons-retreat.svg">
     <button class="hamburger" @click="toggleMenu">
       <img src="@/assets/Icon-burger.svg">
     </button>
@@ -32,10 +32,15 @@ function toggleMenu() {
   height: 80px;
   width: 100vw;
   display: flex;
+  align-items: center;
   position: sticky;
   top: 0;
   padding-right: $margin-medium;
   z-index: 999;
+}
+
+.logo {
+  max-width: 80vw;
 }
 
 .hamburger {
@@ -59,6 +64,7 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: $margin-xsmall;
   position: fixed;
   left: 50%;
   top: 0;
