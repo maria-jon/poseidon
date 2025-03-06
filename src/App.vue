@@ -2,7 +2,7 @@
 
 <template>
   <header>
-    <div class="wrapper">
+    <div>
       <!-- <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
