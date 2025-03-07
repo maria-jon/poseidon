@@ -42,6 +42,18 @@ main {
   margin: 0 1rem 4rem 1rem;
 }
 
+.wrapper {
+  width: 100%;
+  height: 47.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  background-color: $color-primary-light;
+  margin-bottom: 2rem;
+}
+
 header {
   width: 90%;
   max-width: 22rem;
@@ -59,16 +71,5 @@ h3 {
 
 p {
   margin-bottom: 1rem;
-}
-
-.wrapper {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0.5rem;
-  background-color: $color-primary-light;
-  margin-bottom: 2rem;
 }
 </style>
