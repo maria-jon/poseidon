@@ -5,6 +5,7 @@ import ines from '../assets/Images/Komprimerad package-ines_2560x1440_jpg (1).jp
 import thesiren from '../assets/Images/Komprimerad package-the-siren_2560x1440_jpg (1).jpg'
 import poseidontemple from '../assets/Images/Komprimerad package-poseidons-temple_2560x1440_jpg (1).jpg'
 
+
   document.addEventListener('DOMContentLoaded', () => {
   const sliderContainer: HTMLElement | null = document.querySelector('.slider-container')
   const slider: HTMLElement | null = document.querySelector('.slider')
@@ -96,9 +97,8 @@ import poseidontemple from '../assets/Images/Komprimerad package-poseidons-templ
       ✨ Experience serenity and adventure, from spa treatments to ocean excursions.
     </article>
     <article class="text">Let us create your perfect stay.</article>
+    <button class="about">About the retreat</button>
   </section>
-
-  <button class="aboutbtn">ABOUT THE RETREAT</button>
 
   <h3>Discover Our<br />Underwater Stays</h3>
 
@@ -190,15 +190,17 @@ body {
   background-color: #f1e393;
   color: #1c272c;
   font-size: 1rem;
+  padding: 0.5rem 1rem;
   font-family: 'Merriweather', serif;
-  box-shadow: 4px 4px 10px black;
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 .book:hover {
-  backdrop-filter: blur(8px);
-  background-color: #ead95d;
+  background-color: #fac801;
+  font-size: 1.125rem;
   transform: scale(1.05);
-  box-shadow: 6px 6px 12px black;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
 }
 h2 {
   text-align: center;
@@ -210,25 +212,28 @@ h2 {
   margin-left: 10px;
   margin-right: 10px;
 }
-.aboutbtn {
+.about {
   background-color: #c45c54;
   border-radius: 8px;
-  color: #fcf9f7;
+  color: #efedeb;
   border: none;
   height: 38px;
   width: fit-content;
   cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+  padding: 0.5rem 1rem;
   margin-top: 20px;
-  box-shadow: 4px 4px 10px black;
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
   margin-bottom: 20px;
   margin-left: 10px;
 }
-.aboutbtn:hover {
-  backdrop-filter: blur(8px);
-  background-color: #d66b63;
+
+.about:hover {
+  background-color: #52201c;
+  font-size: 1.125rem;
   transform: scale(1.05);
-  box-shadow: 6px 6px 12px black;
-  color: #efedeb;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
 }
 .text {
   padding-top: 10px;
