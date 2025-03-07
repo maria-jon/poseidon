@@ -44,20 +44,20 @@ defineProps({
   </section>
     <section>
       <h5>Payment options</h5>
-      <div class="radios">
+      <form class="radios">
         <label>
-          <input class="radio-input" type="radio" value="credit">
+          <input class="radio-input" type="radio" name="payment" value="credit">
           <span class="input-label info">Pay with credit card</span>
         </label>
         <label>
-          <input class="radio-input" type="radio" value="paypal">
+          <input class="radio-input" type="radio" name="payment" value="paypal">
           <span class="input-label info">Pay with PayPal</span>
         </label>
         <label>
-          <input class="radio-input" type="radio" value="arrival">
+          <input class="radio-input" type="radio" name="payment" value="arrival">
           <span class="input-label info">Pay on arrival</span>
         </label>
-      </div>
+      </form>
     </section>
     <MainButton :label="label" :width="width" />
   </div>
