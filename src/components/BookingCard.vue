@@ -118,18 +118,22 @@ input[type="text"] {
   display: flex;
   flex-direction: column;
   border-radius: 8px;
-  padding: 0 $margin-xsmall;
+  padding:  $margin-xsmall;
 }
+
+.radios > label {
+  display: flex;
+  align-items: center;
+}
+
 input[type="radio"] {
-  margin: $margin-xsmall;
-  width: 1.5rem;
-  height: 1.5rem;
+  margin: 6px;
+  width: 1.75rem;
+  height: 1.75rem;
   accent-color: $color-error-red;
 }
 
 button {
-  position: absolute;
-  bottom: 20px;
-  right: 17px;
+  align-self: flex-end;
 }
 </style>

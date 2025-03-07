@@ -9,7 +9,7 @@ import BookingCard from '@/components/BookingCard.vue';
   <BookingCard
     header="Complete your booking"
     label="Continue"
-    width="200px"
+    width="120px"
     />
   <PopupConfirmation
     header="Congratulations!"
