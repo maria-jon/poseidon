@@ -28,36 +28,30 @@ import poseidontemple from '../assets/Images/Komprimerad package-poseidons-templ
 
   let currentIndex: number = 0
   let autoSlideInterval: number
-
   
   const updateSlider = (): void => {
     slider.style.transform = `translateX(-${currentIndex * 100}%)`
   }
 
-  
   const showNextImage = (): void => {
     currentIndex = (currentIndex + 1) % images.length
     updateSlider()
   }
-
- 
+  
   const showPrevImage = (): void => {
     currentIndex = (currentIndex - 1 + images.length) % images.length
     updateSlider()
   }
 
-  
   const startAutoSlide = (): void => {
     stopAutoSlide()
     autoSlideInterval = window.setInterval(showNextImage, 5000) // change image every 5 seconds
   }
 
-  
   const stopAutoSlide = (): void => {
     clearInterval(autoSlideInterval)
   }
 
-  
   const restartAutoSlide = (): void => {
     stopAutoSlide()
     startAutoSlide()
@@ -109,14 +103,27 @@ import poseidontemple from '../assets/Images/Komprimerad package-poseidons-templ
   <h3>Discover Our<br />Underwater Stays</h3>
 
   <!-- Mobile and Tablet-->
-  <div class="slider-container">
-    <div class="slider">
-      <img :src="thebluelagoon" class="retreat" width="500" height="400" />
-      <img :src="ines" class="retreat" width="500" height="400" />
-      <img :src="thesiren" class="retreat" width="500" height="400" />
-      <img :src="poseidontemple" class="retreat" width="500" height="400" />
+<div class="slider-container">
+  <div class="slider">
+    <div class="slide">
+      <img :src="thebluelagoon" class="imgslide" width="500" height="400" />
+      <p class="image-label">The Blue Lagoon</p>
+    </div>
+    <div class="slide">
+      <img :src="ines" class="imgslide" width="500" height="400" />
+      <p class="image-label">Ines Suite</p>
+    </div>
+    <div class="slide">
+      <img :src="thesiren" class="imgslide" width="500" height="400" />
+      <p class="image-label">The Siren</p>
+    </div>
+    <div class="slide">
+      <img :src="poseidontemple" class="imgslide" width="500" height="400" />
+      <p class="image-label">Poseidon's Temple</p>
     </div>
   </div>
+</div>
+
 
   <!-- Desktopversion-->
   <div class="image-grid">
@@ -148,8 +155,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 32px;
-  height: 45vh;
+  height: 35vh;
 }
 .retreat {
   height: 100%;
@@ -197,7 +203,7 @@ body {
 h2 {
   text-align: center;
   font-family: 'Merriweather', serif;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .welcome {
   margin-top: 12px;
@@ -232,25 +238,49 @@ h3 {
   text-align: center;
   font-family: 'Merriweather', serif;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
+
 
 .slider-container {
   width: 100%;
-  overflow: hidden;
-  margin: auto;
+  overflow: hidden; 
   position: relative;
+  background-color: #688272; 
+  padding: 10px 0; 
 }
 
 .slider {
   display: flex;
+  width: 100%; 
   transition: transform 0.5s ease;
-  width: 100%;
 }
 
-.slider img {
-  width: 100%;
-  height: auto;
+.slide {
+  position: relative;
+  width: 100%; 
+  flex: 0 0 100%;
+  text-align: center;
+}
+
+.imgslide {
+  width: 95%;
+  height: 200px;
   object-fit: cover;
+  border-radius: 5px;
+  
+}
+
+.image-label {
+  position: absolute;
+  left: 9.5px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 1.2rem;
+  padding: 5px;
+  border-radius: 5px;
+  font-family: 'Merriweather', serif;
+  text-align: right; 
 }
 
 @media (min-width: 320px) {
@@ -260,10 +290,27 @@ h3 {
 .image-grid {
   display: none; 
 }
+.image-label {
+  position: absolute;
+  bottom: 6px; 
+  right: 1;
+  width: 95%;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 1rem;
+  text-align: right; 
+}
+
 }
 
 @media (min-width: 768px) {
-  .titleone {
+  .herosection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 28vh;
+}
+.titleone {
   font-size: 3rem;
 }
 .titletwo {
@@ -291,8 +338,30 @@ h3 {
   margin-bottom: 10px;
   margin-top: 20px;
 }
+h2 {
+  margin-top: 35px;
+}
 .image-grid {
   display: none; 
+}
+.imgslide {
+  width: 95%;
+  height: 35vh;
+  object-fit: cover;
+  border-radius: 5px;
+  
+}
+.image-label {
+  position: absolute;
+  bottom: 1; 
+  left: 19px;
+  width: 95%; 
+  background: rgba(0, 0, 0, 0.7); 
+  color: white;
+  font-size: 1.2rem; 
+  padding: 10px 15px; 
+  text-align: right;
+  font-family: 'Merriweather', serif;
 }
 
 }

@@ -3,16 +3,7 @@ import heroImage from '../assets/Images/komprimerad poseidons-retreat_1_2560x144
 import poseidonfish from '@/assets/Images/Komprimerad poseidon-fish_2560x1440_jpg (1).jpg'
 import poseidonhall from '@/assets/Images/Komprimerad poseidon-hall_2560x1440_jpg (1).jpg'
 import mermaid from '@/assets/Images/Komprimerad poseidon-mermaid_1440x2560_jpg (1).jpg'
-</script>
-
-<template>
-//import thebluelagoon from '../assets/Images/Komprimerad package-the-blue-lagoon_2560x1440_jpg (1).jpg'
-//import heroImage from '../assets/Images/komprimerad poseidons-retreat_1_2560x1440_jpg (1).jpg'
-//import ines from '../assets/Images/Komprimerad package-ines_2560x1440_jpg (1).jpg'
-//import thesiren from '../assets/Images/Komprimerad package-the-siren_2560x1440_jpg (1).jpg'
-//import poseidontemple from '../assets/Images/Komprimerad package-poseidons-temple_2560x1440_jpg (1).jpg'
-import poseidonfish from '@/assets/Images/Komprimerad poseidon-fish_2560x1440_jpg (1).jpg'
-import poseidonhall from '@/assets/Images/Komprimerad poseidon-hall_2560x1440_jpg (1).jpg'
+import HeaderBar from './HeaderBar.vue'
 </script>
 
 <template>
@@ -42,11 +33,7 @@ import poseidonhall from '@/assets/Images/Komprimerad poseidon-hall_2560x1440_jp
     <img :src="poseidonhall" class="hall" width="500" height="400" />
     <img :src="mermaid" class="mermaid" width="500" height="400" />
   </div>
-  </div>
 
-  <img :src="poseidonfish" class="fish" width="500" height="400" />
-
-  <img :src="poseidonhall" class="hall" width="500" height="400" />
 </template>
 
 <style scoped>
@@ -78,31 +65,42 @@ p {
 }
 /* Show only the tablet version for medium screens (601px ) */
 @media (min-width: 601px) {
+  .mobile {
+    display: none;
+  }
   p {
     margin-left: 80px;
     margin-right: 50px;
   }
   .tablet {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
+    flex-wrap: wrap; /* Tillåter radbrytning */
+    gap: 10px; /* Mellanrum mellan bilder */
+    justify-content: center; /* Centrerar bilderna horisontellt */
+    align-items: center; /* Ser till att alla bilder är centrerade */
   }
-  .hero,
+
+  .hero {
+    width: 300px;
+    height: 250px;
+    border-radius: 5px;
+  }
+  
   .fish {
     width: 300px;
-    height: 200px;
+    height: 250px;
     border-radius: 5px;
   }
+
   .hall {
-    width: 300px;
-    height: 200px;
+    width: 100px;
+    height: auto;
     border-radius: 5px;
-    flex-basis: 80%;
-    text-align: center;
+    flex-basis: 80%; /* Gör så att .hall tar upp hela raden under */
+    text-align: center; /* (Valfritt) Centrerar bilden horisontellt */
   }
 }
-/* Show only the desktop version for large screens (1025px and up) */
+/* Show only the desktop version for large screens (1024px and up) */
 @media (min-width: 1024px) {
   .tablet {
     display: none;
@@ -113,24 +111,5 @@ p {
     justify-content: center;
   }
 }
-.fish {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  height: 30vh;
-  width: 95vw;
-  border-radius: 5px;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-.hall {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  height: 25vh;
-  width: 95vw;
-  border-radius: 5px;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
+
 </style>
