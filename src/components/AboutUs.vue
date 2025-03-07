@@ -3,7 +3,7 @@ import heroImage from '../assets/Images/komprimerad poseidons-retreat_1_2560x144
 import poseidonfish from '@/assets/Images/Komprimerad poseidon-fish_2560x1440_jpg (1).jpg'
 import poseidonhall from '@/assets/Images/Komprimerad poseidon-hall_2560x1440_jpg (1).jpg'
 import mermaid from '@/assets/Images/Komprimerad poseidon-mermaid_1440x2560_jpg (1).jpg'
-import HeaderBar from './HeaderBar.vue'
+
 </script>
 
 <template>
@@ -60,8 +60,22 @@ p {
   .mobile {
     display: flex;
     flex-direction: column; /* Stack images vertically */
-    align-items: center; /* Center images */
-  }
+    gap: 10px;
+    justify-content: center; /* Centrerar bilderna vertikalt */
+    align-items: center; /* Centrerar bilderna horisontellt */
+    
+   }
+   .fish {
+    width: 95vw;
+    height: 40vh;
+    border-radius: 5px;
+   }
+   .hall {
+    width: 95vw;
+    height: 40vh;
+    margin-bottom: 20px;
+    border-radius: 5px;
+   }
 }
 /* Show only the tablet version for medium screens (601px ) */
 @media (min-width: 601px) {
@@ -96,8 +110,8 @@ p {
     width: 100px;
     height: auto;
     border-radius: 5px;
-    flex-basis: 80%; /* Gör så att .hall tar upp hela raden under */
-    text-align: center; /* (Valfritt) Centrerar bilden horisontellt */
+    flex-basis: 80%; 
+    text-align: center; 
   }
 }
 /* Show only the desktop version for large screens (1024px and up) */
@@ -105,11 +119,30 @@ p {
   .tablet {
     display: none;
   }
+  .tablet {
+    display: none;
+  }
   .desktop {
     display: flex;
-    gap: 10px; /* Space between images */
-    justify-content: center;
+    justify-content: center; /* Centrerar bilderna horisontellt */
+    align-items: center; /* Centrerar bilderna vertikalt */
+    gap: 10px; /* Mellanrum mellan bilder */
+  }
+
+  .hero,
+  .fish,
+  .hall {
+    width: 300px;
+    height: 250px;
+    border-radius: 5px;
+  }
+
+  .mermaid {
+    width: 500px; /* Behåller mermaid-bildens nuvarande storlek */
+    height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-left: auto; /* Flyttar mermaid-bilden till höger */
   }
 }
-
 </style>
