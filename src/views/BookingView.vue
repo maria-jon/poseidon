@@ -14,7 +14,7 @@ import PaymentCard from '@/components/PaymentCard.vue';
   />
   <PaymentCard
     header="Credit card payment"
-    label="continue"
+    label="Confirm booking"
     width="200px"
   />
   <PopupConfirmation

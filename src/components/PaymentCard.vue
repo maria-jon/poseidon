@@ -31,26 +31,26 @@ defineProps({
           </span>
         </div>
       </label>
-    </div>
-    <div class="numbers">
-      <label>
-        <span class="input-label info">Expiration date</span>
-        <div class="input-field">
-          <input type="text" text="name" placeholder="MM/YY">
-          <span class="material-symbols-outlined filled">
-            info
-          </span>
-        </div>
-      </label>
-      <label>
-        <span class="input-label info">CVC</span>
-        <div class="input-field">
-          <input type="text" text="name" placeholder="000">
-          <span class="material-symbols-outlined filled">
-            info
-          </span>
-        </div>
-      </label>
+      <div class="numbers">
+        <label>
+          <span class="input-label info">Expiration date</span>
+          <div class="input-field">
+            <input type="text" text="name" placeholder="MM/YY">
+            <span class="material-symbols-outlined filled">
+              info
+            </span>
+          </div>
+        </label>
+        <label>
+          <span class="input-label info">CVC</span>
+          <div class="input-field">
+            <input type="text" text="name" placeholder="000">
+            <span class="material-symbols-outlined filled">
+              info
+            </span>
+          </div>
+        </label>
+      </div>
     </div>
   </fieldset>
     <MainButton :label="label" :width="width" />
@@ -99,7 +99,7 @@ fieldset {
 input[type="text"] {
   border-radius: 8px;
   border: 2px solid $color-primary-dark;
-  min-width: 70%;
+  min-width: 60%;
   padding: 6px;
   background-color: $color-white;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
@@ -114,6 +114,15 @@ input[type="text"] {
 
 .filled {
   font-variation-settings: 'FILL' 1;
+}
+
+.numbers {
+  display: flex;
+  gap: $margin-medium;
+}
+
+.numbers > label {
+  max-width: 30%;
 }
 
 button {
