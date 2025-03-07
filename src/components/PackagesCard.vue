@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import MainButton from './MainButton.vue'
 defineProps({
   header: String,
   subheader: String,
@@ -20,6 +21,7 @@ defineProps({
         <span v-for="(item, index) in features" :key="index"> ✔ {{ item }} </span>
       </div>
     </div>
+    <MainButton label="Book now" width="9rem" />
   </article>
 </template>
 
@@ -30,8 +32,10 @@ article {
   // align-items: center;
   gap: 2rem;
   width: 100%;
-  height: 44.5rem;
+  height: 100%;
+  // height: 44.5rem;
   padding: 1rem;
+  padding-bottom: 2rem;
 }
 
 img {
@@ -50,5 +54,10 @@ img {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+button {
+  margin-left: auto;
+  margin-top: auto;
 }
 </style>
