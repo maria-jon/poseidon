@@ -9,23 +9,23 @@ defineProps({
 </script>
 
 <template>
-  <div class="complete-your-booking">
+  <form class="complete-your-booking">
     <section>
       <h5>{{ header }}</h5>
-    <form>
+    <div class="texts">
       <label>
         <span class="input-label info">Name</span>
         <div class="input-field">
-          <input class="text-input" text="name" placeholder="Full Name">
+          <input type="text" text="name" placeholder="Full Name">
           <span class="material-symbols-outlined filled">
             info
           </span>
         </div>
-    </label>
+      </label>
       <label>
         <span class="input-label info">Email address</span>
         <div class="input-field">
-          <input class="text-input" text="name" placeholder="example@website.com">
+          <input type="text" text="name" placeholder="example@website.com">
           <span class="material-symbols-outlined filled">
             info
           </span>
@@ -34,33 +34,33 @@ defineProps({
       <label>
         <span class="input-label info">Phone number</span>
         <div class="input-field">
-          <input class="text-input" text="name" placeholder="+00 000 00 00">
+          <input type="text" text="name" placeholder="+00 000 00 00">
           <span class="material-symbols-outlined filled">
             info
           </span>
         </div>
       </label>
-    </form>
-  </section>
+    </div>
+    </section>
     <section>
       <h5>Payment options</h5>
-      <form class="radios">
+      <div class="radios">
         <label>
-          <input class="radio-input" type="radio" name="payment" value="credit">
+          <input type="radio" name="payment" value="credit">
           <span class="input-label info">Pay with credit card</span>
         </label>
         <label>
-          <input class="radio-input" type="radio" name="payment" value="paypal">
+          <input type="radio" name="payment" value="paypal">
           <span class="input-label info">Pay with PayPal</span>
         </label>
         <label>
-          <input class="radio-input" type="radio" name="payment" value="arrival">
+          <input type="radio" name="payment" value="arrival">
           <span class="input-label info">Pay on arrival</span>
         </label>
-      </form>
+      </div>
     </section>
     <MainButton :label="label" :width="width" />
-  </div>
+  </form>
 </template>
 
 <!-- Används så att importera först och sedan använd som
@@ -97,11 +97,13 @@ form {
   display: flex;
 }
 
-.text-input {
-  border-radius: 10px;
+input[type="text"] {
+  border-radius: 8px;
   border: 2px solid $color-primary-dark;
   width: 50%;
-  padding: 2px;
+  padding: 6px;
+  background-color: $color-white;
+  accent-color: $color-error-red;
 }
 
 .material-symbols-outlined {
@@ -119,9 +121,9 @@ form {
   display: flex;
   flex-direction: column;
   border-radius: 8px;
-  padding: 20px;
+  padding: 0 $margin-xsmall;
 }
-.radio-input {
+input[type="radio"] {
   margin: $margin-xsmall;
   width: 1.5rem;
   height: 1.5rem;
