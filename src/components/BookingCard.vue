@@ -10,8 +10,8 @@ defineProps({
 
 <template>
   <form class="complete-your-booking">
-    <section>
-      <h5>{{ header }}</h5>
+    <fieldset>
+      <legend><h5>{{ header }}</h5></legend>
     <div class="texts">
       <label>
         <span class="input-label info">Name</span>
@@ -41,9 +41,9 @@ defineProps({
         </div>
       </label>
     </div>
-    </section>
-    <section>
-      <h5>Payment options</h5>
+  </fieldset>
+    <fieldset>
+      <legend><h5>Payment options</h5></legend>
       <div class="radios">
         <label>
           <input type="radio" name="payment" value="credit">
@@ -58,7 +58,7 @@ defineProps({
           <span class="input-label info">Pay on arrival</span>
         </label>
       </div>
-    </section>
+    </fieldset>
     <MainButton :label="label" :width="width" />
   </form>
 </template>
@@ -90,6 +90,14 @@ form {
   gap: $margin-xsmall;
 }
 
+fieldset {
+  border: none;
+}
+
+.texts {
+  margin-left: 12px;
+}
+
 .input-field {
   display: flex;
 }
@@ -97,10 +105,11 @@ form {
 input[type="text"] {
   border-radius: 8px;
   border: 2px solid $color-primary-dark;
-  width: 50%;
+  min-width: 70%;
   padding: 6px;
   background-color: $color-white;
-  accent-color: $color-error-red;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  color: $color-primary-dark;
 }
 
 .material-symbols-outlined {
@@ -128,8 +137,8 @@ input[type="text"] {
 
 input[type="radio"] {
   margin: 6px;
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 2rem;
+  height: 2rem;
   accent-color: $color-error-red;
 }
 
