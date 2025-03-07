@@ -8,15 +8,15 @@ const { packages } = storeToRefs(packageStore)
 </script>
 
 <template>
-  <header>
-    <h3>Our packages</h3>
+  <div class="header">
+    <h2>Our packages</h2>
     <p>
       Make your stay at Poseidon’s Retreat even more magical with our exclusive package deals.
       Whether you're looking for a romantic getaway, a deep-sea adventure, or ultimate relaxation,
       we have the perfect offer for you.
     </p>
     <span>Dive in and discover luxury beneath the waves!</span>
-  </header>
+  </div>
 
   <main>
     <div class="wrapper" v-for="singlePackage in packages" :key="singlePackage.id">
@@ -42,7 +42,8 @@ main {
 
 .wrapper {
   width: 100%;
-  height: 47.5rem;
+  max-width: 22.5rem;
+  height: max-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -52,22 +53,47 @@ main {
   margin-bottom: 2rem;
 }
 
-header {
+.header {
   width: 90%;
   max-width: 22rem;
   text-align: center;
   height: 17rem;
   margin: 2rem auto;
   text-align: left;
-  // padding: 0 1rem;
 }
 
-h3 {
+h2 {
   margin-bottom: 1rem;
   text-align: center;
 }
 
 p {
   margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: clamp(1rem, 5vw, 3rem);
+  }
+
+  .wrapper {
+    height: 48rem;
+    margin: 0;
+    max-width: none;
+  }
+
+  .header {
+    margin: 2rem 1rem;
+    width: 60%;
+    height: auto;
+    max-width: none;
+  }
+
+  h2 {
+    text-align: left;
+  }
 }
 </style>
