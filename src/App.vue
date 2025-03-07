@@ -1,14 +1,16 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import FooterSection from './components/FooterSection.vue'
+import HeaderBar from './components/HeaderBar.vue'
+</script>
 
 <template>
   <header>
-    <div>
-      <!-- <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav> -->
-    </div>
+    <HeaderBar />
   </header>
-
-  <RouterView />
+  <main>
+    <RouterView />
+  </main>
+  <footer>
+    <FooterSection />
+  </footer>
 </template>
