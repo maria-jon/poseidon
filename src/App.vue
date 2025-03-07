@@ -1,6 +1,4 @@
-<script setup lang="ts">
-import FooterSection from "./components/FooterSection.vue";
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <header>
@@ -13,5 +11,4 @@ import FooterSection from "./components/FooterSection.vue";
   </header>
 
   <RouterView />
-  <FooterSection />
 </template>

@@ -1,62 +1,163 @@
 <script setup lang="ts">
-
-//import thebluelagoon from '../assets/Images/Komprimerad package-the-blue-lagoon_2560x1440_jpg (1).jpg'
-//import heroImage from '../assets/Images/komprimerad poseidons-retreat_1_2560x1440_jpg (1).jpg'
-//import ines from '../assets/Images/Komprimerad package-ines_2560x1440_jpg (1).jpg'
-//import thesiren from '../assets/Images/Komprimerad package-the-siren_2560x1440_jpg (1).jpg'
-//import poseidontemple from '../assets/Images/Komprimerad package-poseidons-temple_2560x1440_jpg (1).jpg'
+import heroImage from '../assets/Images/komprimerad poseidons-retreat_1_2560x1440_jpg (1).jpg'
 import poseidonfish from '@/assets/Images/Komprimerad poseidon-fish_2560x1440_jpg (1).jpg'
 import poseidonhall from '@/assets/Images/Komprimerad poseidon-hall_2560x1440_jpg (1).jpg'
+import mermaid from '@/assets/Images/Komprimerad poseidon-mermaid_1440x2560_jpg (1).jpg'
+
 </script>
 
 <template>
-    <h2>About us</h2>
- <div>
+  <h2>About Poseidon’s Retreat</h2>
+  <div>
     <p>
-        Welcome to Poseidon's Retreat, the premier luxury escape in the heart of Atlantis! 
-        Founded by Poseidon himself, our hotel blends ancient Atlantean elegance with modern comfort.
+      Welcome to Poseidon's Retreat, the premier luxury escape in the heart of Atlantis! Founded by
+      Poseidon himself, our hotel blends ancient Atlantean elegance with modern comfort.
     </p>
-    <p>
-        Dive into luxury at Poseidon’s Hotel – Where the Ocean Meets Elegance.
-    </p>
- </div>
- 
-    <img :src="poseidonfish" class="fish" width="500" height="400" />
+    <p>Dive into luxury at Poseidon’s Hotel – Where the Ocean Meets Elegance.</p>
+    <!-- Mobile version-->
+  </div>
+  <div class="mobile">
+    <img :src="poseidonfish" class="fishmobile" width="500" height="400" />
+    <img :src="poseidonhall" class="hallmobile" width="500" height="400" />
+  </div>
+  <!-- Tablet version-->
+  <div class="tablet">
+    <img :src="heroImage" class="herotablet" width="500" height="400" />
+    <img :src="poseidonfish" class="fishtablet" width="500" height="400" />
+    <img :src="poseidonhall" class="halltablet" width="500" height="400" />
+  </div>
+  <!-- Desktop version-->
+  <div class="desktop">
+    <img :src="heroImage" class="herodesktop" width="500" height="400" />
+  <img :src="poseidonfish" class="fishdesktop" width="500" height="400" />
+    <img :src="poseidonhall" class="halldesktop" width="500" height="400" />
+    <img :src="mermaid" class="mermaiddesktop" width="500" height="400" />
+  </div>
 
-    <img :src="poseidonhall" class="hall" width="500" height="400" />
- 
 </template>
 
 <style scoped>
 h2 {
-    text-align: center;
-    margin-top: 12px;
+  text-align: center;
+  margin-top: 12px;
 }
 p {
-margin-top: 20px;
-margin-bottom: 10px;
-font-size: 1rem;
-margin-right: 5px;
-margin-left: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  margin-right: 5px;
+  margin-left: 10px;
 }
-.fish {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;  
-  height: 30vh; 
-  width: 95vw; 
-  border-radius: 5px;
-  margin-top: 10px;
-  margin-bottom: 20px;
+
+/* Hide all versions by default */
+.mobile,
+.tablet,
+.desktop {
+  display: none;
 }
-.hall {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;  
-  height: 25vh; 
-  width: 95vw; 
-  border-radius: 5px;
-  margin-top: 10px;
+/* Show only the mobile version on small screens (up to 600px) */
+@media (max-width: 600px) {
+  .mobile {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
+    justify-content: center; 
+    align-items: center; 
+    
+   }
+   .fishmobile {
+    width: 95vw;
+    height: 40vh;
+    border-radius: 5px;
+   }
+   .hallmobile {
+    width: 95vw;
+    height: 40vh;
+    margin-bottom: 20px;
+    border-radius: 5px;
+   }
+}
+/* Show only the tablet version for medium screens (601px ) */
+@media (min-width: 601px) {
+  .mobile {
+    display: none;
+  }
+  p {
+    margin-left: 80px;
+    margin-right: 50px;
+  }
+  .tablet {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 10px; 
+    justify-content: center; 
+    align-items: center; 
+  }
+
+  .herotablet {
+    width: 300px;
+    height: 250px;
+    border-radius: 5px;
+  }
+  
+  .fishtablet {
+    width: 300px;
+    height: 250px;
+    border-radius: 5px;
+  }
+
+  .halltablet {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+    flex-basis: 80%; 
+    text-align: center; 
+  }
+}
+/* Show only the desktop version for large screens (1024px and up) */
+@media (min-width: 1024px) {
+  .mobile {
+    display: none;
+  }
+  .tablet {
+    display: none;
+  }
+  .desktop {
+  display: flex;
+  position: relative; 
+  
+  
+ }
+.herodesktop {
+ margin-top: 204px;
+ position: absolute;
+ height: 35vh;
+ width: 38.5vw;
+ margin-left: 325px;
+}
+.fishdesktop {
+position: absolute;
+margin-left: 624px;
+height: 27vh;
+width: 19vw;
+}
+.halldesktop {
+  position: absolute;
+  height: 27vh;
+  width: 19vw;
+  margin-left: 325px;
+}
+.mermaiddesktop {
+  position: absolute;
+  margin-left: 925px;
+  height: 63vh;
+  width: 23vw;
+}
+p {
+  margin-left: 325px;
   margin-bottom: 20px;
+  margin-right: 290px;
+}
+
 }
 </style>

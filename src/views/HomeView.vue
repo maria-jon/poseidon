@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import HeroSection from '../components/HeroSection.vue';
-import MainButton from '@/components/MainButton.vue'
+import HeaderBar from '@/components/HeaderBar.vue'
+import HeroSection from '../components/HeroSection.vue'
 </script>
 
 <template>
-  <MainButton label="Text här" />
   <main>
+    <HeaderBar />
     <HeroSection />
   </main>
 </template>

@@ -26,7 +26,7 @@ export const usePackageStore = defineStore('packages', () => {
           ],
         },
 
-        image: 'Assets/Images/Komprimerad package-ines_2560x1440_jpg (1).jpg',
+        image: 'src/assets/Images/Komprimerad package-ines_2560x1440_jpg (1).jpg',
         id: 0,
       },
       {
@@ -42,7 +42,7 @@ export const usePackageStore = defineStore('packages', () => {
             'Couples’ massage at The Tidal Spa',
           ],
         },
-        image: 'Assets/Images/Komprimerad package-the-siren_2560x1440_jpg (1).jpg',
+        image: 'src/assets/Images/Komprimerad package-the-siren_2560x1440_jpg (1).jpg',
         id: 1,
       },
       {
@@ -58,7 +58,7 @@ export const usePackageStore = defineStore('packages', () => {
             'A deep-sea diving excursion to Atlantis hidden ruins',
           ],
         },
-        image: 'Assets/Images/Komprimerad package-poseidons-temple_2560x1440_jpg (1).jpg',
+        image: 'src/assets/Images/Komprimerad package-poseidons-temple_2560x1440_jpg (1).jpg',
         id: 2,
       },
       {
@@ -74,7 +74,7 @@ export const usePackageStore = defineStore('packages', () => {
             'Access to the Tidal Spa & Thermal Pools',
           ],
         },
-        image: 'Assets/Images/Komprimerad package-the-blue-lagoon_2560x1440_jpg (1).jpg',
+        image: 'src/assets/Images/Komprimerad package-the-blue-lagoon_2560x1440_jpg (1).jpg',
         id: 3,
       },
     ]

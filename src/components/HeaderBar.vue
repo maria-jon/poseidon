@@ -1,7 +1,29 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue'
+
+let desktop = ref(false);
 
 let menuOpen = ref(false);
+
+
+// Check viewport width dynamically as window size changes
+onMounted(() => {
+  window.addEventListener("resize", handleWindowSizeChange);
+  handleWindowSizeChange();
+});
+onUnmounted(() => {
+  window.removeEventListener("resize", handleWindowSizeChange);
+});
+const handleWindowSizeChange = () => {
+  let viewport = window.innerWidth;
+  if (viewport > 1024) {
+    desktop.value = true;
+    menuOpen.value = true;
+  } else {
+    desktop.value = false;
+    menuOpen.value = false;
+  }
+};
 
 function toggleMenu() {
   menuOpen.value = !menuOpen.value;
@@ -10,20 +32,33 @@ function toggleMenu() {
 
 <template>
   <div class="wrapper">
-    <img class="logo" role="img" width="491" height="77" loading="lazy" alt="Poseidons retreat logo" src="@/assets/Logotype_Poseidons-retreat.svg">
+    <img
+      class="logo"
+      role="img"
+      width="491"
+      height="77"
+      loading="lazy"
+      alt="Poseidons retreat logo"
+      src="@/assets/Logotype_Poseidons-retreat.svg"
+    />
+    <div class="menu-overlay" v-if="desktop">
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/about">About us</RouterLink>
+      <RouterLink to="/packages">Our packages</RouterLink>
+      <RouterLink to="/booking">Book now</RouterLink>
+  </div>
     <button class="hamburger" @click="toggleMenu">
       <span class="material-symbols-outlined" v-if="menuOpen">close</span>
       <span class="material-symbols-outlined" v-else>menu</span>
     </button>
   </div>
   <div class="menu-overlay" v-if="menuOpen">
-    <a href="">Home</a>
-    <a href="">About us</a>
-    <a href="">Our packages</a>
-    <a href="">Book now</a>
+    <RouterLink to="/">Home</RouterLink>
+    <RouterLink to="/about">About us</RouterLink>
+    <RouterLink to="/packages">Our packages</RouterLink>
+    <RouterLink to="/booking">Book now</RouterLink>
   </div>
 </template>
-
 
 <style lang="scss" scoped>
 .wrapper {
@@ -60,7 +95,6 @@ function toggleMenu() {
   align-self: flex-start;
 }
 
-
 button {
   background-color: transparent;
   padding: 0;
@@ -90,6 +124,7 @@ a {
   .menu-overlay {
     flex-direction: row;
     background-color: $color-primary-dark;
+    max-height: 80px;
   }
 }
 </style>
