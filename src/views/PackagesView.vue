@@ -42,7 +42,7 @@ main {
 
 .wrapper {
   width: 100%;
-  max-width: 22.5rem;
+  max-width: 37rem;
   height: max-content;
   display: flex;
   flex-direction: column;
@@ -55,11 +55,12 @@ main {
 
 .header {
   width: 90%;
-  max-width: 22rem;
+  max-width: 37rem;
   text-align: center;
-  height: 17rem;
-  margin: 2rem auto;
+  height: fit-content;
+  margin: 2rem 1rem;
   text-align: left;
+  justify-self: center;
 }
 
 h2 {
@@ -77,6 +78,7 @@ p {
     grid-template-columns: repeat(2, 1fr);
     justify-items: center;
     gap: clamp(1rem, 5vw, 3rem);
+    margin: 0 2rem 4rem 2rem;
   }
 
   .wrapper {
@@ -86,10 +88,11 @@ p {
   }
 
   .header {
-    margin: 2rem 1rem;
+    margin: 2rem 2rem;
     width: 60%;
     height: auto;
     max-width: none;
+    justify-self: left;
   }
 
   h2 {
