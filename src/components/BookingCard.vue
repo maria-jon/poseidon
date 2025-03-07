@@ -119,15 +119,14 @@ input[type="text"] {
 }
 
 .filled {
-  font-variation-settings: 'FILL' 1;
-}
+  font-variation-settings: 'FILL' 1;}
 
 .radios {
   background-color: $color-background-light;
   display: flex;
   flex-direction: column;
   border-radius: 8px;
-  padding:  $margin-xsmall;
+  padding: $margin-xsmall;
 }
 
 .radios > label {
