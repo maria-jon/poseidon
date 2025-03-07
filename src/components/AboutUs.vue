@@ -6,6 +6,19 @@ import mermaid from '@/assets/Images/Komprimerad poseidon-mermaid_1440x2560_jpg 
 </script>
 
 <template>
+//import thebluelagoon from '../assets/Images/Komprimerad package-the-blue-lagoon_2560x1440_jpg (1).jpg'
+//import heroImage from '../assets/Images/komprimerad poseidons-retreat_1_2560x1440_jpg (1).jpg'
+//import ines from '../assets/Images/Komprimerad package-ines_2560x1440_jpg (1).jpg'
+//import thesiren from '../assets/Images/Komprimerad package-the-siren_2560x1440_jpg (1).jpg'
+//import poseidontemple from '../assets/Images/Komprimerad package-poseidons-temple_2560x1440_jpg (1).jpg'
+import poseidonfish from '@/assets/Images/Komprimerad poseidon-fish_2560x1440_jpg (1).jpg'
+import poseidonhall from '@/assets/Images/Komprimerad poseidon-hall_2560x1440_jpg (1).jpg'
+import HeaderBar from './HeaderBar.vue'
+</script>
+
+<template>
+  <HeaderBar />
+
   <h2>About us</h2>
   <div>
     <p>
@@ -32,6 +45,11 @@ import mermaid from '@/assets/Images/Komprimerad poseidon-mermaid_1440x2560_jpg 
     <img :src="poseidonhall" class="hall" width="500" height="400" />
     <img :src="mermaid" class="mermaid" width="500" height="400" />
   </div>
+  </div>
+
+  <img :src="poseidonfish" class="fish" width="500" height="400" />
+
+  <img :src="poseidonhall" class="hall" width="500" height="400" />
 </template>
 
 <style scoped>
@@ -97,5 +115,25 @@ p {
     gap: 10px; /* Space between images */
     justify-content: center;
   }
+}
+.fish {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 30vh;
+  width: 95vw;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.hall {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 25vh;
+  width: 95vw;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 </style>
