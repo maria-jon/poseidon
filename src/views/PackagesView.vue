@@ -22,7 +22,13 @@ const { packages } = storeToRefs(packageStore)
 
   <main>
     <div class="wrapper" v-for="singlePackage in packages" :key="singlePackage.id">
-      <PackagesCard :image="singlePackage.image" />
+      <PackagesCard
+        :image="singlePackage.image"
+        :header="singlePackage.text.header"
+        :subheader="singlePackage.text.subheader"
+        :subtext="singlePackage.text.subtext"
+        :features="singlePackage.text.features"
+      />
     </div>
   </main>
 </template>
@@ -33,11 +39,11 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 4rem;
+  margin: 0 1rem 4rem 1rem;
 }
 
 header {
-  // width: 90%;
+  width: 90%;
   max-width: 22rem;
   text-align: center;
   height: 17rem;
@@ -56,13 +62,12 @@ p {
 }
 
 .wrapper {
-  margin: auto;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 90%;
-  max-width: 22rem;
+  border-radius: 0.5rem;
   background-color: $color-primary-light;
   margin-bottom: 2rem;
 }
