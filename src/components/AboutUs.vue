@@ -6,11 +6,7 @@ import mermaid from '@/assets/Images/Komprimerad poseidon-mermaid_1440x2560_jpg 
 import HeaderBar from './HeaderBar.vue'
 </script>
 
-
-
 <template>
-  <HeaderBar />
-
   <h2>About us</h2>
   <div>
     <p>

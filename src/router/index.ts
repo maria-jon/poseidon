@@ -1,8 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import PrivacyView from '@/views/PrivacyView.vue'
-import PackagesView from '@/views/PackagesView.vue'
-import BookingView from '@/views/BookingView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -23,17 +20,17 @@ const router = createRouter({
     {
       path: '/packages',
       name: 'packages',
-      component: PackagesView,
+      component: () => import('../views/PackagesView.vue'),
     },
     {
       path: '/booking',
       name: 'booking',
-      component: BookingView,
+      component: () => import('../views/BookingView.vue'),
     },
     {
       path: '/privacy',
       name: 'privacy-policy',
-      component: PrivacyView,
+      component: () => import('../views/PrivacyView.vue'),
     },
   ],
 })
