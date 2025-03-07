@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import HeaderBar from '@/components/HeaderBar.vue'
 import PackagesCard from '@/components/PackagesCard.vue'
 import { usePackageStore } from '@/stores/packages'
 import { storeToRefs } from 'pinia'
@@ -9,7 +8,6 @@ const { packages } = storeToRefs(packageStore)
 </script>
 
 <template>
-  <HeaderBar />
   <header>
     <h3>Our packages</h3>
     <p>
