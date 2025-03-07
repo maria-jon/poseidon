@@ -59,6 +59,6 @@ button {
   margin-top: auto;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
 }
 </style>
