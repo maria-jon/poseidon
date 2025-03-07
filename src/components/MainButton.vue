@@ -3,6 +3,7 @@ defineProps({
   label: {
     type: String,
     required: true,
+    default: 'Click me',
   },
   width: String,
 })
