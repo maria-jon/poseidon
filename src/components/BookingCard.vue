@@ -25,7 +25,7 @@ defineProps({
       <label>
         <span class="input-label info">Email address</span>
         <div class="input-field">
-          <input type="text" text="name" placeholder="example@website.com">
+          <input type="email" text="name" placeholder="example@website.com">
           <span class="material-symbols-outlined filled">
             info
           </span>
@@ -102,7 +102,7 @@ fieldset {
   display: flex;
 }
 
-input[type="text"] {
+input[type="text"], input[type="email"] {
   border-radius: 8px;
   border: 2px solid $color-primary-dark;
   min-width: 70%;
