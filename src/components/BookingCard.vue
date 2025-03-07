@@ -63,9 +63,6 @@ defineProps({
   </form>
 </template>
 
-<!-- Används så att importera först och sedan använd som
-<PopupConfirmation header="rubriken" text="paragraph texten" label="knapptexten" width="önskad knappens bredd"/>  -->
-
 <style scoped lang="scss">
 .complete-your-booking {
   box-sizing: border-box;
