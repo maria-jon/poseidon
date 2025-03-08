@@ -29,11 +29,9 @@ defineProps({
 article {
   display: flex;
   flex-direction: column;
-  // align-items: center;
   gap: 2rem;
   width: 100%;
   height: 100%;
-  // height: 44.5rem;
   padding: 1rem;
   padding-bottom: 2rem;
 }
@@ -59,5 +57,8 @@ img {
 button {
   margin-left: auto;
   margin-top: auto;
+}
+
+@media (min-width: 768px) {
 }
 </style>
