@@ -3,6 +3,7 @@ import PopupConfirmation from '@/components/PopupConfirmation.vue'
 import BookingCard from '@/components/BookingCard.vue'
 import PaymentCard from '@/components/PaymentCard.vue'
 import PaymentPaypal from '@/components/PaymentPaypal.vue'
+import StayBooking from '@/components/StayBooking.vue'
 </script>
 
 <template>
@@ -16,6 +17,8 @@ import PaymentPaypal from '@/components/PaymentPaypal.vue'
     label="Continue"
     width="200px"
   />
+
+  <StayBooking />
 </template>
 
 <style></style>
