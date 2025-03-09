@@ -17,7 +17,7 @@ import FooterIcons from "./footerIcons/FooterIcons.vue";
             <RoutinLink to="/booking">Book Now</RoutinLink>
           </div>
         </div>
-        <RoutingLink to="/policy" class="privacy-text">Privacy policy</RoutingLink>
+        <RoutingLink to="" class="privacy-text">Privacy policy</RoutingLink>
       </div>
     </footer>
   </template>
@@ -70,13 +70,6 @@ import FooterIcons from "./footerIcons/FooterIcons.vue";
     bottom: 0;
     width: 100%;
     left: 0;
-
-    a{
-        color: #fff;
-        font-weight: 400;
-        font-size: 1rem;
-        text-decoration: underline;
-    }
   }
 }
 
