@@ -99,4 +99,25 @@ p {
     text-align: left;
   }
 }
+
+@media (min-width: 1024px) {
+  main {
+    display: flex;
+    width: 80%;
+    justify-self: center;
+  }
+
+  .wrapper {
+    height: fit-content;
+  }
+
+  .header {
+    width: 80%;
+    justify-self: center;
+
+    p {
+      width: 60%;
+    }
+  }
+}
 </style>

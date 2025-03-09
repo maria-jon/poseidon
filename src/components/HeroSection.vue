@@ -5,8 +5,7 @@ import ines from '../assets/Images/Komprimerad package-ines_2560x1440_jpg (1).jp
 import thesiren from '../assets/Images/Komprimerad package-the-siren_2560x1440_jpg (1).jpg'
 import poseidontemple from '../assets/Images/Komprimerad package-poseidons-temple_2560x1440_jpg (1).jpg'
 
-
-  document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
   const sliderContainer: HTMLElement | null = document.querySelector('.slider-container')
   const slider: HTMLElement | null = document.querySelector('.slider')
   const images: NodeListOf<HTMLImageElement> = document.querySelectorAll('.slider img')
@@ -16,20 +15,19 @@ import poseidontemple from '../assets/Images/Komprimerad package-poseidons-templ
   //left arrow
   const leftArrow = document.createElement('button')
   leftArrow.classList.add('arrow', 'left')
-  leftArrow.innerHTML = '&#9665;' 
+  leftArrow.innerHTML = '&#9665;'
 
   //Right arrow
   const rightArrow = document.createElement('button')
   rightArrow.classList.add('arrow', 'right')
-  rightArrow.innerHTML = '&#9655;' 
+  rightArrow.innerHTML = '&#9655;'
 
-  
   sliderContainer.appendChild(leftArrow)
   sliderContainer.appendChild(rightArrow)
 
   let currentIndex: number = 0
   let autoSlideInterval: number
-  
+
   const updateSlider = (): void => {
     slider.style.transform = `translateX(-${currentIndex * 100}%)`
   }
@@ -38,7 +36,7 @@ import poseidontemple from '../assets/Images/Komprimerad package-poseidons-templ
     currentIndex = (currentIndex + 1) % images.length
     updateSlider()
   }
-  
+
   const showPrevImage = (): void => {
     currentIndex = (currentIndex - 1 + images.length) % images.length
     updateSlider()
@@ -58,7 +56,6 @@ import poseidontemple from '../assets/Images/Komprimerad package-poseidons-templ
     startAutoSlide()
   }
 
-  
   rightArrow.addEventListener('click', () => {
     showNextImage()
     restartAutoSlide()
@@ -69,7 +66,6 @@ import poseidontemple from '../assets/Images/Komprimerad package-poseidons-templ
     restartAutoSlide()
   })
 
-  
   startAutoSlide()
 })
 </script>
@@ -103,48 +99,46 @@ import poseidontemple from '../assets/Images/Komprimerad package-poseidons-templ
   <h3>Discover Our<br />Underwater Stays</h3>
 
   <!-- Mobile and Tablet-->
-<div class="slider-container">
-  <div class="slider">
-    <div class="slide">
-      <img :src="thebluelagoon" class="imgslide" width="500" height="400" />
-      <p class="image-label">The Blue Lagoon</p>
-    </div>
-    <div class="slide">
-      <img :src="ines" class="imgslide" width="500" height="400" />
-      <p class="image-label">Ines Suite</p>
-    </div>
-    <div class="slide">
-      <img :src="thesiren" class="imgslide" width="500" height="400" />
-      <p class="image-label">The Siren</p>
-    </div>
-    <div class="slide">
-      <img :src="poseidontemple" class="imgslide" width="500" height="400" />
-      <p class="image-label">Poseidon's Temple</p>
+  <div class="slider-container">
+    <div class="slider">
+      <div class="slide">
+        <img :src="thebluelagoon" class="imgslide" width="500" height="400" />
+        <p class="image-label">The Blue Lagoon</p>
+      </div>
+      <div class="slide">
+        <img :src="ines" class="imgslide" width="500" height="400" />
+        <p class="image-label">Ines Suite</p>
+      </div>
+      <div class="slide">
+        <img :src="thesiren" class="imgslide" width="500" height="400" />
+        <p class="image-label">The Siren</p>
+      </div>
+      <div class="slide">
+        <img :src="poseidontemple" class="imgslide" width="500" height="400" />
+        <p class="image-label">Poseidon's Temple</p>
+      </div>
     </div>
   </div>
-</div>
-
 
   <!-- Desktopversion-->
   <div class="image-grid">
-  <div class="image-box">
-    <img :src="thebluelagoon" alt="The Blue Lagoon" />
-    <p class="image-label">The Blue Lagoon</p>
+    <div class="image-box">
+      <img :src="thebluelagoon" alt="The Blue Lagoon" />
+      <p class="image-label">The Blue Lagoon</p>
+    </div>
+    <div class="image-box">
+      <img :src="ines" alt="Ines Suite" />
+      <p class="image-label">Ines Suite</p>
+    </div>
+    <div class="image-box">
+      <img :src="thesiren" alt="The Siren" />
+      <p class="image-label">The Siren</p>
+    </div>
+    <div class="image-box">
+      <img :src="poseidontemple" alt="Poseidon's Temple" />
+      <p class="image-label">Poseidon's Temple</p>
+    </div>
   </div>
-  <div class="image-box">
-    <img :src="ines" alt="Ines Suite" />
-    <p class="image-label">Ines Suite</p>
-  </div>
-  <div class="image-box">
-    <img :src="thesiren" alt="The Siren" />
-    <p class="image-label">The Siren</p>
-  </div>
-  <div class="image-box">
-    <img :src="poseidontemple" alt="Poseidon's Temple" />
-    <p class="image-label">Poseidon's Temple</p>
-  </div>
-</div>
-
 </template>
 
 <style scoped>
@@ -165,7 +159,7 @@ body {
 .titleone {
   font-size: 2rem;
   font-family: 'Merriweather', serif;
-  font-weight: 700; 
+  font-weight: 700;
   line-height: 1.2;
   color: #efedeb;
   position: absolute;
@@ -174,7 +168,7 @@ body {
 .titletwo {
   font-size: 2rem;
   font-family: 'Merriweather', serif;
-  font-weight: 700; 
+  font-weight: 700;
   line-height: 1.2;
   color: #efedeb;
   position: absolute;
@@ -246,24 +240,23 @@ h3 {
   margin-bottom: 10px;
 }
 
-
 .slider-container {
   width: 100%;
-  overflow: hidden; 
+  overflow: hidden;
   position: relative;
-  background-color: #688272; 
-  padding: 10px 0; 
+  background-color: #688272;
+  padding: 10px 0;
 }
 
 .slider {
   display: flex;
-  width: 100%; 
+  width: 100%;
   transition: transform 0.5s ease;
 }
 
 .slide {
   position: relative;
-  width: 100%; 
+  width: 100%;
   flex: 0 0 100%;
   text-align: center;
 }
@@ -273,7 +266,6 @@ h3 {
   height: 200px;
   object-fit: cover;
   border-radius: 5px;
-  
 }
 
 .image-label {
@@ -285,143 +277,140 @@ h3 {
   padding: 5px;
   border-radius: 5px;
   font-family: 'Merriweather', serif;
-  text-align: right; 
+  text-align: right;
 }
 
 @media (min-width: 320px) {
   .slider-container {
-  display: block; 
-}
-.image-grid {
-  display: none; 
-}
-.image-label {
-  position: absolute;
-  bottom: 6px; 
-  right: 1;
-  width: 95%;
-  background: rgba(0, 0, 0, 0.7);
-  color: white;
-  font-size: 1rem;
-  text-align: right; 
-}
-
+    display: block;
+  }
+  .image-grid {
+    display: none;
+  }
+  .image-label {
+    position: absolute;
+    bottom: 6px;
+    right: 1;
+    width: 95%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 1rem;
+    text-align: right;
+  }
 }
 
 @media (min-width: 768px) {
   .herosection {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 28vh;
-}
-.titleone {
-  font-size: 3rem;
-}
-.titletwo {
-  font-size: 3rem;
-  padding-top: 90px;
-}
-.welcome {
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  justify-content: center;
-  text-align: left; 
-}
-.text {
-  max-width: 500px; 
-}
-.aboutbtn {
-  margin-left: 130px;
-}
-.book {
-  margin-top: 220px;
-  font-size: 1rem;
-}
-h3 {
-  margin-bottom: 10px;
-  margin-top: 20px;
-}
-h2 {
-  margin-top: 35px;
-}
-.image-grid {
-  display: none; 
-}
-.imgslide {
-  width: 95%;
-  height: 35vh;
-  object-fit: cover;
-  border-radius: 5px;
-  
-}
-.image-label {
-  position: absolute;
-  bottom: 1; 
-  left: 19px;
-  width: 95%; 
-  background: rgba(0, 0, 0, 0.7); 
-  color: white;
-  font-size: 1.2rem; 
-  padding: 10px 15px; 
-  text-align: right;
-  font-family: 'Merriweather', serif;
-}
-
-}
-@media (min-width: 1024px){
-  .herosection {
-  height: 75vh;
-}
-.slider-container {
-    display: none; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 28vh;
+  }
+  .titleone {
+    font-size: 3rem;
+  }
+  .titletwo {
+    font-size: 3rem;
+    padding-top: 90px;
+  }
+  .welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+  }
+  .text {
+    max-width: 500px;
+  }
+  .aboutbtn {
+    margin-left: 130px;
+  }
+  .book {
+    margin-top: 220px;
+    font-size: 1rem;
+  }
+  h3 {
+    margin-bottom: 10px;
+    margin-top: 20px;
+  }
+  h2 {
+    margin-top: 35px;
   }
   .image-grid {
-    display: flex; 
+    display: none;
+  }
+  .imgslide {
+    width: 95%;
+    height: 35vh;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  .image-label {
+    position: absolute;
+    bottom: 1;
+    left: 19px;
+    width: 95%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    text-align: right;
+    font-family: 'Merriweather', serif;
+  }
+}
+@media (min-width: 1024px) {
+  .herosection {
+    height: 75vh;
+  }
+  .slider-container {
+    display: none;
+  }
+  .image-grid {
+    display: flex;
   }
 
-.aboutbtn {
-  margin-left: 500px;
-}
-.book {
-  margin-top: 230px;
-  font-size: 1rem;
-}
-.image-grid {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-  background-color: #688272;
-}
+  .aboutbtn {
+    margin-left: 500px;
+  }
+  .book {
+    margin-top: 230px;
+    font-size: 1rem;
+  }
+  .image-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #688272;
+  }
 
-.image-box {
-  width: 350px;
-  height: 250px;
-  overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-  position: relative; 
-}
+  .image-box {
+    width: 350px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
 
-.image-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+  .image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
-.image-label {
-  position: absolute;
-  bottom: 0; 
-  left: 0; 
-  width: 100%; 
-  background: rgba(0, 0, 0, 0.7); 
-  color: white;
-  font-size: 18px; 
-  padding: 10px 15px; 
-  text-align: right;
-  font-family: 'Merriweather', serif;
-}
+  .image-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 18px;
+    padding: 10px 15px;
+    text-align: right;
+    font-family: 'Merriweather', serif;
+  }
 }
 </style>

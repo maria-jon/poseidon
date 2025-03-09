@@ -1,60 +1,56 @@
 <script setup lang="ts">
-import MainButton from './MainButton.vue';
+import MainButton from './MainButton.vue'
 
 defineProps({
   header: { type: String, required: true },
   label: String,
   width: String,
-});
+})
 </script>
 
 <template>
   <form class="complete-your-booking">
     <fieldset>
-      <legend><h5>{{ header }}</h5></legend>
-    <div class="texts">
-      <label>
-        <span class="input-label info">Name</span>
-        <div class="input-field">
-          <input type="text" text="name" placeholder="Full Name">
-          <span class="material-symbols-outlined filled">
-            info
-          </span>
-        </div>
-      </label>
-      <label>
-        <span class="input-label info">Email address</span>
-        <div class="input-field">
-          <input type="email" text="name" placeholder="example@website.com">
-          <span class="material-symbols-outlined filled">
-            info
-          </span>
-        </div>
-      </label>
-      <label>
-        <span class="input-label info">Phone number</span>
-        <div class="input-field">
-          <input type="text" text="name" placeholder="+00 000 00 00">
-          <span class="material-symbols-outlined filled">
-            info
-          </span>
-        </div>
-      </label>
-    </div>
-  </fieldset>
+      <legend>
+        <h5>{{ header }}</h5>
+      </legend>
+      <div class="texts">
+        <label>
+          <span class="input-label info">Name</span>
+          <div class="input-field">
+            <input type="text" text="name" placeholder="Full Name" />
+            <span class="material-symbols-outlined filled"> info </span>
+          </div>
+        </label>
+        <label>
+          <span class="input-label info">Email address</span>
+          <div class="input-field">
+            <input type="email" text="name" placeholder="example@website.com" />
+            <span class="material-symbols-outlined filled"> info </span>
+          </div>
+        </label>
+        <label>
+          <span class="input-label info">Phone number</span>
+          <div class="input-field">
+            <input type="text" text="name" placeholder="+00 000 00 00" />
+            <span class="material-symbols-outlined filled"> info </span>
+          </div>
+        </label>
+      </div>
+    </fieldset>
     <fieldset>
       <legend><h5>Payment options</h5></legend>
       <div class="radios">
         <label>
-          <input type="radio" name="payment" value="credit">
+          <input type="radio" name="payment" value="credit" />
           <span class="input-label info">Pay with credit card</span>
         </label>
         <label>
-          <input type="radio" name="payment" value="paypal">
+          <input type="radio" name="payment" value="paypal" />
           <span class="input-label info">Pay with PayPal</span>
         </label>
         <label>
-          <input type="radio" name="payment" value="arrival">
+          <input type="radio" name="payment" value="arrival" />
           <span class="input-label info">Pay on arrival</span>
         </label>
       </div>
@@ -102,7 +98,8 @@ fieldset {
   display: flex;
 }
 
-input[type="text"], input[type="email"] {
+input[type='text'],
+input[type='email'] {
   border-radius: 8px;
   border: 2px solid $color-primary-dark;
   min-width: 70%;
@@ -119,7 +116,8 @@ input[type="text"], input[type="email"] {
 }
 
 .filled {
-  font-variation-settings: 'FILL' 1;}
+  font-variation-settings: 'FILL' 1;
+}
 
 .radios {
   background-color: $color-background-light;
@@ -134,7 +132,7 @@ input[type="text"], input[type="email"] {
   align-items: center;
 }
 
-input[type="radio"] {
+input[type='radio'] {
   margin: 6px;
   width: 2rem;
   height: 2rem;

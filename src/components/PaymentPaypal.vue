@@ -1,28 +1,30 @@
 <script setup lang="ts">
-import MainButton from './MainButton.vue';
+import MainButton from './MainButton.vue'
 
 defineProps({
   header: { type: String, required: true },
   label: String,
   width: String,
-});
+})
 </script>
 
 <template>
   <form class="paypal-payment">
     <fieldset>
-      <legend><h5>{{ header }}</h5></legend>
-    <div class="texts">
-      <label>
-        <span class="input-label info">Email address</span>
-        <div class="input-field">
-          <input type="email" text="name" placeholder="example@website.com">
-        </div>
-      </label>
-      <p class="info">You will be redirected to Paypal to complete your payment.</p>
-    </div>
-  </fieldset>
-  <MainButton :label="label" :width="width" />
+      <legend>
+        <h5>{{ header }}</h5>
+      </legend>
+      <div class="texts">
+        <label>
+          <span class="input-label info">Email address</span>
+          <div class="input-field">
+            <input type="email" text="name" placeholder="example@website.com" />
+          </div>
+        </label>
+        <p class="info">You will be redirected to Paypal to complete your payment.</p>
+      </div>
+    </fieldset>
+    <MainButton :label="label" :width="width" />
   </form>
 </template>
 
@@ -65,7 +67,7 @@ fieldset {
   display: flex;
 }
 
-input[type="email"] {
+input[type='email'] {
   border-radius: 8px;
   border: 2px solid $color-primary-dark;
   min-width: 80%;

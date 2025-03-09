@@ -1,32 +1,31 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 
-let desktop = ref(false);
+let desktop = ref(false)
 
-let menuOpen = ref(false);
-
+let menuOpen = ref(false)
 
 // Check viewport width dynamically as window size changes
 onMounted(() => {
-  window.addEventListener("resize", handleWindowSizeChange);
-  handleWindowSizeChange();
-});
+  window.addEventListener('resize', handleWindowSizeChange)
+  handleWindowSizeChange()
+})
 onUnmounted(() => {
-  window.removeEventListener("resize", handleWindowSizeChange);
-});
+  window.removeEventListener('resize', handleWindowSizeChange)
+})
 const handleWindowSizeChange = () => {
-  let viewport = window.innerWidth;
+  let viewport = window.innerWidth
   if (viewport > 1024) {
-    desktop.value = true;
-    menuOpen.value = true;
+    desktop.value = true
+    menuOpen.value = true
   } else {
-    desktop.value = false;
-    menuOpen.value = false;
+    desktop.value = false
+    menuOpen.value = false
   }
-};
+}
 
 function toggleMenu() {
-  menuOpen.value = !menuOpen.value;
+  menuOpen.value = !menuOpen.value
 }
 </script>
 
@@ -46,7 +45,7 @@ function toggleMenu() {
       <RouterLink to="/about">About us</RouterLink>
       <RouterLink to="/packages">Our packages</RouterLink>
       <RouterLink to="/booking">Book now</RouterLink>
-  </div>
+    </div>
     <button class="hamburger" @click="toggleMenu">
       <span class="material-symbols-outlined" v-if="menuOpen">close</span>
       <span class="material-symbols-outlined" v-else>menu</span>

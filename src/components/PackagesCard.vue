@@ -59,6 +59,26 @@ button {
   margin-top: auto;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
+  article {
+    flex-direction: row;
+    position: relative;
+    flex-wrap: wrap;
+  }
+
+  img {
+    width: 45%;
+    height: 20rem;
+  }
+
+  .text-content {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1500px) {
+  img {
+    height: auto;
+  }
 }
 </style>

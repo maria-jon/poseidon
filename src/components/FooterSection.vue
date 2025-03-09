@@ -1,31 +1,27 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import FooterIcons from "./footerIcons/FooterIcons.vue";
+import FooterIcons from './FooterIcons.vue'
+import { RouterLink } from 'vue-router'
 </script>
 
 <template>
-    <footer class="menu-footer">
-      <div class="menu-container">
+  <footer class="menu-footer">
+    <div class="menu-container">
+      <FooterIcons />
 
-         <FooterIcons />
-
-        <nav class="menu-nav">
-          <ul class="menu-list">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#packages">Our Packages</a></li>
-            <li><a href="#book">Book Now</a></li>
-          </ul>
-        </nav>
-        <p class="privacy-text">Privacy policy |  Icons made by <a href="https://www.flaticon.com/" target="_blank">Freepik</a></p>
+      <div class="menu-nav">
+        <div class="menu-list">
+          <RouterLink to="/">Home</RouterLink>
+          <RouterLink to="/about">About Us</RouterLink>
+          <RouterLink to="/packages">Our Packages</RouterLink>
+          <RouterLink to="/booking">Book Now</RouterLink>
+        </div>
       </div>
-    </footer>
-  </template>
-
-
-
-<style lang="scss">
-@import '/src/style/variables.scss';
+      <RouterLink to="/policy" class="privacy-text">Privacy policy</RouterLink>
+    </div>
+  </footer>
+</template>
+<style scoped lang="scss">
+@import '@/style/variables.scss';
 .menu-footer {
   background-color: $color-primary-medium;
   color: #fff;
@@ -41,7 +37,7 @@ import FooterIcons from "./footerIcons/FooterIcons.vue";
   .menu-container {
     margin-bottom: 1rem;
   }
-  ul {
+  .menu-list {
     list-style: none;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -49,8 +45,8 @@ import FooterIcons from "./footerIcons/FooterIcons.vue";
     justify-content: center;
     gap: 1.5rem;
     padding: 0;
-   }
-    .menu-list a {
+  }
+  a {
     color: #fff;
     display: inline-block;
     font-size: 1.3rem;
@@ -60,7 +56,7 @@ import FooterIcons from "./footerIcons/FooterIcons.vue";
     }
   }
 
-.privacy-text {
+  .privacy-text {
     text-align: center;
     position: absolute;
     font-weight: 400;
@@ -71,13 +67,6 @@ import FooterIcons from "./footerIcons/FooterIcons.vue";
     bottom: 0;
     width: 100%;
     left: 0;
-
-    a{
-        color: #fff;
-        font-weight: 400;
-        font-size: 1rem;
-        text-decoration: underline;
-    }
   }
 }
 
@@ -87,7 +76,6 @@ import FooterIcons from "./footerIcons/FooterIcons.vue";
     align-items: center;
     gap: 0.7rem;
     min-height: 200px;
-   }
-  
+  }
 }
 </style>
