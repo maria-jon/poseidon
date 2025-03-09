@@ -132,6 +132,7 @@ h2 {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin: 20px 0;
 }
 
 @media (max-width: 1024px) {
