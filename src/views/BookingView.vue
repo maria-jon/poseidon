@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import PopupConfirmation from '@/components/PopupConfirmation.vue'
+// import PopupConfirmation from '@/components/PopupConfirmation.vue'
 import BookingCard from '@/components/BookingCard.vue'
 import PaymentCard from '@/components/PaymentCard.vue'
 import PaymentPaypal from '@/components/PaymentPaypal.vue'
@@ -10,12 +10,24 @@ import PaymentPaypal from '@/components/PaymentPaypal.vue'
   <PaymentCard header="Credit card payment" label="Confirm booking" width="200px" />
   <PaymentPaypal header="PayPal payment" label="Continue" width="200px" />
 
-  <PopupConfirmation
+  <!-- <PopupConfirmation
+    header="We are sorry!"
+    text="This package is currently unavailable on your selected dates. Try adjusting your search."
+    label="Close"
+    width="150px"
+  /> -->
+  <!-- <PopupConfirmation
     header="Congratulations!"
     text="Your selected package is available. Click ‘Continue’ to finalize your reservation."
     label="Continue"
-    width="200px"
-  />
+    width="150px"
+  /> -->
+  <!-- <PopupConfirmation
+    header="Confirmation"
+    text="Thank you! Your underwater adventure awaits. We have sent your booking details to your email."
+    label="Close"
+    width="150px"
+  /> -->
 </template>
 
 <style></style>
