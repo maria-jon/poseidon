@@ -30,16 +30,16 @@ The homepage includes a **carousel display** that allows users to browse through
 
 Under the **Book Now** section, the system dynamically displays availability status based on user selections:
 
--  If the selected room is **available**, a message appears: _"Great! Your desired room is available – click Continue to complete your booking."_
--  If the room is **unavailable**, an alternative message suggests: _"Unfortunately, your selected package is not available on these dates. Please try another date."_
+- If the selected room is **available**, a message appears: _"Great! Your desired room is available – click Continue to complete your booking."_
+- If the room is **unavailable**, an alternative message suggests: _"Unfortunately, your selected package is not available on these dates. Please try another date."_
 
 Depending on the chosen payment method, the interface will display **different payment options**, such as PayPal or credit card. Upon confirming the booking, a confirmation message will be shown.
 
 ### Interactive Elements
 
--  **Hover Effects:** Links increase in text size on hover, improving user feedback and accessibility.
--  **Design System:** All text styles and color themes are stored as reusable styles in Figma, ensuring consistency across components.
--  **Prototype Functionality:** The **mobile design prototype** demonstrates how buttons and links behave dynamically within the interface.
+- **Hover Effects:** Links increase in text size on hover, improving user feedback and accessibility.
+- **Design System:** All text styles and color themes are stored as reusable styles in Figma, ensuring consistency across components.
+- **Prototype Functionality:** The **mobile design prototype** demonstrates how buttons and links behave dynamically within the interface.
 
 ### Development Guidelines
 

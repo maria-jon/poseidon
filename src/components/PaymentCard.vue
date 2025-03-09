@@ -1,58 +1,52 @@
 <script setup lang="ts">
-import MainButton from './MainButton.vue';
+import MainButton from './MainButton.vue'
 
 defineProps({
   header: { type: String, required: true },
   label: String,
   width: String,
-});
+})
 </script>
 
 <template>
   <form class="credit-card-payment">
     <fieldset>
-      <legend><h5>{{ header }}</h5></legend>
-    <div class="texts">
-      <label>
-        <span class="input-label info">Name on card</span>
-        <div class="input-field">
-          <input type="text" text="name" placeholder="Full Name">
-          <span class="material-symbols-outlined filled">
-            info
-          </span>
-        </div>
-      </label>
-      <label>
-        <span class="input-label info">Credit card number</span>
-        <div class="input-field">
-          <input type="text" text="name" placeholder="0000 0000 0000 0000">
-          <span class="material-symbols-outlined filled">
-            info
-          </span>
-        </div>
-      </label>
-      <div class="numbers">
+      <legend>
+        <h5>{{ header }}</h5>
+      </legend>
+      <div class="texts">
         <label>
-          <span class="input-label info">Expiration date</span>
+          <span class="input-label info">Name on card</span>
           <div class="input-field">
-            <input type="text" text="name" placeholder="MM/YY">
-            <span class="material-symbols-outlined filled">
-              info
-            </span>
+            <input type="text" text="name" placeholder="Full Name" />
+            <span class="material-symbols-outlined filled"> info </span>
           </div>
         </label>
         <label>
-          <span class="input-label info">CVC</span>
+          <span class="input-label info">Credit card number</span>
           <div class="input-field">
-            <input type="text" text="name" placeholder="000">
-            <span class="material-symbols-outlined filled">
-              info
-            </span>
+            <input type="text" text="name" placeholder="0000 0000 0000 0000" />
+            <span class="material-symbols-outlined filled"> info </span>
           </div>
         </label>
+        <div class="numbers">
+          <label>
+            <span class="input-label info">Expiration date</span>
+            <div class="input-field">
+              <input type="text" text="name" placeholder="MM/YY" />
+              <span class="material-symbols-outlined filled"> info </span>
+            </div>
+          </label>
+          <label>
+            <span class="input-label info">CVC</span>
+            <div class="input-field">
+              <input type="text" text="name" placeholder="000" />
+              <span class="material-symbols-outlined filled"> info </span>
+            </div>
+          </label>
+        </div>
       </div>
-    </div>
-  </fieldset>
+    </fieldset>
     <MainButton :label="label" :width="width" />
   </form>
 </template>
@@ -96,7 +90,7 @@ fieldset {
   display: flex;
 }
 
-input[type="text"] {
+input[type='text'] {
   border-radius: 8px;
   border: 2px solid $color-primary-dark;
   min-width: 60%;
