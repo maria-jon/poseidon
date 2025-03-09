@@ -126,7 +126,7 @@ h2 {
   }
 
 .back-button {
-  background-color: #d9534f;
+  background-color: $color-secondary-red-light;
   color: white;
   padding: 10px 20px;
   border: none;
