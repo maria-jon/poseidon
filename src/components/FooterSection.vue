@@ -9,23 +9,22 @@ import FooterIcons from "./footerIcons/FooterIcons.vue";
 
          <FooterIcons />
 
-        <nav class="menu-nav">
-          <ul class="menu-list">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#packages">Our Packages</a></li>
-            <li><a href="#book">Book Now</a></li>
-          </ul>
-        </nav>
-        <p class="privacy-text">Privacy policy |  Icons made by <a href="https://www.flaticon.com/" target="_blank">Freepik</a></p>
+        <div class="menu-nav">
+          <div class="menu-list">
+            <RoutinLink to="/home">Home</RoutinLink>
+            <RoutinLink to="/about">About Us</RoutinLink>
+            <RoutinLink to="/packages">Our Packages</RoutinLink>
+            <RoutinLink to="/booking">Book Now</RoutinLink>
+          </div>
+        </div>
+        <RoutingLink to="/policy" class="privacy-text">Privacy policy</RoutingLink>
       </div>
     </footer>
   </template>
 
 
 
-<style lang="scss">
-@import '/src/style/variables.scss';
+<style scoped lang="scss">
 .menu-footer {
   background-color: $color-primary-medium;
   color: #fff;
@@ -41,7 +40,7 @@ import FooterIcons from "./footerIcons/FooterIcons.vue";
   .menu-container {
     margin-bottom: 1rem;
   }
-  ul {
+  .menu-list {
     list-style: none;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -50,7 +49,7 @@ import FooterIcons from "./footerIcons/FooterIcons.vue";
     gap: 1.5rem;
     padding: 0;
    }
-    .menu-list a {
+     a {
     color: #fff;
     display: inline-block;
     font-size: 1.3rem;
