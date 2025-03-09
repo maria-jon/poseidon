@@ -61,5 +61,10 @@ const goHome = () => {
   </template>
 
 <style scoped lang="scss">
+@import '@/style/variables.scss';
+.content-section h1 {
+  color: black;
+}
+
 
 </style>

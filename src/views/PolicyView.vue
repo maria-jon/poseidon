@@ -1,4 +1,4 @@
-<script lang="ts">
+<script setup lang="ts">
 import PrivacyPolicy from '@/components/PrivacyPolicy.vue'
 </script>
 
