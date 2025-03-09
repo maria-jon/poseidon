@@ -3,7 +3,6 @@ import heroImage from '../assets/Images/komprimerad poseidons-retreat_1_2560x144
 import poseidonfish from '@/assets/Images/Komprimerad poseidon-fish_2560x1440_jpg (1).jpg'
 import poseidonhall from '@/assets/Images/Komprimerad poseidon-hall_2560x1440_jpg (1).jpg'
 import mermaid from '@/assets/Images/Komprimerad poseidon-mermaid_1440x2560_jpg (1).jpg'
-
 </script>
 
 <template>
@@ -29,11 +28,10 @@ import mermaid from '@/assets/Images/Komprimerad poseidon-mermaid_1440x2560_jpg 
   <!-- Desktop version-->
   <div class="desktop">
     <img :src="heroImage" class="herodesktop" width="500" height="400" />
-  <img :src="poseidonfish" class="fishdesktop" width="500" height="400" />
+    <img :src="poseidonfish" class="fishdesktop" width="500" height="400" />
     <img :src="poseidonhall" class="halldesktop" width="500" height="400" />
     <img :src="mermaid" class="mermaiddesktop" width="500" height="400" />
   </div>
-
 </template>
 
 <style scoped>
@@ -59,23 +57,22 @@ p {
 @media (max-width: 600px) {
   .mobile {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     gap: 10px;
-    justify-content: center; 
-    align-items: center; 
-    
-   }
-   .fishmobile {
+    justify-content: center;
+    align-items: center;
+  }
+  .fishmobile {
     width: 95vw;
     height: 40vh;
     border-radius: 5px;
-   }
-   .hallmobile {
+  }
+  .hallmobile {
     width: 95vw;
     height: 40vh;
     margin-bottom: 20px;
     border-radius: 5px;
-   }
+  }
 }
 /* Show only the tablet version for medium screens (601px ) */
 @media (min-width: 601px) {
@@ -88,10 +85,10 @@ p {
   }
   .tablet {
     display: flex;
-    flex-wrap: wrap; 
-    gap: 10px; 
-    justify-content: center; 
-    align-items: center; 
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
   }
 
   .herotablet {
@@ -99,7 +96,7 @@ p {
     height: 250px;
     border-radius: 5px;
   }
-  
+
   .fishtablet {
     width: 300px;
     height: 250px;
@@ -110,8 +107,8 @@ p {
     width: 100px;
     height: auto;
     border-radius: 5px;
-    flex-basis: 80%; 
-    text-align: center; 
+    flex-basis: 80%;
+    text-align: center;
   }
 }
 /* Show only the desktop version for large screens (1024px and up) */
@@ -123,41 +120,38 @@ p {
     display: none;
   }
   .desktop {
-  display: flex;
-  position: relative; 
-  
-  
- }
-.herodesktop {
- margin-top: 204px;
- position: absolute;
- height: 35vh;
- width: 38.5vw;
- margin-left: 325px;
-}
-.fishdesktop {
-position: absolute;
-margin-left: 624px;
-height: 27vh;
-width: 19vw;
-}
-.halldesktop {
-  position: absolute;
-  height: 27vh;
-  width: 19vw;
-  margin-left: 325px;
-}
-.mermaiddesktop {
-  position: absolute;
-  margin-left: 925px;
-  height: 63vh;
-  width: 23vw;
-}
-p {
-  margin-left: 325px;
-  margin-bottom: 20px;
-  margin-right: 290px;
-}
-
+    display: flex;
+    position: relative;
+  }
+  .herodesktop {
+    margin-top: 204px;
+    position: absolute;
+    height: 35vh;
+    width: 38.5vw;
+    margin-left: 325px;
+  }
+  .fishdesktop {
+    position: absolute;
+    margin-left: 624px;
+    height: 27vh;
+    width: 19vw;
+  }
+  .halldesktop {
+    position: absolute;
+    height: 27vh;
+    width: 19vw;
+    margin-left: 325px;
+  }
+  .mermaiddesktop {
+    position: absolute;
+    margin-left: 925px;
+    height: 63vh;
+    width: 23vw;
+  }
+  p {
+    margin-left: 325px;
+    margin-bottom: 20px;
+    margin-right: 290px;
+  }
 }
 </style>
