@@ -1,9 +1,7 @@
-<script setup lang="ts">
-import HeaderBar from '@/components/HeaderBar.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <HeaderBar />
+  <div></div>
 </template>
 
 <style></style>

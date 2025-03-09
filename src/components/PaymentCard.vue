@@ -9,12 +9,12 @@ defineProps({
 </script>
 
 <template>
-  <form class="complete-your-booking">
+  <form class="credit-card-payment">
     <fieldset>
       <legend><h5>{{ header }}</h5></legend>
     <div class="texts">
       <label>
-        <span class="input-label info">Name</span>
+        <span class="input-label info">Name on card</span>
         <div class="input-field">
           <input type="text" text="name" placeholder="Full Name">
           <span class="material-symbols-outlined filled">
@@ -23,48 +23,42 @@ defineProps({
         </div>
       </label>
       <label>
-        <span class="input-label info">Email address</span>
+        <span class="input-label info">Credit card number</span>
         <div class="input-field">
-          <input type="email" text="name" placeholder="example@website.com">
+          <input type="text" text="name" placeholder="0000 0000 0000 0000">
           <span class="material-symbols-outlined filled">
             info
           </span>
         </div>
       </label>
-      <label>
-        <span class="input-label info">Phone number</span>
-        <div class="input-field">
-          <input type="text" text="name" placeholder="+00 000 00 00">
-          <span class="material-symbols-outlined filled">
-            info
-          </span>
-        </div>
-      </label>
-    </div>
-  </fieldset>
-    <fieldset>
-      <legend><h5>Payment options</h5></legend>
-      <div class="radios">
+      <div class="numbers">
         <label>
-          <input type="radio" name="payment" value="credit">
-          <span class="input-label info">Pay with credit card</span>
+          <span class="input-label info">Expiration date</span>
+          <div class="input-field">
+            <input type="text" text="name" placeholder="MM/YY">
+            <span class="material-symbols-outlined filled">
+              info
+            </span>
+          </div>
         </label>
         <label>
-          <input type="radio" name="payment" value="paypal">
-          <span class="input-label info">Pay with PayPal</span>
-        </label>
-        <label>
-          <input type="radio" name="payment" value="arrival">
-          <span class="input-label info">Pay on arrival</span>
+          <span class="input-label info">CVC</span>
+          <div class="input-field">
+            <input type="text" text="name" placeholder="000">
+            <span class="material-symbols-outlined filled">
+              info
+            </span>
+          </div>
         </label>
       </div>
-    </fieldset>
+    </div>
+  </fieldset>
     <MainButton :label="label" :width="width" />
   </form>
 </template>
 
 <style scoped lang="scss">
-.complete-your-booking {
+.credit-card-payment {
   box-sizing: border-box;
   position: fixed;
   background-color: $color-primary-light;
@@ -102,10 +96,10 @@ fieldset {
   display: flex;
 }
 
-input[type="text"], input[type="email"] {
+input[type="text"] {
   border-radius: 8px;
   border: 2px solid $color-primary-dark;
-  min-width: 70%;
+  min-width: 60%;
   padding: 6px;
   background-color: $color-white;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
@@ -119,26 +113,16 @@ input[type="text"], input[type="email"] {
 }
 
 .filled {
-  font-variation-settings: 'FILL' 1;}
-
-.radios {
-  background-color: $color-background-light;
-  display: flex;
-  flex-direction: column;
-  border-radius: 8px;
-  padding: $margin-xsmall;
+  font-variation-settings: 'FILL' 1;
 }
 
-.radios > label {
+.numbers {
   display: flex;
-  align-items: center;
+  gap: $margin-medium;
 }
 
-input[type="radio"] {
-  margin: 6px;
-  width: 2rem;
-  height: 2rem;
-  accent-color: $color-error-red;
+.numbers > label {
+  max-width: 30%;
 }
 
 button {

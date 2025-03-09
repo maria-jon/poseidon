@@ -1,6 +1,11 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
+import ines from '../assets/Images/Komprimerad package-ines_2560x1440_jpg (1).jpg'
+import thesiren from '../assets/Images/Komprimerad package-the-siren_2560x1440_jpg (1).jpg'
+import poseidontemple from '../assets/Images/Komprimerad package-poseidons-temple_2560x1440_jpg (1).jpg'
+import thebluelagoon from '../assets/Images/Komprimerad package-the-blue-lagoon_2560x1440_jpg (1).jpg'
+
 interface Ipackages {
   text: { header: string; subheader: string; subtext: string; features: string[] }
   image: string
@@ -26,7 +31,7 @@ export const usePackageStore = defineStore('packages', () => {
           ],
         },
 
-        image: 'src/assets/Images/Komprimerad package-ines_2560x1440_jpg (1).jpg',
+        image: ines,
         id: 0,
       },
       {
@@ -42,7 +47,7 @@ export const usePackageStore = defineStore('packages', () => {
             'Couples’ massage at The Tidal Spa',
           ],
         },
-        image: 'src/assets/Images/Komprimerad package-the-siren_2560x1440_jpg (1).jpg',
+        image: thesiren,
         id: 1,
       },
       {
@@ -58,7 +63,7 @@ export const usePackageStore = defineStore('packages', () => {
             'A deep-sea diving excursion to Atlantis hidden ruins',
           ],
         },
-        image: 'src/assets/Images/Komprimerad package-poseidons-temple_2560x1440_jpg (1).jpg',
+        image: poseidontemple,
         id: 2,
       },
       {
@@ -74,7 +79,7 @@ export const usePackageStore = defineStore('packages', () => {
             'Access to the Tidal Spa & Thermal Pools',
           ],
         },
-        image: 'src/assets/Images/Komprimerad package-the-blue-lagoon_2560x1440_jpg (1).jpg',
+        image: thebluelagoon,
         id: 3,
       },
     ]
