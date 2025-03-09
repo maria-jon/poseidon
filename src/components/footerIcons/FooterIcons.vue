@@ -24,9 +24,7 @@ import FooterSection from './components/FooterSection.vue'
  
   </template>
 
-<style lang="scss">
-@import '/src/style/variables';
-
+<style scoped lang="scss">
 .footer-icons {
   display: flex;
   justify-content: center;
