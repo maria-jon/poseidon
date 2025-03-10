@@ -2,17 +2,18 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import poseidonMermaid from '/src/assets/Images/Komprimerad poseidon-mermaid_1440x2560_jpg.jpg'
+import MainButton from './MainButton.vue'
 
-// Redirect to the homepage via the router
+// Initialize Vue Router for navigation
 const router = useRouter()
 
-// Describe the type for the policy section
+// Define an interface for the policy sections
 interface PolicySection {
   title: string
   points: string[]
 }
 
-// Creating a reactive partition array
+// Create a reactive array of policy sections
 const policySections = ref<PolicySection[]>([
   {
     title: '1. Introduction',
@@ -55,7 +56,7 @@ const policySections = ref<PolicySection[]>([
   },
 ])
 
-// Function to go to the main page
+// Function to navigate back to the homepage
 const goHome = () => {
   router.push('/')
 }
@@ -80,12 +81,16 @@ const goHome = () => {
           <li v-for="(point, i) in section.points" :key="i">{{ point }}</li>
         </ul>
       </div>
+      <div class="button-container">
+        <MainButton label="Back to Home" :width="'10rem'" @click="goHome" />
+      </div>
       <button @click="goHome" class="back-button">BACK TO HOME</button>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
+
 @import '@/style/variables.scss';
 .privacy-policy {
   display: flex;
@@ -99,9 +104,9 @@ const goHome = () => {
 .image-section {
   flex: 1;
   display: flex;
-  justify-content: center; /* Вирівнює картинку зліва */
+  justify-content: center;
   align-items: center;
-  max-width: 40%; /* Обмежує ширину, щоб текст не був надто стислий */
+  max-width: 40%; /* Prevents image from taking too much space */
 }
 
 .image-privacy {
@@ -119,6 +124,7 @@ const goHome = () => {
   max-width: 50%;
 }
 
+/* Right-aligned content section */
 .content-section {
   flex: 1;
   h1 {
@@ -134,6 +140,7 @@ const goHome = () => {
   }
 }
 
+/* Styling for policy sections */
 .policy-section {
   margin-bottom: 10px;
   ul {
@@ -141,20 +148,14 @@ const goHome = () => {
   }
 }
 
+/* Add bullet points only to the 4th section */
 .policy-section:nth-child(4) ul {
   list-style: disc;
 }
 
-.back-button {
-  background-color: $color-secondary-red-light;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 20px 0;
-}
 
+
+/* Responsive styles */
 @media (max-width: 1024px) {
   .privacy-policy {
     padding: 20px;
@@ -169,7 +170,6 @@ const goHome = () => {
   .image-section {
     display: none;
   }
-
   .content-section {
     max-width: 600px;
     width: 100%;
@@ -177,10 +177,13 @@ const goHome = () => {
     height: auto;
   }
   .policy-section {
-    margin-bottom: 15px;
+    margin: 15px;
   }
-  .back-button {
-    margin-top: 30px;
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 20px;
   }
 }
 </style>
