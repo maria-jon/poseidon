@@ -14,17 +14,18 @@ const handleSelection = (newValue: any) => {
   userChoice.value = newValue;
 };
 
+/* Variable currentStep keeps track of progress
+** Last step occurs when currentStep reaches 3
+*/
 const nextStep = () => {
   if (currentStep.value === 1 && !userChoice.value) {
-    console.warn('no selection');
+    console.warn('no user selection for payment');
   };
 
   if (userChoice.value === 'arrival') {
-    currentStep.value++;
+    currentStep.value++; // adds extra count to currentStep to make it go to the last step
   }
   currentStep.value++;
-
-  console.log(currentStep.value);
 };
 
 const lastStep = computed(() => {
@@ -40,10 +41,10 @@ defineProps({
 
 <template>
   <main>
-    <div class="booking" :class="{ 'hidden': lastStep}">
+    <div class="booking">
       <PopupConfirmation
       header="Congratulations!"
-      text="Your selected package is available. Click ‘Continue’ to finalize your reservation."
+      text="Your selected package is available. Click 'Continue' to finalize your reservation."
       label="Continue"
       width="150px"
       v-if="currentStep < 1"
@@ -60,6 +61,7 @@ defineProps({
       v-if="currentStep === 3 || (currentStep === 2 && userChoice === 'arrival')"
       />
 
+      <!-- Use button here instead of buttons on components -->
       <MainButton
       label="continue"
       :width="width"
@@ -67,6 +69,7 @@ defineProps({
       v-if="currentStep >= 0 && currentStep <= 2"
       :disabled="currentStep === 1 && !userChoice"
       />
+      <!-- During last step, user will be redirected to home page -->
       <a href="/" v-if="lastStep">
         <MainButton
         label="continue"
