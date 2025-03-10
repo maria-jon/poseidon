@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// import MainButton from './MainButton.vue'
 import { ref, defineEmits, watch } from 'vue';
 
 defineProps({
@@ -73,23 +72,6 @@ watch(selectedOption, (newValue) => {
 </template>
 
 <style scoped lang="scss">
-/*
-.complete-your-booking {
-  box-sizing: border-box;
-  position: fixed;
-  background-color: $color-primary-light;
-  border-radius: 8px;
-  width: 24rem;
-  max-width: 90%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: $margin-small;
-}
-*/
 h5 {
   margin-bottom: $margin-small;
 }
