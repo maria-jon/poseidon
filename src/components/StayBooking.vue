@@ -1,56 +1,58 @@
 <script setup lang="ts">
-import blueLagoon from '/src/assets/Images/Komprimerad package-the-blue-lagoon_2560x1440_jpg.jpg';
-import { ref } from 'vue';
+import blueLagoon from '/src/assets/Images/Komprimerad package-the-blue-lagoon_2560x1440_jpg.jpg'
+import { ref } from 'vue'
 import MainButton from './MainButton.vue'
 
-const fromDate = ref<string>('');
-const toDate = ref<string>('');
-const packageType = ref<string>('basic');
-const adults = ref<number>(1);
-const children = ref<number>(0);
-const specialRequest = ref<string>('');
-const errorMessage = ref<string>('');
+const fromDate = ref<string>('')
+const toDate = ref<string>('')
+const packageType = ref<string>('basic')
+const adults = ref<number>(1)
+const children = ref<number>(0)
+const specialRequest = ref<string>('')
+const errorMessage = ref<string>('')
 
 const checkAvailability = () => {
   if (!fromDate.value || !toDate.value) {
-    errorMessage.value = "Please select valid dates.";
-    return;
+    errorMessage.value = 'Please select valid dates.'
+    return
   }
   if (adults.value < 1) {
-    errorMessage.value = "At least one adult is required.";
-    return;
+    errorMessage.value = 'At least one adult is required.'
+    return
   }
-  
+
   // Availability check simulation
-  const available = Math.random() > 0.5; 
-  
+  const available = Math.random() > 0.5
+
   if (!available) {
-    errorMessage.value = "Sorry, this package is currently unavailable on your selected dates. Try adjusting your search.";
+    errorMessage.value =
+      'Sorry, this package is currently unavailable on your selected dates. Try adjusting your search.'
   } else {
-    errorMessage.value = "";
-    window.location.href = '/next-step'; 
+    errorMessage.value = ''
+    window.location.href = '/next-step'
   }
-};
+}
 </script>
 
 <template>
-     <div class="container">
+  <div class="container">
     <h1>Book your stay</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-        fugiat nulla pariatur.</p>
-    
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+      voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    </p>
+
     <div class="booking">
-        <div class="image-container">
-            <h2>Check availability</h2>
-      <img :src="blueLagoon" alt="The Blue Lagoon" width="300" height="400" /> 
-      <p class="image-text">The Blue Lagoon</p>
-        </div>
+      <div class="image-container">
+        <h2>Check availability</h2>
+        <img :src="blueLagoon" alt="The Blue Lagoon" width="300" height="400" />
+        <p class="image-text">The Blue Lagoon</p>
+      </div>
       <div class="form-container">
         <form @submit.prevent="checkAvailability">
-            <div class="form-group">
+          <div class="form-group">
             <label>From Date</label>
             <input type="date" v-model="fromDate" required />
           </div>
@@ -83,16 +85,15 @@ const checkAvailability = () => {
             <input type="text" v-model="specialRequest" />
           </div>
           <div class="button-container">
-        <MainButton label="Continue" :width="'10rem'" @click="goHome" />
-        </div>
-          
+            <MainButton label="Continue" :width="'10rem'" @click="goHome" />
+          </div>
         </form>
-        
+
         <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
       </div>
     </div>
   </div>
-  </template>
+</template>
 <style scoped lang="scss">
 @import '@/style/variables.scss';
 .container {
@@ -101,8 +102,8 @@ const checkAvailability = () => {
   background: $color-background-light;
 }
 p {
-    width: 50%;
-    margin: 20px 0;
+  width: 50%;
+  margin: 20px 0;
 }
 
 h1 {
@@ -118,9 +119,9 @@ h1 {
 
 .booking {
   display: flex;
-  flex-wrap: wrap; 
-  justify-content: space-between; 
-  gap: 20px; 
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
   margin-top: 20px;
 }
 .image-container,
@@ -135,25 +136,25 @@ h1 {
   position: relative;
   margin-bottom: 30px;
   img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  border-radius: 15px;
-  max-height: 400px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 15px;
+    max-height: 400px;
   }
 }
 .image-text {
   position: absolute;
-  bottom: 50%; 
+  bottom: 50%;
   height: 18%;
-  width: 100%; 
-  text-align: right; 
+  width: 100%;
+  text-align: right;
   color: white;
   font-size: 1.8rem;
   font-weight: bold;
   background: rgba(0, 0, 0, 0.6);
-  padding: 10px 20px; 
-  border-radius: 0 0 15px 15px; 
+  padding: 10px 20px;
+  border-radius: 0 0 15px 15px;
   box-sizing: border-box;
 }
 
@@ -194,11 +195,11 @@ select {
 }
 
 .button-container {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    margin-top: 20px;
-  }
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 20px;
+}
 button:hover {
   background: #a63d35;
 }

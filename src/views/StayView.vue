@@ -3,7 +3,7 @@ import StayBooking from '@/components/StayBooking.vue'
 </script>
 
 <template>
-    <main>
-  <StayBooking />
+  <main>
+    <StayBooking />
   </main>
 </template>

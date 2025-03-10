@@ -1,69 +1,89 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import { useRouter } from "vue-router";
-import poseidonMermaid from '/src/assets/Images/Komprimerad poseidon-mermaid_1440x2560_jpg.jpg';
+import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import poseidonMermaid from '/src/assets/Images/Komprimerad poseidon-mermaid_1440x2560_jpg.jpg'
 
 // Redirect to the homepage via the router
-const router = useRouter();
+const router = useRouter()
 
 // Describe the type for the policy section
 interface PolicySection {
-  title: string;
-  points: string[];
+  title: string
+  points: string[]
 }
 
 // Creating a reactive partition array
 const policySections = ref<PolicySection[]>([
   {
-    title: "1. Introduction",
-    points: ["Poseidon Hotel values your privacy. This policy outlines how we collect, use, and protect your personal data."],
+    title: '1. Introduction',
+    points: [
+      'Poseidon Hotel values your privacy. This policy outlines how we collect, use, and protect your personal data.',
+    ],
   },
   {
-    title: "2. Information We Collect",
-    points: ["We collect basic information such as your name, email, and preferences when you interact with our site.", "Additionally, cookies may be used to improve user experience."],
+    title: '2. Information We Collect',
+    points: [
+      'We collect basic information such as your name, email, and preferences when you interact with our site.',
+      'Additionally, cookies may be used to improve user experience.',
+    ],
   },
   {
-    title: "3. How We Use Your Data",
-    points: ["To process bookings and reservations.", "To improve website functionality and enhance user experience.", "To provide relevant offers and services."],
+    title: '3. How We Use Your Data',
+    points: [
+      'To process bookings and reservations.',
+      'To improve website functionality and enhance user experience.',
+      'To provide relevant offers and services.',
+    ],
   },
   {
-    title: "4. Data Protection",
-    points: ["We do not share your personal data with third parties unless necessary for service provision.", "All data is securely stored and protected."],
+    title: '4. Data Protection',
+    points: [
+      'We do not share your personal data with third parties unless necessary for service provision.',
+      'All data is securely stored and protected.',
+    ],
   },
   {
-    title: "5. Cookies Policy",
-    points: ["Our website uses cookies to enhance navigation and analyze site traffic.", "You can manage cookie preferences through your browser settings."],
+    title: '5. Cookies Policy',
+    points: [
+      'Our website uses cookies to enhance navigation and analyze site traffic.',
+      'You can manage cookie preferences through your browser settings.',
+    ],
   },
   {
-    title: "6. Contact Us",
-    points: ["For any privacy-related inquiries, please contact us at privacy@poseidonhotel.com."],
+    title: '6. Contact Us',
+    points: ['For any privacy-related inquiries, please contact us at privacy@poseidonhotel.com.'],
   },
-]);
+])
 
 // Function to go to the main page
 const goHome = () => {
-  router.push("/");
-};
+  router.push('/')
+}
 </script>
 
 <template>
-    <div class="privacy-policy">
-      <div class="image-section">
-        <img :src="poseidonMermaid" class="image-privacy" alt="poseidon mermaid" height="500" weight="400"/>
-      </div>
-      <div class="content-section">
-        <h1>Privacy Policy</h1>
-        <div v-for="(section, index) in policySections" :key="index" class="policy-section">
-          <h2>{{ section.title }}</h2>
-          <ul>
-            <li v-for="(point, i) in section.points" :key="i">{{ point }}</li>
-          </ul>
-        </div>
-        <button @click="goHome" class="back-button">BACK TO HOME</button>
-      </div>
+  <div class="privacy-policy">
+    <div class="image-section">
+      <img
+        :src="poseidonMermaid"
+        class="image-privacy"
+        alt="poseidon mermaid"
+        height="500"
+        weight="400"
+      />
     </div>
-   
-  </template>
+    <div class="content-section">
+      <h1>Privacy Policy</h1>
+      <div v-for="(section, index) in policySections" :key="index" class="policy-section">
+        <h2>{{ section.title }}</h2>
+        <ul>
+          <li v-for="(point, i) in section.points" :key="i">{{ point }}</li>
+        </ul>
+      </div>
+      <button @click="goHome" class="back-button">BACK TO HOME</button>
+    </div>
+  </div>
+</template>
 
 <style scoped lang="scss">
 @import '@/style/variables.scss';
@@ -102,28 +122,28 @@ const goHome = () => {
 .content-section {
   flex: 1;
   h1 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  padding-bottom: 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-bottom: 30px;
   }
 
-h2 {
-  font-size: 1.1rem;
-  font-weight: bold;
-  padding-bottom: 15px;
- }
+  h2 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding-bottom: 15px;
+  }
 }
 
 .policy-section {
-    margin-bottom: 10px;
-   ul {
+  margin-bottom: 10px;
+  ul {
     list-style: none;
-    }
+  }
 }
 
 .policy-section:nth-child(4) ul {
-    list-style: disc;
-  }
+  list-style: disc;
+}
 
 .back-button {
   background-color: $color-secondary-red-light;
@@ -144,7 +164,7 @@ h2 {
     display: flex;
     height: auto;
     box-sizing: border-box;
-}
+  }
 
   .image-section {
     display: none;

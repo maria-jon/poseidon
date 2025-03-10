@@ -3,7 +3,7 @@ import PrivacyPolicy from '@/components/PrivacyPolicy.vue'
 </script>
 
 <template>
-    <main>
-  <PrivacyPolicy />
+  <main>
+    <PrivacyPolicy />
   </main>
 </template>
