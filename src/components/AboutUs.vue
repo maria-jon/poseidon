@@ -151,7 +151,7 @@ p {
   .mermaiddesktop {
     position: absolute;
     margin-left: 925px;
-    height: 63.6vh;
+    height: 63vh;
     width: 23vw;
   }
   p {
