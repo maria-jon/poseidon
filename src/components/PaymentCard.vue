@@ -1,15 +1,29 @@
 <script setup lang="ts">
 import MainButton from './MainButton.vue'
+import { ref } from 'vue';
 
 defineProps({
   header: { type: String, required: true },
   label: String,
   width: String,
 })
+
+const cardName = ref('');
+const cardNumber = ref('');
+const cardDate = ref('');
+const cardCvc = ref('');
+
+
+function submitForm() {
+  console.log(cardName.value);
+  console.log(cardNumber.value);
+  console.log(cardDate.value);
+  console.log(cardCvc.value);
+}
 </script>
 
 <template>
-  <form class="credit-card-payment">
+  <form class="credit-card-payment" v-on:submit.prevent="submitForm">
     <fieldset>
       <legend>
         <h5>{{ header }}</h5>
@@ -18,14 +32,14 @@ defineProps({
         <label>
           <span class="input-label info">Name on card</span>
           <div class="input-field">
-            <input type="text" text="name" placeholder="Full Name" />
+            <input type="text" text="name" placeholder="Full Name" v-model="cardName" />
             <span class="material-symbols-outlined filled"> info </span>
           </div>
         </label>
         <label>
           <span class="input-label info">Credit card number</span>
           <div class="input-field">
-            <input type="text" text="name" placeholder="0000 0000 0000 0000" />
+            <input type="text" text="name" placeholder="0000 0000 0000 0000" v-model="cardNumber" />
             <span class="material-symbols-outlined filled"> info </span>
           </div>
         </label>
@@ -33,14 +47,14 @@ defineProps({
           <label>
             <span class="input-label info">Expiration date</span>
             <div class="input-field">
-              <input type="text" text="name" placeholder="MM/YY" />
+              <input type="text" text="name" placeholder="MM/YY" v-model="cardDate" />
               <span class="material-symbols-outlined filled"> info </span>
             </div>
           </label>
           <label>
             <span class="input-label info">CVC</span>
             <div class="input-field">
-              <input type="text" text="name" placeholder="000" />
+              <input type="text" text="name" placeholder="000" v-model="cardCvc" />
               <span class="material-symbols-outlined filled"> info </span>
             </div>
           </label>

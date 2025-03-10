@@ -1,63 +1,76 @@
 <script setup lang="ts">
 import MainButton from './MainButton.vue'
+import { ref } from 'vue';
 
 defineProps({
   header: { type: String, required: true },
   label: String,
   width: String,
 })
+
+const fullName = ref('');
+const emailAddress = ref('');
+const phoneNumber = ref('');
+const paymentOptions = ref<'credit' | 'paypal' | 'arrival'>('credit');
+
+function submitForm() {
+  console.log(fullName.value);
+  console.log(emailAddress.value);
+  console.log(phoneNumber.value);
+  console.log(paymentOptions.value);
+}
 </script>
 
 <template>
   <main>
-  <form class="complete-your-booking">
-    <fieldset>
-      <legend>
-        <h5>{{ header }}</h5>
-      </legend>
-      <div class="texts">
-        <label>
-          <span class="input-label info">Name</span>
-          <div class="input-field">
-            <input type="text" text="name" placeholder="Full Name" />
-            <span class="material-symbols-outlined filled"> info </span>
-          </div>
-        </label>
-        <label>
-          <span class="input-label info">Email address</span>
-          <div class="input-field">
-            <input type="email" text="name" placeholder="example@website.com" />
-            <span class="material-symbols-outlined filled"> info </span>
-          </div>
-        </label>
-        <label>
-          <span class="input-label info">Phone number</span>
-          <div class="input-field">
-            <input type="text" text="name" placeholder="+00 000 00 00" />
-            <span class="material-symbols-outlined filled"> info </span>
-          </div>
-        </label>
-      </div>
-    </fieldset>
-    <fieldset>
-      <legend><h5>Payment options</h5></legend>
-      <div class="radios">
-        <label>
-          <input type="radio" name="payment" value="credit" />
-          <span class="input-label info">Pay with credit card</span>
-        </label>
-        <label>
-          <input type="radio" name="payment" value="paypal" />
-          <span class="input-label info">Pay with PayPal</span>
-        </label>
-        <label>
-          <input type="radio" name="payment" value="arrival" />
-          <span class="input-label info">Pay on arrival</span>
-        </label>
-      </div>
-    </fieldset>
-    <MainButton :label="label" :width="width" />
-  </form>
+    <form class="complete-your-booking" v-on:submit.prevent="submitForm">
+      <fieldset>
+        <legend>
+          <h5>{{ header }}</h5>
+        </legend>
+        <div class="texts">
+          <label>
+            <span class="input-label info">Name</span>
+            <div class="input-field">
+              <input type="text" text="name" placeholder="Full Name" v-model="fullName" />
+              <span class="material-symbols-outlined filled"> info </span>
+            </div>
+          </label>
+          <label>
+            <span class="input-label info">Email address</span>
+            <div class="input-field">
+              <input type="email" text="name" placeholder="example@website.com" v-model="emailAddress" />
+              <span class="material-symbols-outlined filled"> info </span>
+            </div>
+          </label>
+          <label>
+            <span class="input-label info">Phone number</span>
+            <div class="input-field">
+              <input type="text" text="name" placeholder="+00 000 00 00" v-model="phoneNumber" />
+              <span class="material-symbols-outlined filled"> info </span>
+            </div>
+          </label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend><h5>Payment options</h5></legend>
+        <div class="radios">
+          <label>
+            <input type="radio" name="payment" value="credit" v-model="paymentOptions" />
+            <span class="input-label info">Pay with credit card</span>
+          </label>
+          <label>
+            <input type="radio" name="payment" value="paypal" v-model="paymentOptions" />
+            <span class="input-label info">Pay with PayPal</span>
+          </label>
+          <label>
+            <input type="radio" name="payment" value="arrival" v-model="paymentOptions" />
+            <span class="input-label info">Pay on arrival</span>
+          </label>
+        </div>
+      </fieldset>
+      <MainButton :label="label" :width="width" />
+    </form>
   </main>
 </template>
 

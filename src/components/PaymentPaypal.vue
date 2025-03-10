@@ -1,15 +1,23 @@
 <script setup lang="ts">
 import MainButton from './MainButton.vue'
+import { ref } from 'vue';
 
 defineProps({
   header: { type: String, required: true },
   label: String,
   width: String,
 })
+
+const paypalEmail = ref('');
+
+function submitForm() {
+  console.log(paypalEmail.value);
+}
+
 </script>
 
 <template>
-  <form class="paypal-payment">
+  <form class="paypal-payment" v-on:submit.prevent="submitForm">
     <fieldset>
       <legend>
         <h5>{{ header }}</h5>
@@ -18,7 +26,7 @@ defineProps({
         <label>
           <span class="input-label info">Email address</span>
           <div class="input-field">
-            <input type="email" text="name" placeholder="example@website.com" />
+            <input type="email" text="name" placeholder="example@website.com" v-model="paypalEmail" />
           </div>
         </label>
         <p class="info">You will be redirected to Paypal to complete your payment.</p>

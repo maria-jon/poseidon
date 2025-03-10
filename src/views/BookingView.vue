@@ -6,9 +6,11 @@ import PaymentPaypal from '@/components/PaymentPaypal.vue'
 </script>
 
 <template>
+
   <BookingCard header="Complete your booking" label="Continue" width="120px" />
   <PaymentCard header="Credit card payment" label="Confirm booking" width="200px" />
   <PaymentPaypal header="PayPal payment" label="Continue" width="200px" />
+
 
   <!-- <PopupConfirmation
     header="We are sorry!"
@@ -30,4 +32,5 @@ import PaymentPaypal from '@/components/PaymentPaypal.vue'
   /> -->
 </template>
 
-<style></style>
+<style scoped lang="scss">
+</style>
