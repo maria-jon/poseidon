@@ -55,11 +55,11 @@ function closeMenu() {
     </button>
   </div>
   <div class="menu-overlay" v-if="menuOpen">
-  <RouterLink to="/" @click="closeMenu">Home</RouterLink>
-  <RouterLink to="/about" @click="closeMenu">About us</RouterLink>
-  <RouterLink to="/packages" @click="closeMenu">Our packages</RouterLink>
-  <RouterLink to="/booking" @click="closeMenu">Book now</RouterLink>
-</div>
+    <RouterLink to="/" @click="closeMenu">Home</RouterLink>
+    <RouterLink to="/about" @click="closeMenu">About us</RouterLink>
+    <RouterLink to="/packages" @click="closeMenu">Our packages</RouterLink>
+    <RouterLink to="/booking" @click="closeMenu">Book now</RouterLink>
+  </div>
 </template>
 
 <style lang="scss" scoped>

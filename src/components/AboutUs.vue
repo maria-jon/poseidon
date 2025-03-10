@@ -8,32 +8,32 @@ import mermaid from '@/assets/Images/Komprimerad poseidon-mermaid_1440x2560_jpg.
 
 <template>
   <main>
-  <h2>About Poseidon’s Retreat</h2>
-  <div>
-    <p>
-      Welcome to Poseidon's Retreat, the premier luxury escape in the heart of Atlantis! Founded by
-      Poseidon himself, our hotel blends ancient Atlantean elegance with modern comfort.
-    </p>
-    <p>Dive into luxury at Poseidon’s Hotel – Where the Ocean Meets Elegance.</p>
-    <!-- Mobile version-->
-  </div>
-  <div class="mobile">
-    <img :src="poseidonfish" class="fishmobile" width="500" height="400" />
-    <img :src="poseidonhall" class="hallmobile" width="500" height="400" />
-  </div>
-  <!-- Tablet version-->
-  <div class="tablet">
-    <img :src="heroImage" class="herotablet" width="500" height="400" />
-    <img :src="poseidonfish" class="fishtablet" width="500" height="400" />
-    <img :src="poseidonhall" class="halltablet" width="500" height="400" />
-  </div>
-  <!-- Desktop version-->
-  <div class="desktop">
-    <img :src="heroImage" class="herodesktop" width="500" height="400" />
-    <img :src="poseidonfish" class="fishdesktop" width="500" height="400" />
-    <img :src="poseidonhall" class="halldesktop" width="500" height="400" />
-    <img :src="mermaid" class="mermaiddesktop" width="500" height="400" />
-  </div>
+    <h2>About Poseidon’s Retreat</h2>
+    <div>
+      <p>
+        Welcome to Poseidon's Retreat, the premier luxury escape in the heart of Atlantis! Founded
+        by Poseidon himself, our hotel blends ancient Atlantean elegance with modern comfort.
+      </p>
+      <p>Dive into luxury at Poseidon’s Hotel – Where the Ocean Meets Elegance.</p>
+      <!-- Mobile version-->
+    </div>
+    <div class="mobile">
+      <img :src="poseidonfish" class="fishmobile" width="500" height="400" />
+      <img :src="poseidonhall" class="hallmobile" width="500" height="400" />
+    </div>
+    <!-- Tablet version-->
+    <div class="tablet">
+      <img :src="heroImage" class="herotablet" width="500" height="400" />
+      <img :src="poseidonfish" class="fishtablet" width="500" height="400" />
+      <img :src="poseidonhall" class="halltablet" width="500" height="400" />
+    </div>
+    <!-- Desktop version-->
+    <div class="desktop">
+      <img :src="heroImage" class="herodesktop" width="500" height="400" />
+      <img :src="poseidonfish" class="fishdesktop" width="500" height="400" />
+      <img :src="poseidonhall" class="halldesktop" width="500" height="400" />
+      <img :src="mermaid" class="mermaiddesktop" width="500" height="400" />
+    </div>
   </main>
 </template>
 
@@ -76,7 +76,6 @@ p {
     margin-bottom: 20px;
     border-radius: 5px;
   }
-  
 }
 /* Show only the tablet version for medium screens (601px ) */
 @media (min-width: 601px) {
@@ -118,8 +117,8 @@ p {
 /* Show only the desktop version for large screens (1024px and up) */
 @media (min-width: 1024px) {
   main {
-  margin-bottom: 470px;
-}
+    margin-bottom: 470px;
+  }
   .mobile {
     display: none;
   }
@@ -159,6 +158,5 @@ p {
     margin-bottom: 20px;
     margin-right: 290px;
   }
-
 }
 </style>
