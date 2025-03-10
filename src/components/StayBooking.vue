@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import blueLagoon from '@/assets/Images/Komprimerad package-the-blue-lagoon_2560x1440_jpg (1).jpg';
+//import blueLagoon from '@/assets/Images/Komprimerad package-the-blue-lagoon_2560x1440_jpg (1).jpg';
 </script>
 
 <template>
