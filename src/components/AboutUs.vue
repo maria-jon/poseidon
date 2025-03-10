@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import heroImage from '../assets/Images/komprimerad poseidons-retreat_1_2560x1440_jpg (1).jpg'
-import poseidonfish from '@/assets/Images/Komprimerad poseidon-fish_2560x1440_jpg (1).jpg'
-import poseidonhall from '@/assets/Images/Komprimerad poseidon-hall_2560x1440_jpg (1).jpg'
-import mermaid from '@/assets/Images/Komprimerad poseidon-mermaid_1440x2560_jpg (1).jpg'
+import heroImage from '../assets/Images/komprimerad poseidons-retreat_1_2560x1440_jpg.jpg'
+import poseidonfish from '@/assets/Images/Komprimerad poseidon-fish_2560x1440_jpg.jpg'
+import poseidonhall from '@/assets/Images/Komprimerad poseidon-hall_2560x1440_jpg.jpg'
+import mermaid from '@/assets/Images/Komprimerad poseidon-mermaid_1440x2560_jpg.jpg'
 //import FooterSection from '@/components/FooterSection.vue'
 </script>
 
