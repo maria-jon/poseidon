@@ -102,7 +102,6 @@ const checkAvailability = () => {
 <style scoped lang="scss">
 @import '@/style/variables.scss';
 .container {
-  font-family: 'Poppins', sans-serif;
   padding: 40px;
   background: $color-background-light;
 }
