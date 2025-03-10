@@ -5,10 +5,10 @@ import PaymentCard from '@/components/PaymentCard.vue'
 import PaymentPaypal from '@/components/PaymentPaypal.vue'
 import MainButton from '@/components/MainButton.vue'
 
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 
 
-const currentStep = ref(1);
+const currentStep = ref(0);
 const userChoice = ref(null);
 
 const handleSelection = (newValue: any) => {
@@ -18,10 +18,19 @@ const handleSelection = (newValue: any) => {
 const nextStep = () => {
   if (currentStep.value === 1 && !userChoice.value) {
     console.warn('no selection');
-  }; // Prevent skipping Step 1 without selection
+  };
+
+  if (userChoice.value === 'arrival') {
+    currentStep.value === 3;
+  }
   currentStep.value++;
-  console.log(userChoice.value);
+
+  console.log(currentStep.value);
 };
+
+const lastStep = computed(() => {
+	return currentStep.value > 2;
+});
 
 defineProps({
   header: { type: String, required: true },
@@ -32,23 +41,31 @@ defineProps({
 
 <template>
   <main>
-    <div class="booking">
-    <BookingCard header="Complete your booking" label="Continue" width="120px" v-if="currentStep === 1" @updateChoice="handleSelection" />
-    <PaymentCard header="Credit card payment" label="Confirm booking" width="200px" v-if="currentStep === 2 && userChoice === 'credit'" />
-    <PaymentPaypal header="PayPal payment" label="Continue" width="200px" v-if="currentStep === 2 && userChoice === 'paypal'" />
+    <div class="booking" :class="{ 'hidden': lastStep}">
+      <PopupConfirmation
+      header="Congratulations!"
+      text="Your selected package is available. Click ‘Continue’ to finalize your reservation."
+      label="Continue"
+      width="150px"
+      v-if="currentStep < 1"
+      />
+      <BookingCard header="Complete your booking" label="Continue" width="120px" v-if="currentStep === 1" @updateChoice="handleSelection" />
+      <PaymentCard header="Credit card payment" label="Confirm booking" width="200px" v-if="currentStep === 2 && userChoice === 'credit'" />
+      <PaymentPaypal header="PayPal payment" label="Continue" width="200px" v-if="currentStep === 2 && userChoice === 'paypal'" />
 
-    <PopupConfirmation
-    header="Confirmation"
-    text="Thank you! Your underwater adventure awaits. We have sent your booking details to your email."
-    label="Close"
-    width="150px"
-    v-if="currentStep === 3 || (currentStep === 2 && userChoice === 'arrival')"
-    />
+      <PopupConfirmation
+      header="Confirmation"
+      text="Thank you! Your underwater adventure awaits. We have sent your booking details to your email."
+      label="Close"
+      width="150px"
+      v-if="currentStep === 3 || (currentStep === 2 && userChoice === 'arrival')"
+      />
 
-    <MainButton label="continue" :width="width"
-    @click="nextStep"
-    v-if="(currentStep === 1 && userChoice) || currentStep > 1"
-    />
+      <MainButton label="continue" :width="width"
+      @click="nextStep"
+      v-if="(currentStep === 1 && userChoice) || currentStep >= 0"
+      :disabled="currentStep === 1 && !userChoice"
+      />
     </div>
   </main>
 
@@ -58,18 +75,12 @@ defineProps({
     label="Close"
     width="150px"
   /> -->
-  <!-- <PopupConfirmation
-    header="Congratulations!"
-    text="Your selected package is available. Click ‘Continue’ to finalize your reservation."
-    label="Continue"
-    width="150px"
-  /> -->
 </template>
 
 
 <style scoped lang="scss">
 main {
-  /* margin-bottom: 600px; */
+  margin-bottom: 600px;
   margin-top: 1rem;
   display: flex;
   justify-content: center;

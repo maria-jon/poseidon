@@ -21,7 +21,7 @@ watch(selectedOption, (newValue) => {
 </script>
 
 <template>
-  <main>
+  <div>
     <form class="complete-your-booking">
       <fieldset>
         <legend>
@@ -69,7 +69,7 @@ watch(selectedOption, (newValue) => {
         </div>
       </fieldset>
     </form>
-  </main>
+  </div>
 </template>
 
 <style scoped lang="scss">

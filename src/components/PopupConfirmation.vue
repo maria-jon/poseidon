@@ -10,17 +10,23 @@ defineProps({
 </script>
 
 <template>
-  <dialog open="true">
+  <div>
     <h5>{{ header }}</h5>
     <p>{{ text }}</p>
-    <MainButton :label="label" :width="width" />
-  </dialog>
+    <!-- <MainButton :label="label" :width="width" /> -->
+  </div>
 </template>
 
 <!-- Används så att importera först och sedan använd som
 <PopupConfirmation header="rubriken" text="paragraph texten" label="knapptexten" width="önskad knappens bredd"/>  -->
 
 <style scoped lang="scss">
+div {
+  border: none;
+  background-color: $color-primary-light;
+  max-width: max-content;
+}
+/*
 dialog {
   box-sizing: border-box;
   position: fixed;
@@ -36,7 +42,7 @@ dialog {
   padding-left: 1.5rem;
   padding-top: 1.5rem;
 }
-
+*/
 h5 {
   margin-bottom: 2rem;
 }
