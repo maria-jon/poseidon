@@ -23,6 +23,7 @@ import StayBooking from '@/components/StayBooking.vue'
     label="Continue"
     width="200px"
   />-->
+  <StayBooking />
 </template>
 
 <style></style>
