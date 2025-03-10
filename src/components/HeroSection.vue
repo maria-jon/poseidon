@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import thebluelagoon from '../assets/Images/Komprimerad package-the-blue-lagoon_2560x1440_jpg (1).jpg'
-import heroImage from '../assets/Images/komprimerad poseidons-retreat_1_2560x1440_jpg (1).jpg'
-import ines from '../assets/Images/Komprimerad package-ines_2560x1440_jpg (1).jpg'
-import thesiren from '../assets/Images/Komprimerad package-the-siren_2560x1440_jpg (1).jpg'
-import poseidontemple from '../assets/Images/Komprimerad package-poseidons-temple_2560x1440_jpg (1).jpg'
+import thebluelagoon from '../assets/Images/Komprimerad package-the-blue-lagoon_2560x1440_jpg.jpg'
+import heroImage from '../assets/Images/komprimerad poseidons-retreat_1_2560x1440_jpg.jpg'
+import ines from '../assets/Images/Komprimerad package-ines_2560x1440_jpg.jpg'
+import thesiren from '../assets/Images/Komprimerad package-the-siren_2560x1440_jpg.jpg'
+import poseidontemple from '../assets/Images/Komprimerad package-poseidons-temple_2560x1440_jpg.jpg'
 
 document.addEventListener('DOMContentLoaded', () => {
   const sliderContainer: HTMLElement | null = document.querySelector('.slider-container')
@@ -74,7 +74,11 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="herosection">
     <p class="titleone">Unwind at</p>
     <p class="titletwo">Poseidon's Retreat</p>
-    <button class="book">Book a package</button>
+    <div class="routerlink">
+    <RouterLink to="/packages" v-slot="{ navigate }">
+    <button class="book" @click="navigate">Book a package</button>
+    </RouterLink>
+    </div>
     <img :src="heroImage" class="retreat" alt="Poseidons Retreat" width="500" height="400" />
   </div>
   <h2>Under the Sea – A Stay<br />Like No Other</h2>
@@ -93,8 +97,10 @@ document.addEventListener('DOMContentLoaded', () => {
       ✨ Experience serenity and adventure, from spa treatments to ocean excursions.
     </article>
     <article class="text">Let us create your perfect stay.</article>
-    <button class="about">About the retreat</button>
-  </section>
+    <RouterLink to="/about" v-slot="{ navigate }">
+    <button class="about" @click="navigate">About the retreat</button>
+    </RouterLink>
+    </section>
 
   <h3>Discover Our<br />Underwater Stays</h3>
 
@@ -175,10 +181,12 @@ body {
   justify-content: center;
   padding-top: 70px;
 }
-.book {
+.routerlink {
   position: absolute;
   justify-content: center;
-  margin-top: 175px;
+  margin-top: 160px;
+}
+.book {
   padding: 5px;
   border-radius: 8px;
   background-color: #f1e393;
@@ -313,6 +321,11 @@ h3 {
     font-size: 3rem;
     padding-top: 90px;
   }
+  .routerlink {
+  position: absolute;
+  justify-content: center;
+  margin-top: 0;
+}
   .welcome {
     display: flex;
     flex-direction: column;
@@ -369,6 +382,11 @@ h3 {
   .image-grid {
     display: flex;
   }
+  .routerlink {
+  position: absolute;
+  justify-content: center;
+  margin-top: 0;
+}
 
   .aboutbtn {
     margin-left: 500px;

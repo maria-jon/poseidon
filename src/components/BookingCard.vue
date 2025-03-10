@@ -9,6 +9,7 @@ defineProps({
 </script>
 
 <template>
+  <main>
   <form class="complete-your-booking">
     <fieldset>
       <legend>
@@ -57,9 +58,13 @@ defineProps({
     </fieldset>
     <MainButton :label="label" :width="width" />
   </form>
+  </main>
 </template>
 
 <style scoped lang="scss">
+main {
+  margin-bottom: 600px;
+}
 .complete-your-booking {
   box-sizing: border-box;
   position: fixed;
