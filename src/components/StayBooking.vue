@@ -57,13 +57,15 @@ const checkAvailability = () => {
         <form @submit.prevent="checkAvailability">
              <!-- Date selection fields -->
           <div class="form-group">
-            <label>From Date</label>
+            <label>From Date
             <input type="date" v-model="fromDate" required />
+            </label>
           </div>
 
           <div class="form-group">
-            <label>To Date</label>
+            <label>To Date
             <input type="date" v-model="toDate" required />
+            </label>
           </div>
           <!-- Package selection -->
           <div class="form-group">
@@ -75,18 +77,21 @@ const checkAvailability = () => {
           </div>
           <!-- Adults and children number inputs -->
           <div class="form-group">
-            <label>Adults</label>
+            <label>Adults
             <input type="number" v-model.number="adults" min="1" required />
+            </label>
           </div>
 
           <div class="form-group">
-            <label>Children</label>
+            <label>Children
             <input type="number" v-model.number="children" min="0" />
+            </label>
           </div>
           <!-- Special request input (optional) -->
           <div class="form-group">
-            <label>Special Request (optional)</label>
+            <label>Special Request (optional)
             <input type="text" v-model="specialRequest" />
+            </label>
           </div>
           <!-- Button container with MainButton component -->
           <div class="button-container">
