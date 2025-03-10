@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import MainButton from './MainButton.vue'
+// import MainButton from './MainButton.vue'
 
 defineProps({
   header: { type: String, required: true },
