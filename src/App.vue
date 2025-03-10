@@ -14,3 +14,4 @@ import HeaderBar from './components/HeaderBar.vue'
     <FooterSection />
   </footer>
 </template>
+

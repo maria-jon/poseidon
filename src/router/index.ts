@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import PolicyView from '../views/PolicyView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -35,7 +36,7 @@ const router = createRouter({
     {
       path: '/policy',
       name: 'policy',
-      component: () => import('../views/PrivacyView.vue'),
+      component: () => import('../views/PolicyView.vue'),
     },
   ],
 })
