@@ -105,7 +105,6 @@ const checkAvailability = () => {
   </div>
 </template>
 <style scoped lang="scss">
-@import '@/style/variables.scss';
 .container {
   padding: 40px;
   background: $color-background-light;
