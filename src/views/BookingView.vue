@@ -22,7 +22,7 @@ import StayBooking from '@/components/StayBooking.vue'
     text="Your selected package is available. Click ‘Continue’ to finalize your reservation."
     label="Continue"
     width="200px"
-  />
+  />-->
 </template>
 
 <style></style>
