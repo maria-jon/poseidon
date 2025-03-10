@@ -1,15 +1,26 @@
 <script setup lang="ts">
-import MainButton from './MainButton.vue'
+import { ref, defineEmits, watch } from 'vue';
 
 defineProps({
   header: { type: String, required: true },
   label: String,
   width: String,
 })
+
+const emit = defineEmits(['updateChoice']);
+const selectedOption = ref(null);
+
+const fullName = ref(null);
+const emailAddress = ref(null);
+const phoneNumber = ref(null);
+
+watch(selectedOption, (newValue) => {
+  emit('updateChoice', newValue); // send payment selection to BookingView
+});
 </script>
 
 <template>
-  <main>
+  <div>
     <form class="complete-your-booking">
       <fieldset>
         <legend>
@@ -19,21 +30,21 @@ defineProps({
           <label>
             <span class="input-label info">Name</span>
             <div class="input-field">
-              <input type="text" text="name" placeholder="Full Name" />
+              <input type="text" text="name" placeholder="Full Name" v-model="fullName" />
               <span class="material-symbols-outlined filled"> info </span>
             </div>
           </label>
           <label>
             <span class="input-label info">Email address</span>
             <div class="input-field">
-              <input type="email" text="name" placeholder="example@website.com" />
+              <input type="email" text="name" placeholder="example@website.com" v-model="emailAddress" />
               <span class="material-symbols-outlined filled"> info </span>
             </div>
           </label>
           <label>
             <span class="input-label info">Phone number</span>
             <div class="input-field">
-              <input type="text" text="name" placeholder="+00 000 00 00" />
+              <input type="text" text="name" placeholder="+00 000 00 00" v-model="phoneNumber" />
               <span class="material-symbols-outlined filled"> info </span>
             </div>
           </label>
@@ -43,44 +54,24 @@ defineProps({
         <legend><h5>Payment options</h5></legend>
         <div class="radios">
           <label>
-            <input type="radio" name="payment" value="credit" />
+            <input type="radio" value="credit" v-model="selectedOption" />
             <span class="input-label info">Pay with credit card</span>
           </label>
           <label>
-            <input type="radio" name="payment" value="paypal" />
+            <input type="radio" value="paypal" v-model="selectedOption" />
             <span class="input-label info">Pay with PayPal</span>
           </label>
           <label>
-            <input type="radio" name="payment" value="arrival" />
+            <input type="radio" value="arrival" v-model="selectedOption" />
             <span class="input-label info">Pay on arrival</span>
           </label>
         </div>
       </fieldset>
-      <MainButton :label="label" :width="width" />
     </form>
-  </main>
+  </div>
 </template>
 
 <style scoped lang="scss">
-main {
-  margin-bottom: 600px;
-}
-.complete-your-booking {
-  box-sizing: border-box;
-  position: fixed;
-  background-color: $color-primary-light;
-  border-radius: 8px;
-  width: 24rem;
-  max-width: 90%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: $margin-small;
-}
-
 h5 {
   margin-bottom: $margin-small;
 }
