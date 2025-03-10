@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import MainButton from './MainButton.vue'
+// import MainButton from './MainButton.vue'
 import { ref } from 'vue';
 
 defineProps({
@@ -61,11 +61,12 @@ function submitForm() {
         </div>
       </div>
     </fieldset>
-    <MainButton :label="label" :width="width" />
+    <!-- <MainButton :label="label" :width="width" /> -->
   </form>
 </template>
 
 <style scoped lang="scss">
+/*
 .credit-card-payment {
   box-sizing: border-box;
   position: fixed;
@@ -81,6 +82,7 @@ function submitForm() {
   flex-direction: column;
   gap: $margin-small;
 }
+*/
 
 h5 {
   margin-bottom: $margin-small;

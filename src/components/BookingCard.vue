@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import MainButton from './MainButton.vue'
-import { ref } from 'vue';
+// import MainButton from './MainButton.vue'
+import { ref, defineEmits, watch } from 'vue';
 
 defineProps({
   header: { type: String, required: true },
@@ -8,22 +8,21 @@ defineProps({
   width: String,
 })
 
-const fullName = ref('');
-const emailAddress = ref('');
-const phoneNumber = ref('');
-const paymentOptions = ref<'credit' | 'paypal' | 'arrival'>('credit');
+const emit = defineEmits(['updateChoice']);
+const selectedOption = ref(null);
 
-function submitForm() {
-  console.log(fullName.value);
-  console.log(emailAddress.value);
-  console.log(phoneNumber.value);
-  console.log(paymentOptions.value);
-}
+const fullName = ref(null);
+const emailAddress = ref(null);
+const phoneNumber = ref(null);
+
+watch(selectedOption, (newValue) => {
+  emit('updateChoice', newValue); // send payment selection to BookingView
+});
 </script>
 
 <template>
   <main>
-    <form class="complete-your-booking" v-on:submit.prevent="submitForm">
+    <form class="complete-your-booking">
       <fieldset>
         <legend>
           <h5>{{ header }}</h5>
@@ -56,28 +55,25 @@ function submitForm() {
         <legend><h5>Payment options</h5></legend>
         <div class="radios">
           <label>
-            <input type="radio" name="payment" value="credit" v-model="paymentOptions" />
+            <input type="radio" value="credit" v-model="selectedOption" />
             <span class="input-label info">Pay with credit card</span>
           </label>
           <label>
-            <input type="radio" name="payment" value="paypal" v-model="paymentOptions" />
+            <input type="radio" value="paypal" v-model="selectedOption" />
             <span class="input-label info">Pay with PayPal</span>
           </label>
           <label>
-            <input type="radio" name="payment" value="arrival" v-model="paymentOptions" />
+            <input type="radio" value="arrival" v-model="selectedOption" />
             <span class="input-label info">Pay on arrival</span>
           </label>
         </div>
       </fieldset>
-      <MainButton :label="label" :width="width" />
     </form>
   </main>
 </template>
 
 <style scoped lang="scss">
-main {
-  margin-bottom: 600px;
-}
+/*
 .complete-your-booking {
   box-sizing: border-box;
   position: fixed;
@@ -93,7 +89,7 @@ main {
   flex-direction: column;
   gap: $margin-small;
 }
-
+*/
 h5 {
   margin-bottom: $margin-small;
 }
