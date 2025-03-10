@@ -3,9 +3,11 @@ import heroImage from '../assets/Images/komprimerad poseidons-retreat_1_2560x144
 import poseidonfish from '@/assets/Images/Komprimerad poseidon-fish_2560x1440_jpg (1).jpg'
 import poseidonhall from '@/assets/Images/Komprimerad poseidon-hall_2560x1440_jpg (1).jpg'
 import mermaid from '@/assets/Images/Komprimerad poseidon-mermaid_1440x2560_jpg (1).jpg'
+//import FooterSection from '@/components/FooterSection.vue'
 </script>
 
 <template>
+  <main>
   <h2>About Poseidon’s Retreat</h2>
   <div>
     <p>
@@ -32,9 +34,13 @@ import mermaid from '@/assets/Images/Komprimerad poseidon-mermaid_1440x2560_jpg 
     <img :src="poseidonhall" class="halldesktop" width="500" height="400" />
     <img :src="mermaid" class="mermaiddesktop" width="500" height="400" />
   </div>
+  </main>
 </template>
 
 <style scoped>
+main {
+  margin-bottom: 470px;
+}
 h2 {
   text-align: center;
   margin-top: 12px;
@@ -73,6 +79,7 @@ p {
     margin-bottom: 20px;
     border-radius: 5px;
   }
+  
 }
 /* Show only the tablet version for medium screens (601px ) */
 @media (min-width: 601px) {
@@ -121,7 +128,6 @@ p {
   }
   .desktop {
     display: flex;
-    position: relative;
   }
   .herodesktop {
     margin-top: 204px;
@@ -145,7 +151,7 @@ p {
   .mermaiddesktop {
     position: absolute;
     margin-left: 925px;
-    height: 63vh;
+    height: 63.6vh;
     width: 23vw;
   }
   p {
@@ -153,5 +159,6 @@ p {
     margin-bottom: 20px;
     margin-right: 290px;
   }
+
 }
 </style>
