@@ -3,6 +3,7 @@ import blueLagoon from '/src/assets/Images/Komprimerad package-the-blue-lagoon_2
 import { ref } from 'vue'
 import MainButton from './MainButton.vue'
 
+// Declare reactive variables to manage the form state
 const fromDate = ref<string>('')
 const toDate = ref<string>('')
 const packageType = ref<string>('basic')
@@ -11,19 +12,20 @@ const children = ref<number>(0)
 const specialRequest = ref<string>('')
 const errorMessage = ref<string>('')
 
+// Function to check availability when the form is submitted
 const checkAvailability = () => {
   if (!fromDate.value || !toDate.value) {
     errorMessage.value = 'Please select valid dates.'
     return
-  }
+  }// Ensure at least one adult is selected
   if (adults.value < 1) {
     errorMessage.value = 'At least one adult is required.'
     return
   }
 
-  // Availability check simulation
+   // Simulate availability check (random in this case)
   const available = Math.random() > 0.5
-
+  // Set error message if no availability
   if (!available) {
     errorMessage.value =
       'Sorry, this package is currently unavailable on your selected dates. Try adjusting your search.'
@@ -50,8 +52,10 @@ const checkAvailability = () => {
         <img :src="blueLagoon" alt="The Blue Lagoon" width="300" height="400" />
         <p class="image-text">The Blue Lagoon</p>
       </div>
+      <!-- Form container -->
       <div class="form-container">
         <form @submit.prevent="checkAvailability">
+             <!-- Date selection fields -->
           <div class="form-group">
             <label>From Date</label>
             <input type="date" v-model="fromDate" required />
@@ -61,7 +65,7 @@ const checkAvailability = () => {
             <label>To Date</label>
             <input type="date" v-model="toDate" required />
           </div>
-
+          <!-- Package selection -->
           <div class="form-group">
             <label>Choose Your Package</label>
             <select v-model="packageType">
@@ -69,7 +73,7 @@ const checkAvailability = () => {
               <option value="premium">Premium</option>
             </select>
           </div>
-
+          <!-- Adults and children number inputs -->
           <div class="form-group">
             <label>Adults</label>
             <input type="number" v-model.number="adults" min="1" required />
@@ -79,16 +83,17 @@ const checkAvailability = () => {
             <label>Children</label>
             <input type="number" v-model.number="children" min="0" />
           </div>
-
+          <!-- Special request input (optional) -->
           <div class="form-group">
             <label>Special Request (optional)</label>
             <input type="text" v-model="specialRequest" />
           </div>
+          <!-- Button container with MainButton component -->
           <div class="button-container">
             <MainButton label="Continue" :width="'10rem'" @click="goHome" />
           </div>
         </form>
-
+        <!-- Error message display -->
         <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
       </div>
     </div>
