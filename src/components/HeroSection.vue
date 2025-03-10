@@ -97,8 +97,10 @@ document.addEventListener('DOMContentLoaded', () => {
       ✨ Experience serenity and adventure, from spa treatments to ocean excursions.
     </article>
     <article class="text">Let us create your perfect stay.</article>
-    <button class="about">About the retreat</button>
-  </section>
+    <RouterLink to="/about" v-slot="{ navigate }">
+    <button class="about" @click="navigate">About the retreat</button>
+    </RouterLink>
+    </section>
 
   <h3>Discover Our<br />Underwater Stays</h3>
 
