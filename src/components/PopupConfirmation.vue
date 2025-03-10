@@ -25,7 +25,7 @@ dialog {
   box-sizing: border-box;
   position: fixed;
   background-color: $color-primary-light;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   border: none;
   width: 24rem;
   max-width: 90%;
@@ -33,17 +33,17 @@ dialog {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding-left: 24px;
-  padding-top: 24px;
+  padding-left: 1.5rem;
+  padding-top: 1.5rem;
 }
 
 h5 {
-  margin-bottom: 32px;
+  margin-bottom: 2rem;
 }
 
 button {
   position: absolute;
-  bottom: 20px;
-  right: 17px;
+  bottom: 1.25rem;
+  right: 1rem;
 }
 </style>
