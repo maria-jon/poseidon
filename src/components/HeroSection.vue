@@ -75,9 +75,9 @@ document.addEventListener('DOMContentLoaded', () => {
     <p class="titleone">Unwind at</p>
     <p class="titletwo">Poseidon's Retreat</p>
     <div class="routerlink">
-    <RouterLink to="/packages" v-slot="{ navigate }">
-    <button class="book" @click="navigate">Book a package</button>
-    </RouterLink>
+      <RouterLink to="/packages" v-slot="{ navigate }">
+        <button class="book" @click="navigate">Book a package</button>
+      </RouterLink>
     </div>
     <img :src="heroImage" class="retreat" alt="Poseidons Retreat" width="500" height="400" />
   </div>
@@ -98,9 +98,9 @@ document.addEventListener('DOMContentLoaded', () => {
     </article>
     <article class="text">Let us create your perfect stay.</article>
     <RouterLink to="/about" v-slot="{ navigate }">
-    <button class="about" @click="navigate">About the retreat</button>
+      <button class="about" @click="navigate">About the retreat</button>
     </RouterLink>
-    </section>
+  </section>
 
   <h3>Discover Our<br />Underwater Stays</h3>
 
@@ -322,10 +322,10 @@ h3 {
     padding-top: 90px;
   }
   .routerlink {
-  position: absolute;
-  justify-content: center;
-  margin-top: 0;
-}
+    position: absolute;
+    justify-content: center;
+    margin-top: 0;
+  }
   .welcome {
     display: flex;
     flex-direction: column;
@@ -383,10 +383,10 @@ h3 {
     display: flex;
   }
   .routerlink {
-  position: absolute;
-  justify-content: center;
-  margin-top: 0;
-}
+    position: absolute;
+    justify-content: center;
+    margin-top: 0;
+  }
 
   .aboutbtn {
     margin-left: 500px;
