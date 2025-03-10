@@ -44,5 +44,8 @@ button {
       transform: scale(1.125);
     }
   }
+  &:disabled {
+    background-color: $color-grey-500;
+  }
 }
 </style>
