@@ -7,7 +7,6 @@ import MainButton from '@/components/MainButton.vue'
 
 import { ref, computed } from 'vue';
 
-
 const currentStep = ref(0);
 const userChoice = ref(null);
 
@@ -21,7 +20,7 @@ const nextStep = () => {
   };
 
   if (userChoice.value === 'arrival') {
-    currentStep.value === 3;
+    currentStep.value++;
   }
   currentStep.value++;
 
@@ -61,11 +60,19 @@ defineProps({
       v-if="currentStep === 3 || (currentStep === 2 && userChoice === 'arrival')"
       />
 
-      <MainButton label="continue" :width="width"
+      <MainButton
+      label="continue"
+      :width="width"
       @click="nextStep"
-      v-if="(currentStep === 1 && userChoice) || currentStep >= 0"
+      v-if="currentStep >= 0 && currentStep <= 2"
       :disabled="currentStep === 1 && !userChoice"
       />
+      <a href="/" v-if="lastStep">
+        <MainButton
+        label="continue"
+        :width="width"
+        />
+      </a>
     </div>
   </main>
 
@@ -103,7 +110,7 @@ h5 {
   margin-bottom: $margin-small;
 }
 
-button {
+button, a {
   align-self: flex-end;
 }
 </style>
