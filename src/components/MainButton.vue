@@ -21,10 +21,10 @@ defineProps({
 <style scoped lang="scss">
 button {
   background-color: $color-secondary-red-light;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   color: $color-white;
   border: none;
-  height: 38px;
+  height: 2.375rem;
   width: fit-content;
   transition: all 0.2s ease-in-out;
   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
