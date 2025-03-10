@@ -74,7 +74,11 @@ document.addEventListener('DOMContentLoaded', () => {
   <div class="herosection">
     <p class="titleone">Unwind at</p>
     <p class="titletwo">Poseidon's Retreat</p>
-    <button class="book">Book a package</button>
+    <div class="routerlink">
+    <RouterLink to="/packages" v-slot="{ navigate }">
+    <button class="book" @click="navigate">Book a package</button>
+    </RouterLink>
+    </div>
     <img :src="heroImage" class="retreat" alt="Poseidons Retreat" width="500" height="400" />
   </div>
   <h2>Under the Sea – A Stay<br />Like No Other</h2>
@@ -175,10 +179,12 @@ body {
   justify-content: center;
   padding-top: 70px;
 }
-.book {
+.routerlink {
   position: absolute;
   justify-content: center;
-  margin-top: 175px;
+  margin-top: 160px;
+}
+.book {
   padding: 5px;
   border-radius: 8px;
   background-color: #f1e393;
@@ -313,6 +319,11 @@ h3 {
     font-size: 3rem;
     padding-top: 90px;
   }
+  .routerlink {
+  position: absolute;
+  justify-content: center;
+  margin-top: 0;
+}
   .welcome {
     display: flex;
     flex-direction: column;
@@ -369,6 +380,11 @@ h3 {
   .image-grid {
     display: flex;
   }
+  .routerlink {
+  position: absolute;
+  justify-content: center;
+  margin-top: 0;
+}
 
   .aboutbtn {
     margin-left: 500px;
