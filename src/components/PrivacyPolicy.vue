@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import poseidonMermaid from '@/assets/Images/Komprimerad poseidon-mermaid_1440x2560_jpg (1).jpg';
+import poseidonMermaid from '@/assets/Images/Komprimerad poseidon-mermaid_1440x2560_jpg.jpg';
 
 // Redirect to the homepage via the router
 const router = useRouter();
