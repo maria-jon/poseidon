@@ -38,9 +38,6 @@ import mermaid from '@/assets/Images/Komprimerad poseidon-mermaid_1440x2560_jpg 
 </template>
 
 <style scoped>
-main {
-  margin-bottom: 470px;
-}
 h2 {
   text-align: center;
   margin-top: 12px;
@@ -120,6 +117,9 @@ p {
 }
 /* Show only the desktop version for large screens (1024px and up) */
 @media (min-width: 1024px) {
+  main {
+  margin-bottom: 470px;
+}
   .mobile {
     display: none;
   }
