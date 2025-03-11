@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
+import { onMounted } from 'vue'
 import thebluelagoon from '../assets/Images/Komprimerad package-the-blue-lagoon_2560x1440_jpg.jpg'
 import heroImage from '../assets/Images/komprimerad poseidons-retreat_1_2560x1440_jpg.jpg'
 import ines from '../assets/Images/Komprimerad package-ines_2560x1440_jpg.jpg'
 import thesiren from '../assets/Images/Komprimerad package-the-siren_2560x1440_jpg.jpg'
 import poseidontemple from '../assets/Images/Komprimerad package-poseidons-temple_2560x1440_jpg.jpg'
 
-function initPage() { 
+function initPage() {
   const sliderContainer: HTMLElement | null = document.querySelector('.slider-container')
   const slider: HTMLElement | null = document.querySelector('.slider')
   const images: NodeListOf<HTMLImageElement> = document.querySelectorAll('.slider img')
@@ -38,21 +38,18 @@ function initPage() {
 }
 
 onMounted(() => {
-  initPage();
-});
-
+  initPage()
+})
 </script>
 
 <template>
   <div class="herosection">
-  <h1>
-    <span class="titleone">Unwind at</span>
-    <span>Poseidon's Retreat</span>
-  </h1>
+    <h1>
+      <span class="titleone">Unwind at</span>
+      <span>Poseidon's Retreat</span>
+    </h1>
     <div class="routerlink">
-      <RouterLink to="/packages" v-slot="{ navigate }">
-        <button class="book" @click="navigate">Book a package</button>
-      </RouterLink>
+      <RouterLink class="book" to="/packages">Book a package</RouterLink>
     </div>
     <img :src="heroImage" class="retreat" alt="Poseidons Retreat" width="500" height="400" />
   </div>
