@@ -229,6 +229,7 @@ h2 {
 }
 
 .guest-label {
+  display: inline-block;
   margin-right: 10px;
   width: 100px;
 }
