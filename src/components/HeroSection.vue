@@ -7,7 +7,6 @@ import thesiren from '../assets/Images/Komprimerad package-the-siren_2560x1440_j
 import poseidontemple from '../assets/Images/Komprimerad package-poseidons-temple_2560x1440_jpg.jpg'
 
 function initPage() { 
-  document.addEventListener('DOMContentLoaded', () => {
   const sliderContainer: HTMLElement | null = document.querySelector('.slider-container')
   const slider: HTMLElement | null = document.querySelector('.slider')
   const images: NodeListOf<HTMLImageElement> = document.querySelectorAll('.slider img')
@@ -36,7 +35,7 @@ function initPage() {
   }
 
   startAutoSlide()
-}) }
+}
 
 onMounted(() => {
   initPage();
