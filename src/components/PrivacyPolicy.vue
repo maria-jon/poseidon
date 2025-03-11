@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import poseidonMermaid from '/src/assets/Images/Komprimerad poseidon-mermaid_1440x2560_jpg.jpg'
+import poseidonMermaid from '/src/assets/Images/poseidon-mermaid.jpg'
 import MainButton from './MainButton.vue'
 
 // Initialize Vue Router for navigation

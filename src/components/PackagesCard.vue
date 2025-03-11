@@ -7,12 +7,16 @@ defineProps({
   features: { type: Array, items: String },
   image: String,
   id: Number,
+  alt: String,
+  imgWidth: Number,
+  imgHeight: Number,
+  route: String,
 })
 </script>
 
 <template>
   <article>
-    <img :src="image" alt="" />
+    <img :src="image" :alt="alt" :width="imgWidth" :height="imgHeight" />
     <div class="text-content">
       <h2>{{ header }}</h2>
       <h6>{{ subheader }}</h6>
@@ -21,7 +25,9 @@ defineProps({
         <span v-for="(item, index) in features" :key="index"> ✔ {{ item }} </span>
       </div>
     </div>
-    <MainButton label="Book now" width="9rem" />
+    <RouterLink :to="route" class="button">
+      <MainButton label="Book now" width="9rem" />
+    </RouterLink>
   </article>
 </template>
 
@@ -54,7 +60,7 @@ img {
   gap: 0.5rem;
 }
 
-button {
+.button {
   margin-left: auto;
   margin-top: auto;
 }

@@ -22,10 +22,14 @@ const { packages } = storeToRefs(packageStore)
     <div class="wrapper" v-for="singlePackage in packages" :key="singlePackage.id">
       <PackagesCard
         :image="singlePackage.image"
+        :alt="singlePackage.text.header"
+        :imgWidth="singlePackage.imgWidth"
+        :imgHeight="singlePackage.imgHeight"
         :header="singlePackage.text.header"
         :subheader="singlePackage.text.subheader"
         :subtext="singlePackage.text.subtext"
         :features="singlePackage.text.features"
+        :route="singlePackage.route"
       />
     </div>
   </main>
