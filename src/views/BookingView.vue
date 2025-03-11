@@ -1,9 +1,11 @@
+
 <script setup lang="ts">
 import PopupConfirmation from '@/components/PopupConfirmation.vue'
 import BookingCard from '@/components/BookingCard.vue'
 import PaymentCard from '@/components/PaymentCard.vue'
 import PaymentPaypal from '@/components/PaymentPaypal.vue'
 import MainButton from '@/components/MainButton.vue'
+import StayBooking from '@/components/StayBooking.vue'
 
 import { ref, computed } from 'vue';
 
@@ -77,6 +79,7 @@ defineProps({
         />
       </a>
     </div>
+    <StayBooking />
   </main>
 
   <!-- <PopupConfirmation

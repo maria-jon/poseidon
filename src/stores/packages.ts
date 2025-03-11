@@ -1,15 +1,17 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
-import ines from '../assets/Images/Komprimerad package-ines_2560x1440_jpg.jpg'
-import thesiren from '../assets/Images/Komprimerad package-the-siren_2560x1440_jpg.jpg'
-import poseidontemple from '../assets/Images/Komprimerad package-poseidons-temple_2560x1440_jpg.jpg'
-import thebluelagoon from '../assets/Images/Komprimerad package-the-blue-lagoon_2560x1440_jpg.jpg'
+import ines from '../assets/Images/ines.jpg'
+import thesiren from '../assets/Images/the-siren.jpg'
+import poseidontemple from '../assets/Images/poseidons-temple.jpg'
+import thebluelagoon from '../assets/Images/the-blue-lagoon.jpg'
 
 interface Ipackages {
   text: { header: string; subheader: string; subtext: string; features: string[] }
   image: string
   id: number
+  imgWidth: number
+  imgHeight: number
 }
 
 export const usePackageStore = defineStore('packages', () => {
@@ -33,6 +35,8 @@ export const usePackageStore = defineStore('packages', () => {
 
         image: ines,
         id: 0,
+        imgWidth: 2560,
+        imgHeight: 1440,
       },
       {
         text: {
@@ -49,6 +53,8 @@ export const usePackageStore = defineStore('packages', () => {
         },
         image: thesiren,
         id: 1,
+        imgWidth: 2560,
+        imgHeight: 1440,
       },
       {
         text: {
@@ -65,6 +71,8 @@ export const usePackageStore = defineStore('packages', () => {
         },
         image: poseidontemple,
         id: 2,
+        imgWidth: 2560,
+        imgHeight: 1440,
       },
       {
         text: {
@@ -81,6 +89,8 @@ export const usePackageStore = defineStore('packages', () => {
         },
         image: thebluelagoon,
         id: 3,
+        imgWidth: 2560,
+        imgHeight: 1440,
       },
     ]
   }
@@ -89,29 +99,3 @@ export const usePackageStore = defineStore('packages', () => {
 
   return { packages, initializePackages }
 })
-
-// !!!Gör så här för att använda i en komponent (specifika element som div span etc kan självklart bytas ut)!!!
-
-// <script setup lang="ts">
-// import { usePackageStore } from '@/stores/packages'
-// import { storeToRefs } from 'pinia'
-
-// const packageStore = usePackageStore()
-// const { packages } = storeToRefs(packageStore)
-// </script>
-
-// <template>
-//   <div class="">
-//     <div v-for="packageItem in packages" :key="packageItem.id" class="">
-//       <img :src="packageItem.image" alt="" />
-//       <h2>{{ packageItem.text.header }}</h2>
-//       <h3>{{ packageItem.text.subheader }}</h3>
-//       <p>{{ packageItem.text.subtext }}</p>
-//       <ul>
-//         <li v-for="(feature, index) in packageItem.text.features" :key="index">
-//           <span>{{ feature }}</span>
-//         </li>
-//       </ul>
-//     </div>
-//   </div>
-// </template>
