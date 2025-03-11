@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import blueLagoon from '@/assets/Images/package-the-blue-lagoon_2560x1440_jpg.jpg'
+import blueLagoon from '@/assets/Images/the-blue-lagoon.jpg'
 import { ref } from 'vue'
 import MainButton from './MainButton.vue'
 
