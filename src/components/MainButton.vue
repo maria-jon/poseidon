@@ -1,4 +1,11 @@
 <script setup lang="ts">
+/**
+ * Use like this:
+ * @label String with button text
+ * @width The width of the button including unit, i.e. '58px' or '40%'
+ * <Button label="Click me" width="12.5rem"/>
+ */
+
 defineProps({
   label: {
     type: String,
@@ -15,9 +22,6 @@ defineProps({
   </button>
 </template>
 
-<!-- Används såhär (byt ut label texten till det som behövs i den komponenten den ska användas i)
- <Button label="Click me" width="önskad knappens bredd"/> -->
-
 <style scoped lang="scss">
 button {
   background-color: $color-secondary-red-light;
@@ -32,7 +36,7 @@ button {
   text-transform: uppercase;
 
   .button-label {
-    display: inline-block; /* Ensures scaling works properly */
+    display: inline-block;
     transition: transform 0.2s ease-in-out;
   }
 
