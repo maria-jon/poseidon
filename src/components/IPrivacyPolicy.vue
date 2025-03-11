@@ -4,17 +4,18 @@ import { useRouter } from 'vue-router'
 import poseidonMermaid from '@/assets/Images/Komprimerad poseidon-mermaid_1440x2560_jpg.jpg'
 import MainButton from './MainButton.vue'
 
-// Initialize Vue Router for navigation
-const router = useRouter()
-
 // Define an interface for the policy sections
-interface PolicySection {
+interface IPolicySection {
   title: string
   points: string[]
 }
 
+// Initialize Vue Router for navigation
+const router = useRouter()
+
+
 // Create a reactive array of policy sections
-const policySections = ref<PolicySection[]>([
+const policySections = ref<IPolicySection[]>([
   {
     title: '1. Introduction',
     points: [

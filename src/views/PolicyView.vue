@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import PrivacyPolicy from '@/components/PrivacyPolicy.vue'
+import IPrivacyPolicy from '@/components/IPrivacyPolicy.vue'
 </script>
 
 <template>
   <main>
-    <PrivacyPolicy />
+    <IPrivacyPolicy />
   </main>
 </template>
