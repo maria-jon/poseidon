@@ -137,10 +137,14 @@ a {
 }
 
 @media only screen and (min-width: 1024px) {
+  .wrapper {
+    height: 120px;
+    width: 100vw;
+  }
   .menu-overlay {
     flex-direction: row;
     background-color: $color-primary-dark;
-    max-height: 80px;
+    max-height: 120px;
   }
 }
 </style>
