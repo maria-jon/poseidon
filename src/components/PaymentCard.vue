@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from 'vue'
 
 defineProps({
   header: { type: String, required: true },
@@ -7,17 +7,16 @@ defineProps({
   width: String,
 })
 
-const cardName = ref('');
-const cardNumber = ref('');
-const cardDate = ref('');
-const cardCvc = ref('');
-
+const cardName = ref('')
+const cardNumber = ref('')
+const cardDate = ref('')
+const cardCvc = ref('')
 
 function submitForm() {
-  console.log(cardName.value);
-  console.log(cardNumber.value);
-  console.log(cardDate.value);
-  console.log(cardCvc.value);
+  console.log(cardName.value)
+  console.log(cardNumber.value)
+  console.log(cardDate.value)
+  console.log(cardCvc.value)
 }
 </script>
 

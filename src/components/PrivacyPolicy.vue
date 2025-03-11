@@ -90,7 +90,6 @@ const goHome = () => {
 </template>
 
 <style scoped lang="scss">
-
 @import '@/style/variables.scss';
 .privacy-policy {
   display: flex;
@@ -152,8 +151,6 @@ const goHome = () => {
 .policy-section:nth-child(4) ul {
   list-style: disc;
 }
-
-
 
 /* Responsive styles */
 @media (max-width: 1024px) {

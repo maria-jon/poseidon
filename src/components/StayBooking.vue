@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import blueLagoon from '/src/assets/Images/Komprimerad package-the-blue-lagoon_2560x1440_jpg.jpg'
+import blueLagoon from '@/assets/Images/Komprimerad package-the-blue-lagoon_2560x1440_jpg.jpg'
 import { ref } from 'vue'
 import MainButton from './MainButton.vue'
 
@@ -17,13 +17,13 @@ const checkAvailability = () => {
   if (!fromDate.value || !toDate.value) {
     errorMessage.value = 'Please select valid dates.'
     return
-  }// Ensure at least one adult is selected
+  } // Ensure at least one adult is selected
   if (adults.value < 1) {
     errorMessage.value = 'At least one adult is required.'
     return
   }
 
-   // Simulate availability check (random in this case)
+  // Simulate availability check (random in this case)
   const available = Math.random() > 0.5
   // Set error message if no availability
   if (!available) {
@@ -54,52 +54,65 @@ const checkAvailability = () => {
       </div>
       <!-- Form container -->
       <div class="form-container">
+        <h5>Check availability</h5>
         <form @submit.prevent="checkAvailability">
-             <!-- Date selection fields -->
-          <div class="form-group">
-            <label>From Date
-            <input type="date" v-model="fromDate" required />
-            </label>
-          </div>
+          <!-- Date selection fields -->
+          <div class="data-container">
+            <div class="form-group">
+              <label
+                >From Date
+                <input type="date" v-model="fromDate" required />
+              </label>
+            </div>
 
-          <div class="form-group">
-            <label>To Date
-            <input type="date" v-model="toDate" required />
-            </label>
+            <div class="form-group">
+              <label
+                >To Date
+                <input type="date" v-model="toDate" required />
+              </label>
+            </div>
           </div>
           <!-- Package selection -->
           <div class="form-group">
             <label>Choose Your Package</label>
             <select v-model="packageType">
-              <option value="basic">Basic</option>
-              <option value="premium">Premium</option>
+              <option value="basic">Ines</option>
+              <option value="premium">The Siren</option>
+              <option value="premium">Poseidon’s Temple</option>
+              <option value="premium">The Blue Lagoon</option>
             </select>
           </div>
           <!-- Adults and children number inputs -->
-          <div class="form-group">
-            <label>Adults
-            <input type="number" v-model.number="adults" min="1" required />
-            </label>
-          </div>
+          <p>Number of guests</p>
+          <div class="guest-container">
+          
+            <div class="form-group">
+              <label><span class="guest-label">Adults</span>
+                <input type="number" v-model.number="adults" min="1" required />
+              </label>
+              
+            </div>
 
-          <div class="form-group">
-            <label>Children
-            <input type="number" v-model.number="children" min="0" />
-            </label>
+            <div class="form-group">
+              <label><span class="guest-label">Children</span>
+                <input type="number" v-model.number="children" min="0" />
+                </label>
+            </div>
           </div>
           <!-- Special request input (optional) -->
           <div class="form-group">
-            <label>Special Request (optional)
-            <input type="text" v-model="specialRequest" />
+            <label
+              >Special Request (optional)
+              <input type="text" v-model="specialRequest" />
             </label>
-          </div>
-          <!-- Button container with MainButton component -->
-          <div class="button-container">
-            <MainButton label="Continue" :width="'10rem'" @click="goHome" />
           </div>
         </form>
         <!-- Error message display -->
         <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
+      </div>
+      <!-- Button container with MainButton component -->
+      <div class="button-container">
+        <MainButton label="Continue" :width="'10rem'"/>
       </div>
     </div>
   </div>
@@ -108,6 +121,8 @@ const checkAvailability = () => {
 .container {
   padding: 40px;
   background: $color-background-light;
+  font-weight: 400;
+  text-align: left;
 }
 p {
   width: 50%;
@@ -138,23 +153,17 @@ h1 {
 }
 
 .image-container {
-  display: inline-block;
-  width: 100%;
-  max-width: 600px;
   position: relative;
   margin-bottom: 30px;
   img {
     width: 100%;
     height: 100%;
-    display: block;
     border-radius: 15px;
-    max-height: 400px;
   }
 }
 .image-text {
   position: absolute;
-  bottom: 50%;
-  height: 18%;
+  bottom: 0;
   width: 100%;
   text-align: right;
   color: white;
@@ -174,6 +183,18 @@ h1 {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   margin-top: 20px;
   height: auto;
+  padding: 30px 30px 50px 30px;
+  min-width: 350px;
+  h5 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-weight: 600;
+  }
+  p {
+    font-weight: 400;
+    font-size: 1rem;
+  }
 }
 
 h2 {
@@ -185,13 +206,38 @@ h2 {
 .form-group {
   display: flex;
   flex-direction: column;
+  align-items: right;
   margin-bottom: 12px;
+  text-transform: uppercase;
+}
+.data-container {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+
+.data-container label {
+  text-align: center;
+}
+
+.guest-container input {
+  width: 100px;
+}
+.guest-label {
+  margin-right: 10px;
+  width: 100px;
+}
+
+.guest-container label {
+  text-transform: none;
+  font-size: 1em;
 }
 
 label {
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 400;
   margin-bottom: 5px;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 
 input,
@@ -200,6 +246,7 @@ select {
   border-radius: 5px;
   border: 1px solid #ccc;
   font-size: 1rem;
+  margin: 7px;
 }
 
 .button-container {
