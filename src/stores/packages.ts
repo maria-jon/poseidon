@@ -52,7 +52,6 @@ export const usePackageStore = defineStore('packages', () => {
             'Access to our exclusive infinity pool & relaxation lounge',
           ],
         },
-
         image: ines,
         id: 0,
         imgWidth: 2560,
