@@ -42,7 +42,7 @@ defineProps({
 
 <template>
   <main>
-    <!--<div class="booking">
+    <div class="booking">
       <PopupConfirmation
       header="Congratulations!"
       text="Your selected package is available. Click 'Continue' to finalize your reservation."
@@ -60,33 +60,33 @@ defineProps({
       label="Close"
       width="150px"
       v-if="currentStep === 3 || (currentStep === 2 && userChoice === 'arrival')"
-      /> -->
+      /> 
 
     <!-- Use button here instead of buttons on components -->
-    <!-- <MainButton
+    <MainButton
       label="continue"
       :width="width"
       @click="nextStep"
       v-if="currentStep >= 0 && currentStep <= 2"
       :disabled="currentStep === 1 && !userChoice"
-      /> -->
+      />
     <!-- During last step, user will be redirected to home page -->
-    <!-- <a href="/" v-if="lastStep">
+    <a href="/" v-if="lastStep">
         <MainButton
         label="continue"
         :width="width"
         />
       </a>
-    </div> -->
+    </div>
     <StayBooking />
   </main>
 
-  <!-- <PopupConfirmation
+   <PopupConfirmation
     header="We are sorry!"
     text="This package is currently unavailable on your selected dates. Try adjusting your search."
     label="Close"
     width="150px"
-  /> -->
+  />
 </template>
 
 <style scoped lang="scss">

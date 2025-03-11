@@ -95,7 +95,6 @@ const checkAvailability = () => {
                 ><span class="guest-label">Children</span>
                 <input type="number" v-model.number="children" min="0" />
               </label>
-              </label>
             </div>
           </div>
           <!-- Special request input (optional) -->
