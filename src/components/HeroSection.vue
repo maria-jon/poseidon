@@ -11,20 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const images: NodeListOf<HTMLImageElement> = document.querySelectorAll('.slider img')
 
   if (!sliderContainer || !slider || images.length === 0) return
-
-  //left arrow
-  const leftArrow = document.createElement('button')
-  leftArrow.classList.add('arrow', 'left')
-  leftArrow.innerHTML = '&#9665;'
-
-  //Right arrow
-  const rightArrow = document.createElement('button')
-  rightArrow.classList.add('arrow', 'right')
-  rightArrow.innerHTML = '&#9655;'
-
-  sliderContainer.appendChild(leftArrow)
-  sliderContainer.appendChild(rightArrow)
-
+  
   let currentIndex: number = 0
   let autoSlideInterval: number
 
@@ -36,35 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
     currentIndex = (currentIndex + 1) % images.length
     updateSlider()
   }
-
-  const showPrevImage = (): void => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length
-    updateSlider()
-  }
-
+  
   const startAutoSlide = (): void => {
     stopAutoSlide()
-    autoSlideInterval = window.setInterval(showNextImage, 5000) // change image every 5 seconds
+    autoSlideInterval = window.setInterval(showNextImage, 4000) // change image every 4 seconds
   }
 
   const stopAutoSlide = (): void => {
     clearInterval(autoSlideInterval)
   }
-
-  const restartAutoSlide = (): void => {
-    stopAutoSlide()
-    startAutoSlide()
-  }
-
-  rightArrow.addEventListener('click', () => {
-    showNextImage()
-    restartAutoSlide()
-  })
-
-  leftArrow.addEventListener('click', () => {
-    showPrevImage()
-    restartAutoSlide()
-  })
 
   startAutoSlide()
 })
@@ -271,7 +238,7 @@ h3 {
 
 .image-label {
   position: absolute;
-  left: 9.5px;
+  left: 12px;
   background: rgba(0, 0, 0, 0.7);
   color: white;
   font-size: 1.2rem;
