@@ -46,7 +46,7 @@ onMounted(() => {
   <div class="herosection">
     <h1>
       <span class="titleone">Unwind at</span>
-      <span>Poseidon's Retreat</span>
+      <span class="titletwo">Poseidon's Retreat</span>
     </h1>
     <div class="routerlink">
       <RouterLink class="book" to="/packages">Book a package</RouterLink>
@@ -69,9 +69,7 @@ onMounted(() => {
       ✨ Experience serenity and adventure, from spa treatments to ocean excursions.
     </article>
     <article class="text">Let us create your perfect stay.</article>
-    <RouterLink to="/about" v-slot="{ navigate }">
-      <button class="about" @click="navigate">About the retreat</button>
-    </RouterLink>
+    <RouterLink to="/about" class="about">About the retreat</RouterLink>
   </section>
 
   <h3>Discover Our<br />Underwater Stays</h3>
@@ -142,12 +140,18 @@ h1 {
 }
 .titleone {
   display: block;
+  font-size: 2.4rem;
   text-align: center;
+}
+.titletwo {
+  display: block;
+  text-align: center;
+  font-size: 2.4rem;
 }
 .routerlink {
   position: absolute;
   justify-content: center;
-  margin-top: 160px;
+  margin-top: 150px;
 }
 .book {
   padding: 5px;
@@ -160,6 +164,7 @@ h1 {
   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  display: block;
 }
 .book:hover {
   background-color: #fac801;
@@ -179,6 +184,7 @@ h2 {
 }
 .about {
   background-color: #c45c54;
+  display: block;
   border-radius: 8px;
   color: #efedeb;
   border: none;
@@ -188,10 +194,7 @@ h2 {
   font-size: 1rem;
   transition: all 0.2s ease-in-out;
   padding: 0.5rem 1rem;
-  margin-top: 20px;
   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
-  margin-bottom: 20px;
-  margin-left: 10px;
 }
 
 .about:hover {
@@ -201,7 +204,7 @@ h2 {
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
 }
 .text {
-  padding-top: 10px;
+  margin-bottom: 10px;
   font-size: 1rem;
 }
 h3 {
@@ -275,20 +278,15 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 28vh;
+    height: 40vh;
   }
   .titleone {
-    font-size: 3rem;
-  }
-  .titletwo {
-    font-size: 3rem;
-    padding-top: 90px;
-  }
-  .routerlink {
-    position: absolute;
-    justify-content: center;
-    margin-top: 0;
-  }
+  font-size: 3rem;
+}
+.titletwo {
+  font-size: 3rem;
+}
+
   .welcome {
     display: flex;
     flex-direction: column;
@@ -303,8 +301,8 @@ h3 {
     margin-left: 130px;
   }
   .book {
-    margin-top: 220px;
     font-size: 1rem;
+    margin-top: 20px;
   }
   h3 {
     margin-bottom: 10px;
@@ -318,7 +316,7 @@ h3 {
   }
   .imgslide {
     width: 95%;
-    height: 35vh;
+    height: 50vh;
     object-fit: cover;
     border-radius: 5px;
   }
@@ -339,6 +337,12 @@ h3 {
   .herosection {
     height: 75vh;
   }
+  .titleone {
+  font-size: 4rem;
+}
+.titletwo {
+  font-size: 4rem;
+}
   .slider-container {
     display: none;
   }
