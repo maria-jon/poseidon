@@ -72,8 +72,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <template>
   <div class="herosection">
-    <p class="titleone">Unwind at</p>
-    <p class="titletwo">Poseidon's Retreat</p>
+  <h1>
+    <span class="titleone">Unwind at</span>
+    <span>Poseidon's Retreat</span>
+  </h1>
     <div class="routerlink">
       <RouterLink to="/packages" v-slot="{ navigate }">
         <button class="book" @click="navigate">Book a package</button>
@@ -162,24 +164,15 @@ body {
   width: 100%;
   object-fit: cover;
 }
-.titleone {
-  font-size: 2rem;
+h1 {
   font-family: 'Merriweather', serif;
-  font-weight: 700;
-  line-height: 1.2;
   color: #efedeb;
   position: absolute;
   justify-content: center;
 }
-.titletwo {
-  font-size: 2rem;
-  font-family: 'Merriweather', serif;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #efedeb;
-  position: absolute;
-  justify-content: center;
-  padding-top: 70px;
+.titleone {
+  display: block;
+  text-align: center;
 }
 .routerlink {
   position: absolute;
