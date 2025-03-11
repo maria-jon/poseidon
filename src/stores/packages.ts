@@ -1,10 +1,10 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
-import ines from '../assets/Images/Komprimerad package-ines_2560x1440_jpg.jpg'
-import thesiren from '../assets/Images/Komprimerad package-the-siren_2560x1440_jpg.jpg'
-import poseidontemple from '../assets/Images/Komprimerad package-poseidons-temple_2560x1440_jpg.jpg'
-import thebluelagoon from '../assets/Images/Komprimerad package-the-blue-lagoon_2560x1440_jpg.jpg'
+import ines from '../assets/Images/ines.jpg'
+import thesiren from '../assets/Images/the-siren.jpg'
+import poseidontemple from '../assets/Images/poseidons-temple.jpg'
+import thebluelagoon from '../assets/Images/the-blue-lagoon.jpg'
 
 interface Ipackages {
   text: { header: string; subheader: string; subtext: string; features: string[] }

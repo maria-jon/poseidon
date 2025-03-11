@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import poseidonMermaid from '/src/assets/Images/Komprimerad poseidon-mermaid_1440x2560_jpg.jpg'
+import poseidonMermaid from '/src/assets/Images/poseidon-mermaid.jpg'
 import MainButton from './MainButton.vue'
 
 // Initialize Vue Router for navigation
@@ -90,7 +90,6 @@ const goHome = () => {
 </template>
 
 <style scoped lang="scss">
-
 @import '@/style/variables.scss';
 .privacy-policy {
   display: flex;
@@ -152,8 +151,6 @@ const goHome = () => {
 .policy-section:nth-child(4) ul {
   list-style: disc;
 }
-
-
 
 /* Responsive styles */
 @media (max-width: 1024px) {
