@@ -96,25 +96,6 @@ export const usePackageStore = defineStore('packages', () => {
         imgHeight: 1440,
         route: '',
       },
-      {
-        text: {
-          header: 'The Blue Lagoon',
-          subheader: 'A Tranquil Escape',
-          subtext:
-            'Stay in a beautifully designed blue-themed room, inspired by the serene waters of the lagoon. This package includes:',
-          features: [
-            'A guided snorkeling tour through Atlantis’ coral gardens',
-            'A deluxe ocean-view room',
-            'Daily breakfast at Neptune’s Feast',
-            'Access to the Tidal Spa & Thermal Pools',
-          ],
-        },
-        image: thebluelagoon,
-        id: 3,
-        imgWidth: 2560,
-        imgHeight: 1440,
-        route: '',
-      },
     ]
   }
 
