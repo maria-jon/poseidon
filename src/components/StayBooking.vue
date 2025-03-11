@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import blueLagoon from '/src/assets/Images/Komprimerad package-the-blue-lagoon_2560x1440_jpg.jpg'
+import blueLagoon from '/src/assets/Images/the-blue-lagoon.jpg'
 import { ref } from 'vue'
 import MainButton from './MainButton.vue'
 
@@ -17,13 +17,13 @@ const checkAvailability = () => {
   if (!fromDate.value || !toDate.value) {
     errorMessage.value = 'Please select valid dates.'
     return
-  }// Ensure at least one adult is selected
+  } // Ensure at least one adult is selected
   if (adults.value < 1) {
     errorMessage.value = 'At least one adult is required.'
     return
   }
 
-   // Simulate availability check (random in this case)
+  // Simulate availability check (random in this case)
   const available = Math.random() > 0.5
   // Set error message if no availability
   if (!available) {
@@ -55,16 +55,18 @@ const checkAvailability = () => {
       <!-- Form container -->
       <div class="form-container">
         <form @submit.prevent="checkAvailability">
-             <!-- Date selection fields -->
+          <!-- Date selection fields -->
           <div class="form-group">
-            <label>From Date
-            <input type="date" v-model="fromDate" required />
+            <label
+              >From Date
+              <input type="date" v-model="fromDate" required />
             </label>
           </div>
 
           <div class="form-group">
-            <label>To Date
-            <input type="date" v-model="toDate" required />
+            <label
+              >To Date
+              <input type="date" v-model="toDate" required />
             </label>
           </div>
           <!-- Package selection -->
@@ -77,20 +79,23 @@ const checkAvailability = () => {
           </div>
           <!-- Adults and children number inputs -->
           <div class="form-group">
-            <label>Adults
-            <input type="number" v-model.number="adults" min="1" required />
+            <label
+              >Adults
+              <input type="number" v-model.number="adults" min="1" required />
             </label>
           </div>
 
           <div class="form-group">
-            <label>Children
-            <input type="number" v-model.number="children" min="0" />
+            <label
+              >Children
+              <input type="number" v-model.number="children" min="0" />
             </label>
           </div>
           <!-- Special request input (optional) -->
           <div class="form-group">
-            <label>Special Request (optional)
-            <input type="text" v-model="specialRequest" />
+            <label
+              >Special Request (optional)
+              <input type="text" v-model="specialRequest" />
             </label>
           </div>
           <!-- Button container with MainButton component -->
