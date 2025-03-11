@@ -13,7 +13,6 @@ interface IPolicySection {
 // Initialize Vue Router for navigation
 const router = useRouter()
 
-
 // Create a reactive array of policy sections
 const policySections = ref<IPolicySection[]>([
   {
@@ -90,7 +89,6 @@ const goHome = () => {
 </template>
 
 <style scoped lang="scss">
-
 @import '@/style/variables.scss';
 .privacy-policy {
   display: flex;
