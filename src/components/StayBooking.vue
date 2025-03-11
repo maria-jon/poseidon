@@ -59,15 +59,13 @@ const checkAvailability = () => {
           <!-- Date selection fields -->
           <div class="data-container">
             <div class="form-group">
-              <label
-                >From Date
+              <label>From Date
                 <input type="date" v-model="fromDate" required />
               </label>
             </div>
 
             <div class="form-group">
-              <label
-                >To Date
+              <label>To Date
                 <input type="date" v-model="toDate" required />
               </label>
             </div>
@@ -97,12 +95,12 @@ const checkAvailability = () => {
                 ><span class="guest-label">Children</span>
                 <input type="number" v-model.number="children" min="0" />
               </label>
+              </label>
             </div>
           </div>
           <!-- Special request input (optional) -->
           <div class="form-group">
-            <label
-              >Special Request (optional)
+            <label>Special Request (optional)
               <input type="text" v-model="specialRequest" />
             </label>
           </div>
@@ -124,6 +122,7 @@ const checkAvailability = () => {
   font-weight: 400;
   text-align: left;
 }
+
 p {
   width: 50%;
   margin: 20px 0;
@@ -255,6 +254,7 @@ h2 {
 .guest-container input {
   width: 100px;
 }
+
 .guest-label {
   display: inline-block;
   width: 100px;
