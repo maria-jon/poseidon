@@ -7,12 +7,15 @@ defineProps({
   features: { type: Array, items: String },
   image: String,
   id: Number,
+  alt: String,
+  imgWidth: Number,
+  imgHeight: Number,
 })
 </script>
 
 <template>
   <article>
-    <img :src="image" alt="" />
+    <img :src="image" :alt="alt" :width="imgWidth" :height="imgHeight" />
     <div class="text-content">
       <h2>{{ header }}</h2>
       <h6>{{ subheader }}</h6>

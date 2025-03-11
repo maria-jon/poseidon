@@ -10,6 +10,8 @@ interface Ipackages {
   text: { header: string; subheader: string; subtext: string; features: string[] }
   image: string
   id: number
+  imgWidth: number
+  imgHeight: number
 }
 
 export const usePackageStore = defineStore('packages', () => {
@@ -33,6 +35,8 @@ export const usePackageStore = defineStore('packages', () => {
 
         image: ines,
         id: 0,
+        imgWidth: 2560,
+        imgHeight: 1440,
       },
       {
         text: {
@@ -49,6 +53,8 @@ export const usePackageStore = defineStore('packages', () => {
         },
         image: thesiren,
         id: 1,
+        imgWidth: 2560,
+        imgHeight: 1440,
       },
       {
         text: {
@@ -65,6 +71,8 @@ export const usePackageStore = defineStore('packages', () => {
         },
         image: poseidontemple,
         id: 2,
+        imgWidth: 2560,
+        imgHeight: 1440,
       },
       {
         text: {
@@ -81,6 +89,8 @@ export const usePackageStore = defineStore('packages', () => {
         },
         image: thebluelagoon,
         id: 3,
+        imgWidth: 2560,
+        imgHeight: 1440,
       },
     ]
   }
@@ -89,29 +99,3 @@ export const usePackageStore = defineStore('packages', () => {
 
   return { packages, initializePackages }
 })
-
-// !!!Gör så här för att använda i en komponent (specifika element som div span etc kan självklart bytas ut)!!!
-
-// <script setup lang="ts">
-// import { usePackageStore } from '@/stores/packages'
-// import { storeToRefs } from 'pinia'
-
-// const packageStore = usePackageStore()
-// const { packages } = storeToRefs(packageStore)
-// </script>
-
-// <template>
-//   <div class="">
-//     <div v-for="packageItem in packages" :key="packageItem.id" class="">
-//       <img :src="packageItem.image" alt="" />
-//       <h2>{{ packageItem.text.header }}</h2>
-//       <h3>{{ packageItem.text.subheader }}</h3>
-//       <p>{{ packageItem.text.subtext }}</p>
-//       <ul>
-//         <li v-for="(feature, index) in packageItem.text.features" :key="index">
-//           <span>{{ feature }}</span>
-//         </li>
-//       </ul>
-//     </div>
-//   </div>
-// </template>
