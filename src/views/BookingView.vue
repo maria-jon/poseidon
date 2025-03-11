@@ -1,4 +1,3 @@
-
 <script setup lang="ts">
 import PopupConfirmation from '@/components/PopupConfirmation.vue'
 import BookingCard from '@/components/BookingCard.vue'
@@ -7,32 +6,32 @@ import PaymentPaypal from '@/components/PaymentPaypal.vue'
 import MainButton from '@/components/MainButton.vue'
 import StayBooking from '@/components/StayBooking.vue'
 
-import { ref, computed } from 'vue';
+import { ref, computed } from 'vue'
 
-const currentStep = ref(0);
-const userChoice = ref(null);
+const currentStep = ref(0)
+const userChoice = ref(null)
 
 const handleSelection = (newValue: any) => {
-  userChoice.value = newValue;
-};
+  userChoice.value = newValue
+}
 
 /* Variable currentStep keeps track of progress
-** Last step occurs when currentStep reaches 3
-*/
+ ** Last step occurs when currentStep reaches 3
+ */
 const nextStep = () => {
   if (currentStep.value === 1 && !userChoice.value) {
-    console.warn('no user selection for payment');
-  };
+    console.warn('no user selection for payment')
+  }
 
   if (userChoice.value === 'arrival') {
-    currentStep.value++; // adds extra count to currentStep to make it go to the last step
+    currentStep.value++ // adds extra count to currentStep to make it go to the last step
   }
-  currentStep.value++;
-};
+  currentStep.value++
+}
 
 const lastStep = computed(() => {
-	return currentStep.value > 2;
-});
+  return currentStep.value > 2
+})
 
 defineProps({
   header: { type: String, required: true },
@@ -61,18 +60,18 @@ defineProps({
       label="Close"
       width="150px"
       v-if="currentStep === 3 || (currentStep === 2 && userChoice === 'arrival')"
-      />
+      /> 
 
-      <!-- Use button here instead of buttons on components -->
-      <MainButton
+    <!-- Use button here instead of buttons on components -->
+    <MainButton
       label="continue"
       :width="width"
       @click="nextStep"
       v-if="currentStep >= 0 && currentStep <= 2"
       :disabled="currentStep === 1 && !userChoice"
       />
-      <!-- During last step, user will be redirected to home page -->
-      <a href="/" v-if="lastStep">
+    <!-- During last step, user will be redirected to home page -->
+    <a href="/" v-if="lastStep">
         <MainButton
         label="continue"
         :width="width"
@@ -82,14 +81,13 @@ defineProps({
     <StayBooking />
   </main>
 
-  <!-- <PopupConfirmation
+   <PopupConfirmation
     header="We are sorry!"
     text="This package is currently unavailable on your selected dates. Try adjusting your search."
     label="Close"
     width="150px"
-  /> -->
+  />
 </template>
-
 
 <style scoped lang="scss">
 main {
@@ -116,7 +114,8 @@ h5 {
   margin-bottom: $margin-small;
 }
 
-button, a {
+button,
+a {
   align-self: flex-end;
 }
 </style>

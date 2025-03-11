@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import blueLagoon from '/src/assets/Images/the-blue-lagoon.jpg'
+import blueLagoon from '@/assets/Images/Komprimerad package-the-blue-lagoon_2560x1440_jpg.jpg'
 import { ref } from 'vue'
 import MainButton from './MainButton.vue'
 
@@ -54,53 +54,58 @@ const checkAvailability = () => {
       </div>
       <!-- Form container -->
       <div class="form-container">
+        <h5>Check availability</h5>
         <form @submit.prevent="checkAvailability">
           <!-- Date selection fields -->
-          <div class="form-group">
-            <label
-              >From Date
-              <input type="date" v-model="fromDate" required />
-            </label>
-          </div>
+          <div class="data-container">
+            <div class="form-group">
+              <label>From Date
+                <input type="date" v-model="fromDate" required />
+              </label>
+            </div>
 
-          <div class="form-group">
-            <label
-              >To Date
-              <input type="date" v-model="toDate" required />
-            </label>
+            <div class="form-group">
+              <label>To Date
+                <input type="date" v-model="toDate" required />
+              </label>
+            </div>
           </div>
           <!-- Package selection -->
           <div class="form-group">
             <label>Choose Your Package</label>
             <select v-model="packageType">
-              <option value="basic">Basic</option>
-              <option value="premium">Premium</option>
+              <option value="basic">Ines</option>
+              <option value="premium">The Siren</option>
+              <option value="premium">Poseidon’s Temple</option>
+              <option value="premium">The Blue Lagoon</option>
             </select>
           </div>
           <!-- Adults and children number inputs -->
-          <div class="form-group">
-            <label
-              >Adults
-              <input type="number" v-model.number="adults" min="1" required />
-            </label>
-          </div>
+          <p>Number of guests</p>
+          <div class="guest-container">
+            <div class="form-group">
+              <label
+                ><span class="guest-label">Adults</span>
+                <input type="number" v-model.number="adults" min="1" required />
+              </label>
+            </div>
 
-          <div class="form-group">
-            <label
-              >Children
-              <input type="number" v-model.number="children" min="0" />
-            </label>
+            <div class="form-group">
+              <label
+                ><span class="guest-label">Children</span>
+                <input type="number" v-model.number="children" min="0" />
+              </label>
+            </div>
           </div>
           <!-- Special request input (optional) -->
           <div class="form-group">
-            <label
-              >Special Request (optional)
+            <label>Special Request (optional)
               <input type="text" v-model="specialRequest" />
             </label>
           </div>
           <!-- Button container with MainButton component -->
           <div class="button-container">
-            <MainButton label="Continue" :width="'10rem'" @click="goHome" />
+            <MainButton label="Continue" :width="'10rem'" @click="checkAvailability" />
           </div>
         </form>
         <!-- Error message display -->
@@ -113,72 +118,112 @@ const checkAvailability = () => {
 .container {
   padding: 40px;
   background: $color-background-light;
+  font-weight: 400;
+  text-align: left;
 }
+
 p {
   width: 50%;
   margin: 20px 0;
-}
 
+  @media (max-width: 1024px) {
+    width: 100%; // Full width on smaller screens
+  }
+}
+// Heading styles
 h1 {
   font-size: 2.5rem;
   font-weight: bold;
 }
-
+// Description text styling
 .description {
-  max-width: 600px;
+  max-width: 600px; // Limits text width for better readability
   font-size: 1rem;
-  color: #555;
+  color: #000;
 }
-
+// Booking section layout
 .booking {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: flex-start;
   gap: 20px;
-  margin-top: 20px;
+
+  @media (max-width: 1024px) {
+    flex-direction: column; // Stack elements on smaller screens
+    align-items: center;
+  }
 }
+// Layout for form and image container
 .image-container,
 .form-container {
   width: 48%;
 }
-
+// Image container styles
 .image-container {
-  display: inline-block;
-  width: 100%;
-  max-width: 600px;
   position: relative;
-  margin-bottom: 30px;
-  img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    border-radius: 15px;
-    max-height: 400px;
+  flex: 1;
+  max-width: 48%;
+  min-width: 380px;
+
+  @media (max-width: 1024px) {
+    max-width: 100%; // Full width on smaller screens
   }
 }
+// Image styling
+img {
+  width: 100%;
+  height: 100%;
+  min-height: 400px; // Ensures image has a minimum height
+  border-radius: 15px;
+  display: block;
+  object-fit: cover; // Ensures image covers the container properly
+}
+
+// Overlay text on image
 .image-text {
   position: absolute;
-  bottom: 50%;
-  height: 18%;
-  width: 100%;
-  text-align: right;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   color: white;
   font-size: 1.8rem;
   font-weight: bold;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 10px 20px;
-  border-radius: 0 0 15px 15px;
-  box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.6); // Dark overlay for readability
+  padding: 10px 10px;
+  border-radius: 10px;
+  text-align: right;
+  width: 100%;
+  max-width: 100%;
+  white-space: nowrap;
+  margin-bottom: 0;
+  height: 100px;
 }
-
+// Form container styling
 .form-container {
-  background: #d1e7d3;
-  padding: 25px;
+  flex: 1;
+  background: $color-primary-light;
+  padding: 30px;
   border-radius: 15px;
-  width: 40%;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  margin-top: 20px;
+  min-width: 380px;
+  max-width: 48%;
   height: auto;
+
+  @media (max-width: 1024px) {
+    max-width: 100%;
+  }
+}
+// Form title styling
+h5 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  font-family: 'Montserrat' sans-serif;
+  font-weight: 600;
+}
+p {
+  font-weight: 400;
+  font-size: 1rem;
 }
 
 h2 {
@@ -186,34 +231,59 @@ h2 {
   font-weight: bold;
   margin-bottom: 15px;
 }
-
+// Form group styling
 .form-group {
   display: flex;
   flex-direction: column;
   margin-bottom: 12px;
+  text-transform: uppercase; // Capitalizes text inside form groups
+}
+// Layout for date input fields
+.data-container {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  gap: 10px;
+}
+
+.data-container label {
+  text-align: center;
+}
+
+.guest-container input {
+  width: 100px;
+}
+
+.guest-label {
+  display: inline-block;
+  width: 100px;
+}
+// Guest container label styling
+.guest-container label {
+  text-transform: none;
+  font-size: 1em;
 }
 
 label {
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 400;
   margin-bottom: 5px;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
-
+// Input and select styles
 input,
 select {
   padding: 8px;
   border-radius: 5px;
   border: 1px solid #ccc;
   font-size: 1rem;
+  width: 100%;
 }
-
+// Button container styling
 .button-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-end; // Aligns the button to the right
   width: 100%;
-  margin-top: 20px;
-}
-button:hover {
-  background: #a63d35;
+  margin-top: auto;
 }
 </style>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, defineEmits, watch } from 'vue';
+import { ref, defineEmits, watch } from 'vue'
 
 defineProps({
   header: { type: String, required: true },
@@ -7,16 +7,16 @@ defineProps({
   width: String,
 })
 
-const emit = defineEmits(['updateChoice']);
-const selectedOption = ref(null);
+const emit = defineEmits(['updateChoice'])
+const selectedOption = ref(null)
 
-const fullName = ref(null);
-const emailAddress = ref(null);
-const phoneNumber = ref(null);
+const fullName = ref(null)
+const emailAddress = ref(null)
+const phoneNumber = ref(null)
 
-watch(selectedOption, (newValue) => {
-  emit('updateChoice', newValue); // send payment selection to BookingView
-});
+watch(selectedOption, newValue => {
+  emit('updateChoice', newValue) // send payment selection to BookingView
+})
 </script>
 
 <template>
@@ -37,7 +37,12 @@ watch(selectedOption, (newValue) => {
           <label>
             <span class="input-label info">Email address</span>
             <div class="input-field">
-              <input type="email" text="name" placeholder="example@website.com" v-model="emailAddress" />
+              <input
+                type="email"
+                text="name"
+                placeholder="example@website.com"
+                v-model="emailAddress"
+              />
               <span class="material-symbols-outlined filled"> info </span>
             </div>
           </label>
