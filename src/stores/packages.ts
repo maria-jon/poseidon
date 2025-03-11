@@ -12,6 +12,7 @@ interface Ipackages {
   id: number
   imgWidth: number
   imgHeight: number
+  route: string
 }
 
 export const usePackageStore = defineStore('packages', () => {
@@ -19,6 +20,25 @@ export const usePackageStore = defineStore('packages', () => {
 
   const initializePackages = () => {
     packages.value = [
+      {
+        text: {
+          header: 'The Blue Lagoon',
+          subheader: 'A Tranquil Escape',
+          subtext:
+            'Stay in a beautifully designed blue-themed room, inspired by the serene waters of the lagoon. This package includes:',
+          features: [
+            'A guided snorkeling tour through Atlantis’ coral gardens',
+            'A deluxe ocean-view room',
+            'Daily breakfast at Neptune’s Feast',
+            'Access to the Tidal Spa & Thermal Pools',
+          ],
+        },
+        image: thebluelagoon,
+        id: 3,
+        imgWidth: 2560,
+        imgHeight: 1440,
+        route: '/booking',
+      },
       {
         text: {
           header: 'Inés',
@@ -37,6 +57,7 @@ export const usePackageStore = defineStore('packages', () => {
         id: 0,
         imgWidth: 2560,
         imgHeight: 1440,
+        route: '',
       },
       {
         text: {
@@ -55,6 +76,7 @@ export const usePackageStore = defineStore('packages', () => {
         id: 1,
         imgWidth: 2560,
         imgHeight: 1440,
+        route: '',
       },
       {
         text: {
@@ -73,6 +95,7 @@ export const usePackageStore = defineStore('packages', () => {
         id: 2,
         imgWidth: 2560,
         imgHeight: 1440,
+        route: '',
       },
       {
         text: {
@@ -91,6 +114,7 @@ export const usePackageStore = defineStore('packages', () => {
         id: 3,
         imgWidth: 2560,
         imgHeight: 1440,
+        route: '',
       },
     ]
   }

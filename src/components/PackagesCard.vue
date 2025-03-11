@@ -10,6 +10,7 @@ defineProps({
   alt: String,
   imgWidth: Number,
   imgHeight: Number,
+  route: String,
 })
 </script>
 
@@ -24,7 +25,9 @@ defineProps({
         <span v-for="(item, index) in features" :key="index"> ✔ {{ item }} </span>
       </div>
     </div>
-    <MainButton label="Book now" width="9rem" />
+    <RouterLink :to="route" class="button">
+      <MainButton label="Book now" width="9rem" />
+    </RouterLink>
   </article>
 </template>
 
@@ -57,7 +60,7 @@ img {
   gap: 0.5rem;
 }
 
-button {
+.button {
   margin-left: auto;
   margin-top: auto;
 }
