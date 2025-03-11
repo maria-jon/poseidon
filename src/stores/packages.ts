@@ -10,6 +10,7 @@ interface Ipackages {
   text: { header: string; subheader: string; subtext: string; features: string[] }
   image: string
   id: number
+  route: string
 }
 
 export const usePackageStore = defineStore('packages', () => {
@@ -17,6 +18,23 @@ export const usePackageStore = defineStore('packages', () => {
 
   const initializePackages = () => {
     packages.value = [
+      {
+        text: {
+          header: 'The Blue Lagoon',
+          subheader: 'A Tranquil Escape',
+          subtext:
+            'Stay in a beautifully designed blue-themed room, inspired by the serene waters of the lagoon. This package includes:',
+          features: [
+            'A guided snorkeling tour through Atlantis’ coral gardens',
+            'A deluxe ocean-view room',
+            'Daily breakfast at Neptune’s Feast',
+            'Access to the Tidal Spa & Thermal Pools',
+          ],
+        },
+        image: thebluelagoon,
+        id: 3,
+        route: '/booking',
+      },
       {
         text: {
           header: 'Inés',
@@ -33,6 +51,7 @@ export const usePackageStore = defineStore('packages', () => {
 
         image: ines,
         id: 0,
+        route: '',
       },
       {
         text: {
@@ -49,6 +68,7 @@ export const usePackageStore = defineStore('packages', () => {
         },
         image: thesiren,
         id: 1,
+        route: '',
       },
       {
         text: {
@@ -65,22 +85,7 @@ export const usePackageStore = defineStore('packages', () => {
         },
         image: poseidontemple,
         id: 2,
-      },
-      {
-        text: {
-          header: 'The Blue Lagoon',
-          subheader: 'A Tranquil Escape',
-          subtext:
-            'Stay in a beautifully designed blue-themed room, inspired by the serene waters of the lagoon. This package includes:',
-          features: [
-            'A guided snorkeling tour through Atlantis’ coral gardens',
-            'A deluxe ocean-view room',
-            'Daily breakfast at Neptune’s Feast',
-            'Access to the Tidal Spa & Thermal Pools',
-          ],
-        },
-        image: thebluelagoon,
-        id: 3,
+        route: '',
       },
     ]
   }

@@ -26,6 +26,7 @@ const { packages } = storeToRefs(packageStore)
         :subheader="singlePackage.text.subheader"
         :subtext="singlePackage.text.subtext"
         :features="singlePackage.text.features"
+        :route="singlePackage.route"
       />
     </div>
   </main>
