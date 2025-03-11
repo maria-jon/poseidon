@@ -59,15 +59,13 @@ const checkAvailability = () => {
           <!-- Date selection fields -->
           <div class="data-container">
             <div class="form-group">
-              <label
-                >From Date
+              <label>From Date
                 <input type="date" v-model="fromDate" required />
               </label>
             </div>
 
             <div class="form-group">
-              <label
-                >To Date
+              <label>To Date
                 <input type="date" v-model="toDate" required />
               </label>
             </div>
@@ -85,24 +83,23 @@ const checkAvailability = () => {
           <!-- Adults and children number inputs -->
           <p>Number of guests</p>
           <div class="guest-container">
-          
+
             <div class="form-group">
               <label><span class="guest-label">Adults</span>
                 <input type="number" v-model.number="adults" min="1" required />
               </label>
-              
+
             </div>
 
             <div class="form-group">
               <label><span class="guest-label">Children</span>
                 <input type="number" v-model.number="children" min="0" />
-                </label>
+              </label>
             </div>
           </div>
           <!-- Special request input (optional) -->
           <div class="form-group">
-            <label
-              >Special Request (optional)
+            <label>Special Request (optional)
               <input type="text" v-model="specialRequest" />
             </label>
           </div>
@@ -112,7 +109,7 @@ const checkAvailability = () => {
       </div>
       <!-- Button container with MainButton component -->
       <div class="button-container">
-        <MainButton label="Continue" :width="'10rem'"/>
+        <MainButton label="Continue" :width="'10rem'" />
       </div>
     </div>
   </div>
@@ -124,6 +121,7 @@ const checkAvailability = () => {
   font-weight: 400;
   text-align: left;
 }
+
 p {
   width: 50%;
   margin: 20px 0;
@@ -147,6 +145,7 @@ h1 {
   gap: 20px;
   margin-top: 20px;
 }
+
 .image-container,
 .form-container {
   width: 48%;
@@ -155,12 +154,14 @@ h1 {
 .image-container {
   position: relative;
   margin-bottom: 30px;
+
   img {
     width: 100%;
     height: 100%;
     border-radius: 15px;
   }
 }
+
 .image-text {
   position: absolute;
   bottom: 0;
@@ -185,12 +186,14 @@ h1 {
   height: auto;
   padding: 30px 30px 50px 30px;
   min-width: 350px;
+
   h5 {
     font-size: 1.4rem;
     margin-bottom: 15px;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-weight: 600;
   }
+
   p {
     font-weight: 400;
     font-size: 1rem;
@@ -210,6 +213,7 @@ h2 {
   margin-bottom: 12px;
   text-transform: uppercase;
 }
+
 .data-container {
   display: flex;
   justify-content: space-between;
@@ -223,6 +227,7 @@ h2 {
 .guest-container input {
   width: 100px;
 }
+
 .guest-label {
   margin-right: 10px;
   width: 100px;
@@ -255,6 +260,7 @@ select {
   width: 100%;
   margin-top: 20px;
 }
+
 button:hover {
   background: #a63d35;
 }
