@@ -1,17 +1,19 @@
 <script setup lang="ts">
+import { onMounted } from 'vue';
 import thebluelagoon from '../assets/Images/Komprimerad package-the-blue-lagoon_2560x1440_jpg.jpg'
 import heroImage from '../assets/Images/komprimerad poseidons-retreat_1_2560x1440_jpg.jpg'
 import ines from '../assets/Images/Komprimerad package-ines_2560x1440_jpg.jpg'
 import thesiren from '../assets/Images/Komprimerad package-the-siren_2560x1440_jpg.jpg'
 import poseidontemple from '../assets/Images/Komprimerad package-poseidons-temple_2560x1440_jpg.jpg'
 
-document.addEventListener('DOMContentLoaded', () => {
+function initPage() { 
+  document.addEventListener('DOMContentLoaded', () => {
   const sliderContainer: HTMLElement | null = document.querySelector('.slider-container')
   const slider: HTMLElement | null = document.querySelector('.slider')
   const images: NodeListOf<HTMLImageElement> = document.querySelectorAll('.slider img')
 
   if (!sliderContainer || !slider || images.length === 0) return
-  
+
   let currentIndex: number = 0
   let autoSlideInterval: number
 
@@ -23,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     currentIndex = (currentIndex + 1) % images.length
     updateSlider()
   }
-  
+
   const startAutoSlide = (): void => {
     stopAutoSlide()
     autoSlideInterval = window.setInterval(showNextImage, 4000) // change image every 4 seconds
@@ -34,7 +36,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   startAutoSlide()
-})
+}) }
+
+onMounted(() => {
+  initPage();
+});
+
 </script>
 
 <template>
