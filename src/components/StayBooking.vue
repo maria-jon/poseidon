@@ -59,13 +59,15 @@ const checkAvailability = () => {
           <!-- Date selection fields -->
           <div class="data-container">
             <div class="form-group">
-              <label>From Date
+              <label
+                >From Date
                 <input type="date" v-model="fromDate" required />
               </label>
             </div>
 
             <div class="form-group">
-              <label>To Date
+              <label
+                >To Date
                 <input type="date" v-model="toDate" required />
               </label>
             </div>
@@ -99,7 +101,8 @@ const checkAvailability = () => {
           </div>
           <!-- Special request input (optional) -->
           <div class="form-group">
-            <label>Special Request (optional)
+            <label
+              >Special Request (optional)
               <input type="text" v-model="specialRequest" />
             </label>
           </div>

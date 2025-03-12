@@ -43,43 +43,56 @@ defineProps({
   <main>
     <div class="booking">
       <PopupConfirmation
-      header="Congratulations!"
-      text="Your selected package is available. Click 'Continue' to finalize your reservation."
-      label="Continue"
-      width="150px"
-      v-if="currentStep === 0"
+        header="Congratulations!"
+        text="Your selected package is available. Click 'Continue' to finalize your reservation."
+        label="Continue"
+        width="150px"
+        v-if="currentStep === 0"
       />
-      <BookingCard header="Complete your booking" label="Continue" width="120px" v-if="currentStep === 1" @updateChoice="handleSelection" />
-      <PaymentCard header="Credit card payment" label="Confirm booking" width="200px" v-if="currentStep === 2 && userChoice === 'credit'" />
-      <PaymentPaypal header="PayPal payment" label="Continue" width="200px" v-if="currentStep === 2 && userChoice === 'paypal'" />
+      <BookingCard
+        header="Complete your booking"
+        label="Continue"
+        width="120px"
+        v-if="currentStep === 1"
+        @updateChoice="handleSelection"
+      />
+      <PaymentCard
+        header="Credit card payment"
+        label="Confirm booking"
+        width="200px"
+        v-if="currentStep === 2 && userChoice === 'credit'"
+      />
+      <PaymentPaypal
+        header="PayPal payment"
+        label="Continue"
+        width="200px"
+        v-if="currentStep === 2 && userChoice === 'paypal'"
+      />
 
       <PopupConfirmation
-      header="Confirmation"
-      text="Thank you! Your underwater adventure awaits. We have sent your booking details to your email."
-      label="Close"
-      width="150px"
-      v-if="currentStep === 3 || (currentStep === 2 && userChoice === 'arrival')"
+        header="Confirmation"
+        text="Thank you! Your underwater adventure awaits. We have sent your booking details to your email."
+        label="Close"
+        width="150px"
+        v-if="currentStep === 3 || (currentStep === 2 && userChoice === 'arrival')"
       />
 
-    <!-- Use button here instead of buttons on components -->
-    <MainButton
-      label="continue"
-      :width="width"
-      @click="nextStep"
-      v-if="currentStep >= 0 && currentStep <= 2"
-      :disabled="currentStep === 1 && !userChoice"
-      />
-    <!-- During last step, user will be redirected to home page -->
-    <a href="/" v-if="lastStep">
-        <MainButton
+      <!-- Use button here instead of buttons on components -->
+      <MainButton
         label="continue"
         :width="width"
-        />
+        @click="nextStep"
+        v-if="currentStep >= 0 && currentStep <= 2"
+        :disabled="currentStep === 1 && !userChoice"
+      />
+      <!-- During last step, user will be redirected to home page -->
+      <a href="/" v-if="lastStep">
+        <MainButton label="continue" :width="width" />
       </a>
     </div>
   </main>
 
-   <PopupConfirmation
+  <PopupConfirmation
     header="We are sorry!"
     text="This package is currently unavailable on your selected dates. Try adjusting your search."
     label="Close"
@@ -117,4 +130,3 @@ a {
   align-self: flex-end;
 }
 </style>
-

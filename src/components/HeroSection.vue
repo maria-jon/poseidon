@@ -1,12 +1,10 @@
 <script setup lang="ts">
-
 import { onMounted } from 'vue'
 import thebluelagoon from '@/assets/Images/the-blue-lagoon.jpg'
 import heroImage from '@/assets/Images/poseidons-retreat.jpg'
 import ines from '@/assets/Images/ines.jpg'
 import thesiren from '@/assets/Images/the-siren.jpg'
 import poseidontemple from '@/assets/Images/poseidons-temple.jpg'
-
 
 function initPage() {
   const sliderContainer: HTMLElement | null = document.querySelector('.slider-container')
@@ -283,11 +281,11 @@ h3 {
     height: 40vh;
   }
   .titleone {
-  font-size: 3rem;
-}
-.titletwo {
-  font-size: 3rem;
-}
+    font-size: 3rem;
+  }
+  .titletwo {
+    font-size: 3rem;
+  }
 
   .welcome {
     display: flex;
@@ -340,11 +338,11 @@ h3 {
     height: 75vh;
   }
   .titleone {
-  font-size: 4rem;
-}
-.titletwo {
-  font-size: 4rem;
-}
+    font-size: 4rem;
+  }
+  .titletwo {
+    font-size: 4rem;
+  }
   .slider-container {
     display: none;
   }
