@@ -31,7 +31,7 @@ const checkAvailability = () => {
       'Sorry, this package is currently unavailable on your selected dates. Try adjusting your search.'
   } else {
     errorMessage.value = ''
-    window.location.href = '/stay'
+    window.location.href = '/fed24d-grafiska-verktyg-elddvargskejsarna/stay'
   }
 }
 </script>
