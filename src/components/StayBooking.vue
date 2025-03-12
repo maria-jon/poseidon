@@ -166,9 +166,7 @@ h1 {
 .form-container {
   width: 48%;
 }
-.form-container {
-  margin: 3rem auto 0 2rem;
-}
+
 // Image container styles
 .image-container {
   position: relative;
@@ -228,6 +226,11 @@ img {
   @media (max-width: 768px) {
     width: 100%;
     max-width: 500px;
+  }
+}
+@media (min-width: 1024px) {
+  .form-container {
+    margin: 3rem auto 0 2rem;
   }
 }
 // Form title styling
