@@ -129,28 +129,28 @@ p {
     display: flex;
   }
   .herodesktop {
-    margin-top: 204px;
+    margin-top: 170px;
     position: absolute;
     height: 35vh;
-    width: 38.5vw;
+    width: 51vw;
     margin-left: 325px;
   }
   .fishdesktop {
     position: absolute;
-    margin-left: 624px;
+    margin-left: 590px;
     height: 27vh;
-    width: 19vw;
+    max-width: 25vw;
   }
   .halldesktop {
     position: absolute;
     height: 27vh;
-    width: 19vw;
+    max-width: 25vw;
     margin-left: 325px;
   }
   .mermaiddesktop {
     position: absolute;
-    margin-left: 925px;
-    height: 63vh;
+    margin-left: 855px;
+    height: 63.4vh;
     width: 23vw;
   }
   p {
