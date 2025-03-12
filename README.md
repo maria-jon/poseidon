@@ -1,39 +1,43 @@
-# poseidon-resorts
+# POSEIDON´S RETREAT
 
-This template should help get you started developing with Vue 3 in Vite.
+## This project was done as a front-end school assigment for Medieinstitutet Sweden.
 
-## Recommended IDE Setup
+### The assignment was completed in two teams (see authors). The first team was tasked with designing a responsive and well-defined website of their choice, with an emphasis on consistent colors, typography, and element styling throughout the site. The second team then implemented the design and built the project using Vue as the framework 🚀
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+### Some of the design elements
 
-## Type Support for `.vue` Imports in TS
+![Design Image](src/assets/Readme-images/design.png)  
+_Figure 1: The design of the website._
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+### And the result (one of the pages)
 
-## Customize configuration
+![Poseidon's Retreat](src/assets/Readme-images/poseidons-retreat-main.jpg)  
+_Figure 1: Main view of Poseidon's Retreat._
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+Techstack used for this project:
 
-## Project Setup
+## Tech stack
 
-```sh
-npm install
-```
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)![Vue.js](https://img.shields.io/badge/vue.js-%234FC08D.svg?style=for-the-badge&logo=vue.js&logoColor=white)![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)![Prettier](https://img.shields.io/badge/prettier-%23F7B93E.svg?style=for-the-badge&logo=prettier&logoColor=black)![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white)![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 
-### Compile and Hot-Reload for Development
+## Authors
 
-```sh
-npm run dev
-```
+### Design team
 
-### Type-Check, Compile and Minify for Production
+- [@Frida Nordenlöv](https://github.com/fridanordenlow)
 
-```sh
-npm run build
-```
+- [@Therese Nielsen](https://github.com/thnielseen)
 
-### Lint with [ESLint](https://eslint.org/)
+- [@Elin Nilsson](https://github.com/webbelin)
 
-```sh
-npm run lint
-```
+- [@Emelie Wiberg](https://github.com/Erm0es)
+
+### Development team
+
+- [@Janis Seibutis](https://github.com/JanisSeibutis)
+
+- [@Yuliia Ponomarenko](https://github.com/Yuliia-fed23)
+
+- [@Sarah Sundberg](https://github.com/SarahSu92)
+
+- [@Maria Jonasson](https://github.com/maria-jon)
