@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import heroImage from '../assets/Images/komprimerad poseidons-retreat_1_2560x1440_jpg.jpg'
-import poseidonfish from '@/assets/Images/Komprimerad poseidon-fish_2560x1440_jpg.jpg'
-import poseidonhall from '@/assets/Images/Komprimerad poseidon-hall_2560x1440_jpg.jpg'
-import mermaid from '@/assets/Images/Komprimerad poseidon-mermaid_1440x2560_jpg.jpg'
+import heroImage from '../assets/Images/poseidons-retreat.jpg'
+import poseidonfish from '@/assets/Images/poseidon-fish.jpg'
+import poseidonhall from '@/assets/Images/poseidon-hall.jpg'
+import mermaid from '@/assets/Images/poseidon-mermaid.jpg'
 //import FooterSection from '@/components/FooterSection.vue'
 </script>
 
@@ -29,10 +29,18 @@ import mermaid from '@/assets/Images/Komprimerad poseidon-mermaid_1440x2560_jpg.
     </div>
     <!-- Desktop version-->
     <div class="desktop">
-      <img :src="heroImage" class="herodesktop" width="500" height="400" />
-      <img :src="poseidonfish" class="fishdesktop" width="500" height="400" />
-      <img :src="poseidonhall" class="halldesktop" width="500" height="400" />
-      <img :src="mermaid" class="mermaiddesktop" width="500" height="400" />
+      <div class="left">
+        <div class="top">
+          <img :src="poseidonfish" class="fishdesktop" />
+          <img :src="poseidonhall" class="halldesktop" />
+        </div>
+        <div class="bottom">
+          <img :src="heroImage" class="herodesktop" />
+        </div>
+      </div>
+      <div class="right">
+        <img :src="mermaid" class="mermaiddesktop" />
+      </div>
     </div>
   </main>
 </template>
@@ -82,10 +90,6 @@ p {
   .mobile {
     display: none;
   }
-  p {
-    margin-left: 80px;
-    margin-right: 50px;
-  }
   .tablet {
     display: flex;
     flex-wrap: wrap;
@@ -117,7 +121,10 @@ p {
 /* Show only the desktop version for large screens (1024px and up) */
 @media (min-width: 1024px) {
   main {
-    margin-bottom: 470px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
   }
   .mobile {
     display: none;
@@ -127,32 +134,41 @@ p {
   }
   .desktop {
     display: flex;
+    max-width: 60vw;
+    height: 70vh;
+    gap: 10px;
   }
-  .herodesktop {
-    margin-top: 204px;
-    position: absolute;
-    height: 35vh;
-    width: 38.5vw;
-    margin-left: 325px;
+  .top {
+    display: flex;
+    gap: 10px;
+    img {
+      max-width: 49%;
+      height: auto;
+      border-radius: 5px;
+    }
   }
-  .fishdesktop {
-    position: absolute;
-    margin-left: 624px;
-    height: 27vh;
-    width: 19vw;
+  .bottom {
+      img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
   }
-  .halldesktop {
-    position: absolute;
-    height: 27vh;
-    width: 19vw;
-    margin-left: 325px;
+ .left {
+    display: flex;
+    max-height: 70vh;
+    width: auto;
+    flex-direction: column;
+    gap: 10px;
   }
-  .mermaiddesktop {
-    position: absolute;
-    margin-left: 925px;
-    height: 63vh;
-    width: 23vw;
-  }
+ .right {
+  img {
+      max-height: 100%;
+      width: auto;
+      border-radius: 5px;
+    }
+ }
+  
   p {
     margin-left: 325px;
     margin-bottom: 20px;

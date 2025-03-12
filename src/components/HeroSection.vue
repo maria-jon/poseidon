@@ -1,29 +1,18 @@
 <script setup lang="ts">
-import thebluelagoon from '../assets/Images/Komprimerad package-the-blue-lagoon_2560x1440_jpg.jpg'
-import heroImage from '../assets/Images/komprimerad poseidons-retreat_1_2560x1440_jpg.jpg'
-import ines from '../assets/Images/Komprimerad package-ines_2560x1440_jpg.jpg'
-import thesiren from '../assets/Images/Komprimerad package-the-siren_2560x1440_jpg.jpg'
-import poseidontemple from '../assets/Images/Komprimerad package-poseidons-temple_2560x1440_jpg.jpg'
+import { onMounted } from 'vue'
+import thebluelagoon from '@/assets/Images/the-blue-lagoon.jpg'
+import heroImage from '@/assets/Images/poseidons-retreat.jpg'
+import ines from '@/assets/Images/ines.jpg'
+import thesiren from '@/assets/Images/the-siren.jpg'
+import poseidontemple from '@/assets/Images/poseidons-temple.jpg'
+import MainButton from './MainButton.vue'
 
-document.addEventListener('DOMContentLoaded', () => {
+function initPage() {
   const sliderContainer: HTMLElement | null = document.querySelector('.slider-container')
   const slider: HTMLElement | null = document.querySelector('.slider')
   const images: NodeListOf<HTMLImageElement> = document.querySelectorAll('.slider img')
 
   if (!sliderContainer || !slider || images.length === 0) return
-
-  //left arrow
-  const leftArrow = document.createElement('button')
-  leftArrow.classList.add('arrow', 'left')
-  leftArrow.innerHTML = '&#9665;'
-
-  //Right arrow
-  const rightArrow = document.createElement('button')
-  rightArrow.classList.add('arrow', 'right')
-  rightArrow.innerHTML = '&#9655;'
-
-  sliderContainer.appendChild(leftArrow)
-  sliderContainer.appendChild(rightArrow)
 
   let currentIndex: number = 0
   let autoSlideInterval: number
@@ -37,46 +26,32 @@ document.addEventListener('DOMContentLoaded', () => {
     updateSlider()
   }
 
-  const showPrevImage = (): void => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length
-    updateSlider()
-  }
-
   const startAutoSlide = (): void => {
     stopAutoSlide()
-    autoSlideInterval = window.setInterval(showNextImage, 5000) // change image every 5 seconds
+    autoSlideInterval = window.setInterval(showNextImage, 4000) // change image every 4 seconds
   }
 
   const stopAutoSlide = (): void => {
     clearInterval(autoSlideInterval)
   }
 
-  const restartAutoSlide = (): void => {
-    stopAutoSlide()
-    startAutoSlide()
-  }
-
-  rightArrow.addEventListener('click', () => {
-    showNextImage()
-    restartAutoSlide()
-  })
-
-  leftArrow.addEventListener('click', () => {
-    showPrevImage()
-    restartAutoSlide()
-  })
-
   startAutoSlide()
+}
+
+onMounted(() => {
+  initPage()
 })
 </script>
 
 <template>
   <div class="herosection">
-    <p class="titleone">Unwind at</p>
-    <p class="titletwo">Poseidon's Retreat</p>
+    <h1>
+      <span class="titleone">Unwind at</span>
+      <span class="titletwo">Poseidon's Retreat</span>
+    </h1>
     <div class="routerlink">
-      <RouterLink to="/packages" v-slot="{ navigate }">
-        <button class="book" @click="navigate">Book a package</button>
+      <RouterLink class="book" to="/packages">
+        <MainButton label="Book a package" width="12rem" class="book" />
       </RouterLink>
     </div>
     <img :src="heroImage" class="retreat" alt="Poseidons Retreat" width="500" height="400" />
@@ -97,8 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
       ✨ Experience serenity and adventure, from spa treatments to ocean excursions.
     </article>
     <article class="text">Let us create your perfect stay.</article>
-    <RouterLink to="/about" v-slot="{ navigate }">
-      <button class="about" @click="navigate">About the retreat</button>
+    <RouterLink to="/about" class="about">
+      <MainButton label="About the retreat" width="15rem" />
     </RouterLink>
   </section>
 
@@ -151,6 +126,19 @@ document.addEventListener('DOMContentLoaded', () => {
 body {
   background-color: #c9e4d4;
 }
+
+a {
+  all: unset;
+}
+.about {
+  display: flex;
+  margin: 1rem;
+}
+
+.about button {
+  margin-left: auto;
+}
+
 .herosection {
   display: flex;
   justify-content: center;
@@ -162,47 +150,33 @@ body {
   width: 100%;
   object-fit: cover;
 }
-.titleone {
-  font-size: 2rem;
+h1 {
   font-family: 'Merriweather', serif;
-  font-weight: 700;
-  line-height: 1.2;
   color: #efedeb;
   position: absolute;
   justify-content: center;
 }
+.titleone {
+  display: block;
+  font-size: 2.4rem;
+  text-align: center;
+}
 .titletwo {
-  font-size: 2rem;
-  font-family: 'Merriweather', serif;
-  font-weight: 700;
-  line-height: 1.2;
-  color: #efedeb;
-  position: absolute;
-  justify-content: center;
-  padding-top: 70px;
+  display: block;
+  text-align: center;
+  font-size: 2.4rem;
 }
 .routerlink {
   position: absolute;
   justify-content: center;
-  margin-top: 160px;
+  margin-top: 150px;
 }
 .book {
-  padding: 5px;
-  border-radius: 8px;
-  background-color: #f1e393;
+  background-color: #fac801ff;
   color: #1c272c;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  font-family: 'Merriweather', serif;
-  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
 }
 .book:hover {
   background-color: #fac801;
-  font-size: 1.125rem;
-  transform: scale(1.05);
-  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
 }
 h2 {
   text-align: center;
@@ -213,32 +187,11 @@ h2 {
   margin-top: 12px;
   margin-left: 10px;
   margin-right: 10px;
-}
-.about {
-  background-color: #c45c54;
-  border-radius: 8px;
-  color: #efedeb;
-  border: none;
-  height: 38px;
-  width: fit-content;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: all 0.2s ease-in-out;
-  padding: 0.5rem 1rem;
-  margin-top: 20px;
-  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
-  margin-bottom: 20px;
-  margin-left: 10px;
+  height: fit-content;
 }
 
-.about:hover {
-  background-color: #52201c;
-  font-size: 1.125rem;
-  transform: scale(1.05);
-  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
-}
 .text {
-  padding-top: 10px;
+  margin-bottom: 10px;
   font-size: 1rem;
 }
 h3 {
@@ -278,7 +231,7 @@ h3 {
 
 .image-label {
   position: absolute;
-  left: 9.5px;
+  left: 12px;
   background: rgba(0, 0, 0, 0.7);
   color: white;
   font-size: 1.2rem;
@@ -312,20 +265,19 @@ h3 {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 28vh;
+    height: 40vh;
   }
   .titleone {
     font-size: 3rem;
   }
   .titletwo {
     font-size: 3rem;
-    padding-top: 90px;
   }
-  .routerlink {
-    position: absolute;
-    justify-content: center;
-    margin-top: 0;
+
+  .about {
+    margin: 1rem 0;
   }
+
   .welcome {
     display: flex;
     flex-direction: column;
@@ -340,8 +292,8 @@ h3 {
     margin-left: 130px;
   }
   .book {
-    margin-top: 220px;
     font-size: 1rem;
+    margin-top: 20px;
   }
   h3 {
     margin-bottom: 10px;
@@ -355,7 +307,7 @@ h3 {
   }
   .imgslide {
     width: 95%;
-    height: 35vh;
+    height: 50vh;
     object-fit: cover;
     border-radius: 5px;
   }
@@ -375,6 +327,12 @@ h3 {
 @media (min-width: 1024px) {
   .herosection {
     height: 75vh;
+  }
+  .titleone {
+    font-size: 4rem;
+  }
+  .titletwo {
+    font-size: 4rem;
   }
   .slider-container {
     display: none;

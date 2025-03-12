@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import blueLagoon from '@/assets/Images/Komprimerad package-the-blue-lagoon_2560x1440_jpg.jpg'
+import blueLagoon from '@/assets/Images/the-blue-lagoon.jpg'
 import { ref } from 'vue'
 import MainButton from './MainButton.vue'
 
@@ -31,7 +31,7 @@ const checkAvailability = () => {
       'Sorry, this package is currently unavailable on your selected dates. Try adjusting your search.'
   } else {
     errorMessage.value = ''
-    window.location.href = '/next-step'
+    window.location.href = '/stay'
   }
 }
 </script>
@@ -59,13 +59,15 @@ const checkAvailability = () => {
           <!-- Date selection fields -->
           <div class="data-container">
             <div class="form-group">
-              <label>From Date
+              <label
+                >From Date
                 <input type="date" v-model="fromDate" required />
               </label>
             </div>
 
             <div class="form-group">
-              <label>To Date
+              <label
+                >To Date
                 <input type="date" v-model="toDate" required />
               </label>
             </div>
@@ -99,7 +101,8 @@ const checkAvailability = () => {
           </div>
           <!-- Special request input (optional) -->
           <div class="form-group">
-            <label>Special Request (optional)
+            <label
+              >Special Request (optional)
               <input type="text" v-model="specialRequest" />
             </label>
           </div>

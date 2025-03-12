@@ -34,15 +34,17 @@ function closeMenu() {
 
 <template>
   <div class="wrapper">
-    <img
-      class="logo"
-      role="img"
-      width="491"
-      height="77"
-      loading="lazy"
-      alt="Poseidons retreat logo"
-      src="@/assets/Logotype_Poseidons-retreat.svg"
-    />
+    <RouterLink class="logo-link" to="/">
+      <img
+        class="logo"
+        role="img"
+        width="491"
+        height="77"
+        loading="lazy"
+        alt="Poseidons retreat logo"
+        src="@/assets/Logotype_Poseidons-retreat.svg"
+      />
+    </RouterLink>
     <div class="menu-overlay" v-if="desktop">
       <RouterLink to="/">Home</RouterLink>
       <RouterLink to="/about">About us</RouterLink>
@@ -71,15 +73,27 @@ function closeMenu() {
   width: 100vw;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   position: sticky;
   top: 0;
-  padding-right: $margin-small;
+  padding: $margin-small;
   z-index: 999;
 }
 
+.logo-link {
+  display: flex;
+}
+// Makes sure logo doesn't jump when hovering
+.logo-link > a:hover {
+  font-size: 1.375rem;
+  text-decoration: none;
+}
 .logo {
   max-width: 80vw;
+}
+
+img.logo {
+  max-height: 100%;
+  width: auto;
 }
 
 .hamburger {
@@ -123,10 +137,14 @@ a {
 }
 
 @media only screen and (min-width: 1024px) {
+  .wrapper {
+    height: 120px;
+    width: 100vw;
+  }
   .menu-overlay {
     flex-direction: row;
     background-color: $color-primary-dark;
-    max-height: 80px;
+    max-height: 120px;
   }
 }
 </style>

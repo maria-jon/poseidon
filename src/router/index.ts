@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import PolicyView from '../views/PolicyView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,16 +28,18 @@ const router = createRouter({
       component: () => import('../views/BookingView.vue'),
     },
     {
-      path: '/privacy',
-      name: 'privacy-policy',
-      component: () => import('../views/PrivacyView.vue'),
-    },
-    {
       path: '/policy',
       name: 'policy',
       component: () => import('../views/PolicyView.vue'),
     },
+    {
+      path: '/stay',
+      name: 'stay',
+      component: () => import('../views/StayView.vue') },
   ],
+  scrollBehavior() {
+    return { top: 0 }
+  },
 })
 
 export default router

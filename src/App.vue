@@ -14,3 +14,11 @@ import HeaderBar from './components/HeaderBar.vue'
     <FooterSection />
   </footer>
 </template>
+
+<style scoped lang="scss">
+header {
+  position: sticky;
+  top: 0;
+  z-index: 998;
+}
+</style>
