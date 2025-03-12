@@ -31,15 +31,15 @@ import mermaid from '@/assets/Images/poseidon-mermaid.jpg'
     <div class="desktop">
       <div class="left">
         <div class="top">
-          <img :src="poseidonfish" class="fishdesktop" />
-          <img :src="poseidonhall" class="halldesktop" />
+          <img :src="poseidonhall" class="halldesktop" width="2560" height="1440"/>
+          <img :src="poseidonfish" class="fishdesktop" width="2562" height="1442" />
         </div>
         <div class="bottom">
-          <img :src="heroImage" class="herodesktop" />
+          <img :src="heroImage" class="herodesktop" width="2560" height="1440"/>
         </div>
       </div>
       <div class="right">
-        <img :src="mermaid" class="mermaiddesktop" />
+        <img :src="mermaid" class="mermaiddesktop" width="1440" height="2056" />
       </div>
     </div>
   </main>
@@ -124,7 +124,6 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-   
   }
   .mobile {
     display: none;
@@ -134,38 +133,47 @@ p {
   }
   .desktop {
     display: flex;
-    max-width: 60vw;
-    height: 70vh;
+    max-width: 70%;
+    height: 60vh;
     gap: 10px;
+    overflow: hidden;
   }
   .top {
     display: flex;
     gap: 10px;
+    height: 50%;
+
     img {
       max-width: 49%;
       height: auto;
+      object-fit: cover;
     }
   }
   .bottom {
-      img {
+    height: 60%;
+    img {
+      height: 100%;
       max-width: 100%;
-      height: auto;
+      object-fit: cover;
     }
   }
- .left {
+  .left {
     display: flex;
-    max-height: 70vh;
+    max-height: 60vh;
     width: auto;
     flex-direction: column;
     gap: 10px;
+    overflow: hidden;
   }
- .right {
-  img {
+  .right {
+    max-width: 40%;
+    height: auto;
+    img {
       max-height: 100%;
       width: auto;
     }
- }
-  
+  }
+
   p {
     margin-left: 325px;
     margin-bottom: 20px;
