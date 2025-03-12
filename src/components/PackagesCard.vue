@@ -45,6 +45,7 @@ article {
 img {
   max-width: 100%;
   border-radius: 0.5rem;
+  height: 30%;
 }
 
 .text-content {
@@ -63,6 +64,12 @@ img {
 .button {
   margin-left: auto;
   margin-top: auto;
+}
+
+@media (min-width: 768px) {
+  img {
+    min-height: 13.5rem;
+  }
 }
 
 @media (min-width: 1024px) {
