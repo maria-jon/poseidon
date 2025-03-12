@@ -3,6 +3,8 @@ import blueLagoon from '@/assets/Images/the-blue-lagoon.jpg'
 import { ref } from 'vue'
 import MainButton from './MainButton.vue'
 
+import { useRouter } from 'vue-router'
+
 // Declare reactive variables to manage the form state
 const fromDate = ref<string>('')
 const toDate = ref<string>('')
@@ -11,6 +13,9 @@ const adults = ref<number>(1)
 const children = ref<number>(0)
 const specialRequest = ref<string>('')
 const errorMessage = ref<string>('')
+
+
+const router = useRouter()
 
 // Function to check availability when the form is submitted
 const checkAvailability = () => {
@@ -31,7 +36,7 @@ const checkAvailability = () => {
       'Sorry, this package is currently unavailable on your selected dates. Try adjusting your search.'
   } else {
     errorMessage.value = ''
-    window.location.href = '/fed24d-grafiska-verktyg-elddvargskejsarna/stay'
+    router.push('/stay')
   }
 }
 </script>
