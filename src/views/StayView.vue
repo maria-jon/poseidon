@@ -91,13 +91,13 @@ defineProps({
       </RouterLink>
     </div>
   </main>
-
+  <!--
   <PopupConfirmation
     header="We are sorry!"
     text="This package is currently unavailable on your selected dates. Try adjusting your search."
     label="Close"
     width="150px"
-  />
+  /> -->
 </template>
 
 <style scoped lang="scss">
