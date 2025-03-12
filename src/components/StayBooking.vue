@@ -214,13 +214,21 @@ img {
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  min-width: 380px;
-  max-width: 48%;
+  width: 100%;
+  min-width: 350px;
+  max-width: 500px;
   height: auto;
 
   @media (max-width: 1024px) {
-    max-width: 100%;
+    width: 100%;
+    max-width: 500px;
+
   }
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 500px; 
+  }
+
 }
 // Form title styling
 h5 {
@@ -286,6 +294,7 @@ select {
   border: 1px solid #ccc;
   font-size: 1rem;
   width: 100%;
+  max-width: 100%;
 }
 // Button container styling
 .button-container {
