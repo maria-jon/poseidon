@@ -215,10 +215,13 @@ img {
   height: auto;
 
   @media (max-width: 1024px) {
-    max-width: 100%;
+    width: 100%;
+    max-width: 500px;
+
   }
   @media (max-width: 768px) {
-    max-width: 100%; 
+    width: 100%;
+    max-width: 500px; 
   }
 
 }
