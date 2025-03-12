@@ -42,33 +42,36 @@ defineProps({
 
 <template>
   <main>
-    <div class="booking">
+    <StayBooking
+    v-if="currentStep < 1"/>
+
+    <div class="booking" v-if="currentStep >= 1 && currentStep <= 3">
       <PopupConfirmation
       header="Congratulations!"
       text="Your selected package is available. Click 'Continue' to finalize your reservation."
       label="Continue"
       width="150px"
-      v-if="currentStep < 1"
+      v-if="currentStep === 1"
       />
-      <BookingCard header="Complete your booking" label="Continue" width="120px" v-if="currentStep === 1" @updateChoice="handleSelection" />
-      <PaymentCard header="Credit card payment" label="Confirm booking" width="200px" v-if="currentStep === 2 && userChoice === 'credit'" />
-      <PaymentPaypal header="PayPal payment" label="Continue" width="200px" v-if="currentStep === 2 && userChoice === 'paypal'" />
+      <BookingCard header="Complete your booking" label="Continue" width="120px" v-if="currentStep === 2" @updateChoice="handleSelection" />
+      <PaymentCard header="Credit card payment" label="Confirm booking" width="200px" v-if="currentStep === 3 && userChoice === 'credit'" />
+      <PaymentPaypal header="PayPal payment" label="Continue" width="200px" v-if="currentStep === 3 && userChoice === 'paypal'" />
 
       <PopupConfirmation
       header="Confirmation"
       text="Thank you! Your underwater adventure awaits. We have sent your booking details to your email."
       label="Close"
       width="150px"
-      v-if="currentStep === 3 || (currentStep === 2 && userChoice === 'arrival')"
-      /> 
+      v-if="currentStep === 4 || (currentStep === 3 && userChoice === 'arrival')"
+      />
 
     <!-- Use button here instead of buttons on components -->
     <MainButton
       label="continue"
       :width="width"
       @click="nextStep"
-      v-if="currentStep >= 0 && currentStep <= 2"
-      :disabled="currentStep === 1 && !userChoice"
+      v-if="currentStep >= 1 && currentStep <= 3"
+      :disabled="currentStep === 2 && !userChoice"
       />
     <!-- During last step, user will be redirected to home page -->
     <a href="/" v-if="lastStep">
@@ -78,7 +81,6 @@ defineProps({
         />
       </a>
     </div>
-    <StayBooking />
   </main>
 
    <PopupConfirmation
