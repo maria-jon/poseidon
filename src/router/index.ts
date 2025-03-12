@@ -35,7 +35,8 @@ const router = createRouter({
     {
       path: '/stay',
       name: 'stay',
-      component: () => import('../views/StayView.vue') },
+      component: () => import('../views/StayView.vue'),
+    },
   ],
   scrollBehavior() {
     return { top: 0 }
