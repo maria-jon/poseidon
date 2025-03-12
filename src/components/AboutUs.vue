@@ -144,12 +144,14 @@ p {
     img {
       max-width: 49%;
       height: auto;
+      border-radius: 5px;
     }
   }
   .bottom {
       img {
       max-width: 100%;
       height: auto;
+      border-radius: 5px;
     }
   }
  .left {
@@ -163,6 +165,7 @@ p {
   img {
       max-height: 100%;
       width: auto;
+      border-radius: 5px;
     }
  }
   
