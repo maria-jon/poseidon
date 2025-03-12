@@ -86,9 +86,9 @@ defineProps({
         :disabled="currentStep === 1 && !userChoice"
       />
       <!-- During last step, user will be redirected to home page -->
-      <a href="/" v-if="lastStep">
+      <RouterLink to="/" v-if="lastStep">
         <MainButton label="continue" :width="width" />
-      </a>
+      </RouterLink>
     </div>
   </main>
 
