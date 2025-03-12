@@ -78,19 +78,19 @@ onMounted(() => {
   <div class="slider-container">
     <div class="slider">
       <div class="slide">
-        <img :src="thebluelagoon" class="imgslide" width="500" height="400" />
+        <img :src="thebluelagoon" class="imgslide" width="500" height="400" alt="a blue hotel room underwater" />
         <p class="image-label">The Blue Lagoon</p>
       </div>
       <div class="slide">
-        <img :src="ines" class="imgslide" width="500" height="400" />
+        <img :src="ines" class="imgslide" width="500" height="400" alt="a white hotel room half filled with water" />
         <p class="image-label">Ines Suite</p>
       </div>
       <div class="slide">
-        <img :src="thesiren" class="imgslide" width="500" height="400" />
+        <img :src="thesiren" class="imgslide" width="500" height="400" alt="a dark hotel room with a giant fish tank" />
         <p class="image-label">The Siren</p>
       </div>
       <div class="slide">
-        <img :src="poseidontemple" class="imgslide" width="500" height="400" />
+        <img :src="poseidontemple" class="imgslide" width="500" height="400" alt="a hotel room underwater" />
         <p class="image-label">Poseidon's Temple</p>
       </div>
     </div>
