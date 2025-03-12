@@ -86,7 +86,7 @@ p {
   }
 
   .wrapper {
-    height: 48rem;
+    height: 52rem;
     margin: 0;
     max-width: none;
   }
