@@ -5,6 +5,7 @@ import heroImage from '@/assets/Images/poseidons-retreat.jpg'
 import ines from '@/assets/Images/ines.jpg'
 import thesiren from '@/assets/Images/the-siren.jpg'
 import poseidontemple from '@/assets/Images/poseidons-temple.jpg'
+import MainButton from './MainButton.vue'
 
 function initPage() {
   const sliderContainer: HTMLElement | null = document.querySelector('.slider-container')
@@ -49,7 +50,9 @@ onMounted(() => {
       <span class="titletwo">Poseidon's Retreat</span>
     </h1>
     <div class="routerlink">
-      <RouterLink class="book" to="/packages">Book a package</RouterLink>
+      <RouterLink class="book" to="/packages">
+        <MainButton label="Book a package" width="12rem" class="book" />
+      </RouterLink>
     </div>
     <img :src="heroImage" class="retreat" alt="Poseidons Retreat" width="500" height="400" />
   </div>
@@ -69,7 +72,9 @@ onMounted(() => {
       ✨ Experience serenity and adventure, from spa treatments to ocean excursions.
     </article>
     <article class="text">Let us create your perfect stay.</article>
-    <RouterLink to="/about" class="about">About the retreat</RouterLink>
+    <RouterLink to="/about" class="about">
+      <MainButton label="About the retreat" width="15rem" />
+    </RouterLink>
   </section>
 
   <h3>Discover Our<br />Underwater Stays</h3>
@@ -121,6 +126,19 @@ onMounted(() => {
 body {
   background-color: #c9e4d4;
 }
+
+a {
+  all: unset;
+}
+.about {
+  display: flex;
+  margin: 1rem;
+}
+
+.about button {
+  margin-left: auto;
+}
+
 .herosection {
   display: flex;
   justify-content: center;
@@ -154,23 +172,11 @@ h1 {
   margin-top: 150px;
 }
 .book {
-  padding: 5px;
-  border-radius: 8px;
-  background-color: #f1e393;
+  background-color: #fac801ff;
   color: #1c272c;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
-  font-family: 'Merriweather', serif;
-  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  display: block;
 }
 .book:hover {
   background-color: #fac801;
-  font-size: 1.125rem;
-  transform: scale(1.05);
-  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
 }
 h2 {
   text-align: center;
@@ -181,28 +187,9 @@ h2 {
   margin-top: 12px;
   margin-left: 10px;
   margin-right: 10px;
-}
-.about {
-  background-color: #c45c54;
-  display: block;
-  border-radius: 8px;
-  color: #efedeb;
-  border: none;
-  height: 38px;
-  width: fit-content;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: all 0.2s ease-in-out;
-  padding: 0.5rem 1rem;
-  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25);
+  height: fit-content;
 }
 
-.about:hover {
-  background-color: #52201c;
-  font-size: 1.125rem;
-  transform: scale(1.05);
-  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25);
-}
 .text {
   margin-bottom: 10px;
   font-size: 1rem;
@@ -285,6 +272,10 @@ h3 {
   }
   .titletwo {
     font-size: 3rem;
+  }
+
+  .about {
+    margin: 1rem 0;
   }
 
   .welcome {

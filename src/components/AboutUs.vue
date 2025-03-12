@@ -235,6 +235,7 @@ p {
     img {
       max-height: 100%;
       width: auto;
+      border-radius: 5px;
     }
   }
 }
