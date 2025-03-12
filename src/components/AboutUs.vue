@@ -206,11 +206,14 @@ p {
     display: flex;
     gap: 1rem;
     height: 50%;
+    border-radius: 5px;
 
     img {
       max-width: 49%;
       height: auto;
       object-fit: cover;
+      border-radius: 5px;
+      overflow: hidden;
     }
   }
   .bottom {
@@ -219,6 +222,7 @@ p {
       height: 100%;
       max-width: 100%;
       object-fit: cover;
+      border-radius: 5px;
     }
   }
   .left {
