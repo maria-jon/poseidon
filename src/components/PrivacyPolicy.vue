@@ -84,13 +84,11 @@ const goHome = () => {
       <div class="button-container">
         <MainButton label="Back to Home" :width="'10rem'" @click="goHome" />
       </div>
-      <button @click="goHome" class="back-button">BACK TO HOME</button>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
-@import '@/style/variables.scss';
 .privacy-policy {
   display: flex;
   flex-wrap: nowrap;
@@ -106,6 +104,7 @@ const goHome = () => {
   justify-content: center;
   align-items: center;
   max-width: 40%; /* Prevents image from taking too much space */
+  margin: $margin-xsmall;
 }
 
 .image-privacy {
@@ -126,6 +125,7 @@ const goHome = () => {
 /* Right-aligned content section */
 .content-section {
   flex: 1;
+  margin: $margin-small;
   h1 {
     font-size: 1.5rem;
     font-weight: bold;
