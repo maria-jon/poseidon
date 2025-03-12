@@ -25,7 +25,7 @@ defineProps({
         <span v-for="(item, index) in features" :key="index"> ✔ {{ item }} </span>
       </div>
     </div>
-    <RouterLink :to="route || '/'" class="button">
+    <RouterLink :to="route || ''" class="button">
       <MainButton label="Book now" width="9rem" />
     </RouterLink>
   </article>
@@ -40,6 +40,10 @@ article {
   height: 100%;
   padding: 1rem;
   padding-bottom: 2rem;
+}
+
+a {
+  all: unset;
 }
 
 img {
