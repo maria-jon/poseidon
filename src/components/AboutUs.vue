@@ -9,14 +9,14 @@ import mermaid from '@/assets/Images/poseidon-mermaid.jpg'
 <template>
   <main>
     <h2>About Poseidon’s Retreat</h2>
-    <div>
+    <div class="about">
       <p>
         Welcome to Poseidon's Retreat, the premier luxury escape in the heart of Atlantis! Founded
         by Poseidon himself, our hotel blends ancient Atlantean elegance with modern comfort.
       </p>
       <p>Dive into luxury at Poseidon’s Hotel – Where the Ocean Meets Elegance.</p>
-      <!-- Mobile version-->
     </div>
+    <!-- Mobile version-->
     <div class="mobile">
       <img :src="poseidonfish" class="fishmobile" width="500" height="400" />
       <img :src="poseidonhall" class="hallmobile" width="500" height="400" />
@@ -46,16 +46,22 @@ import mermaid from '@/assets/Images/poseidon-mermaid.jpg'
 </template>
 
 <style scoped>
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 h2 {
   text-align: center;
   margin-top: 12px;
 }
+
+.about {
+  max-width: 95%;
+}
+
 p {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  font-size: 1rem;
-  margin-right: 5px;
-  margin-left: 10px;
+  margin: 1rem 0 1rem 0;
 }
 
 /* Hide all versions by default */
@@ -87,6 +93,11 @@ p {
 }
 /* Show only the tablet version for medium screens (601px ) */
 @media (min-width: 601px) {
+  .about {
+    max-width: 70%;
+    align-self: flex-start;
+    margin-left: 1rem;
+  }
   .mobile {
     display: none;
   }
@@ -120,10 +131,9 @@ p {
 }
 /* Show only the desktop version for large screens (1024px and up) */
 @media (min-width: 1024px) {
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .about {
+    margin-left: 15%;
+    max-width: 60%;
   }
   .mobile {
     display: none;
@@ -172,12 +182,6 @@ p {
       max-height: 100%;
       width: auto;
     }
-  }
-
-  p {
-    margin-left: 325px;
-    margin-bottom: 20px;
-    margin-right: 290px;
   }
 }
 </style>
