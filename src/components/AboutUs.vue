@@ -18,28 +18,28 @@ import mermaid from '@/assets/Images/poseidon-mermaid.jpg'
     </div>
     <!-- Mobile version-->
     <div class="mobile">
-      <img :src="poseidonfish" class="fishmobile" width="500" height="400" />
-      <img :src="poseidonhall" class="hallmobile" width="500" height="400" />
+      <img :src="poseidonfish" class="fishmobile" width="2562" height="1442" alt="an underwater door with schools of fish swimming" />
+      <img :src="poseidonhall" class="hallmobile" width="2560" height="1440" alt="a majestic underwater hall covered in corals" />
     </div>
     <!-- Tablet version-->
     <div class="tablet">
-      <img :src="heroImage" class="herotablet" width="500" height="400" />
-      <img :src="poseidonfish" class="fishtablet" width="500" height="400" />
-      <img :src="poseidonhall" class="halltablet" width="500" height="400" />
+      <img :src="heroImage" class="herotablet" width="2560" height="1440" alt="a colorful underwater city with corals and fish swimming by" />
+      <img :src="poseidonfish" class="fishtablet" width="2562" height="1442" alt="an underwater door with schools of fish swimming" />
+      <img :src="poseidonhall" class="halltablet" width="2560" height="1440" alt="a majestic underwater hall covered in corals" />
     </div>
     <!-- Desktop version-->
     <div class="desktop">
       <div class="left">
         <div class="top">
-          <img :src="poseidonhall" class="halldesktop" width="2560" height="1440"/>
-          <img :src="poseidonfish" class="fishdesktop" width="2562" height="1442" />
+          <img :src="poseidonhall" class="halldesktop" width="2560" height="1440" alt="a majestic underwater hall covered in corals" />
+          <img :src="poseidonfish" class="fishdesktop" width="2562" height="1442" alt="an underwater door with schools of fish swimming" />
         </div>
         <div class="bottom">
-          <img :src="heroImage" class="herodesktop" width="2560" height="1440"/>
+          <img :src="heroImage" class="herodesktop" width="2560" height="1440" alt="a colorful underwater city with corals and fish swimming by" />
         </div>
       </div>
       <div class="right">
-        <img :src="mermaid" class="mermaiddesktop" width="1440" height="2056" />
+        <img :src="mermaid" class="mermaiddesktop" width="1440" height="2056" alt="mermaid swimming towards the surface" />
       </div>
     </div>
   </main>
