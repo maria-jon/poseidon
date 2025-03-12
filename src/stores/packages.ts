@@ -56,7 +56,7 @@ export const usePackageStore = defineStore('packages', () => {
         id: 0,
         imgWidth: 2560,
         imgHeight: 1440,
-        route: '',
+        route: '/booking',
       },
       {
         text: {
@@ -75,7 +75,7 @@ export const usePackageStore = defineStore('packages', () => {
         id: 1,
         imgWidth: 2560,
         imgHeight: 1440,
-        route: '',
+        route: '/booking',
       },
       {
         text: {
@@ -94,7 +94,7 @@ export const usePackageStore = defineStore('packages', () => {
         id: 2,
         imgWidth: 2560,
         imgHeight: 1440,
-        route: '',
+        route: '/booking',
       },
     ]
   }
