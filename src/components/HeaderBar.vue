@@ -36,13 +36,13 @@ function closeMenu() {
   <div class="wrapper">
     <RouterLink class="logo-link" to="/">
       <img
-      class="logo"
-      role="img"
-      width="491"
-      height="77"
-      loading="lazy"
-      alt="Poseidons retreat logo"
-      src="@/assets/Logotype_Poseidons-retreat.svg"
+        class="logo"
+        role="img"
+        width="491"
+        height="77"
+        loading="lazy"
+        alt="Poseidons retreat logo"
+        src="@/assets/Logotype_Poseidons-retreat.svg"
       />
     </RouterLink>
     <div class="menu-overlay" v-if="desktop">
