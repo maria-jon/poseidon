@@ -75,18 +75,19 @@ p {
   .mobile {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 1rem;
     justify-content: center;
     align-items: center;
+    padding: 0 0.75rem 0 0.75rem;
   }
   .fishmobile {
-    width: 95vw;
-    height: 40vh;
+    max-width: 100%;
+    height: auto;
     border-radius: 5px;
   }
   .hallmobile {
-    width: 95vw;
-    height: 40vh;
+    max-width: 100%;
+    height: auto;
     margin-bottom: 20px;
     border-radius: 5px;
   }
@@ -94,9 +95,9 @@ p {
 /* Show only the tablet version for medium screens (601px ) */
 @media (min-width: 601px) {
   .about {
-    max-width: 70%;
+    max-width: 80%;
     align-self: flex-start;
-    margin-left: 1rem;
+    margin-left: 4%;
   }
   .mobile {
     display: none;
@@ -104,25 +105,25 @@ p {
   .tablet {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 1rem;
     justify-content: center;
     align-items: center;
   }
 
   .herotablet {
-    width: 300px;
-    height: 250px;
+    max-width: 45%;
+    height: auto;
     border-radius: 5px;
   }
 
   .fishtablet {
-    width: 300px;
-    height: 250px;
+    max-width: 45%;
+    height: auto;
     border-radius: 5px;
   }
 
   .halltablet {
-    width: 100px;
+    max-width: 92%;
     height: auto;
     border-radius: 5px;
     flex-basis: 80%;
@@ -145,12 +146,12 @@ p {
     display: flex;
     max-width: 70%;
     height: 60vh;
-    gap: 10px;
+    gap: 1rem;
     overflow: hidden;
   }
   .top {
     display: flex;
-    gap: 10px;
+    gap: 1rem;
     height: 50%;
 
     img {
@@ -172,7 +173,7 @@ p {
     max-height: 60vh;
     width: auto;
     flex-direction: column;
-    gap: 10px;
+    gap: 1rem;
     overflow: hidden;
   }
   .right {
