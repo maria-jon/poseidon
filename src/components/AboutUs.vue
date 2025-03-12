@@ -29,10 +29,18 @@ import mermaid from '@/assets/Images/poseidon-mermaid.jpg'
     </div>
     <!-- Desktop version-->
     <div class="desktop">
-      <img :src="heroImage" class="herodesktop" width="500" height="400" />
-      <img :src="poseidonfish" class="fishdesktop" width="500" height="400" />
-      <img :src="poseidonhall" class="halldesktop" width="500" height="400" />
-      <img :src="mermaid" class="mermaiddesktop" width="500" height="400" />
+      <div class="left">
+        <div class="top">
+          <img :src="poseidonfish" class="fishdesktop" />
+          <img :src="poseidonhall" class="halldesktop" />
+        </div>
+        <div class="bottom">
+          <img :src="heroImage" class="herodesktop" />
+        </div>
+      </div>
+      <div class="right">
+        <img :src="mermaid" class="mermaiddesktop" />
+      </div>
     </div>
   </main>
 </template>
@@ -82,10 +90,6 @@ p {
   .mobile {
     display: none;
   }
-  p {
-    margin-left: 80px;
-    margin-right: 50px;
-  }
   .tablet {
     display: flex;
     flex-wrap: wrap;
@@ -117,7 +121,10 @@ p {
 /* Show only the desktop version for large screens (1024px and up) */
 @media (min-width: 1024px) {
   main {
-    margin-bottom: 470px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
   }
   .mobile {
     display: none;
@@ -127,32 +134,38 @@ p {
   }
   .desktop {
     display: flex;
+    max-width: 60vw;
+    height: 70vh;
+    gap: 10px;
   }
-  .herodesktop {
-    margin-top: 170px;
-    position: absolute;
-    height: 35vh;
-    width: 51vw;
-    margin-left: 325px;
+  .top {
+    display: flex;
+    gap: 10px;
+    img {
+      max-width: 49%;
+      height: auto;
+    }
   }
-  .fishdesktop {
-    position: absolute;
-    margin-left: 590px;
-    height: 27vh;
-    max-width: 25vw;
+  .bottom {
+      img {
+      max-width: 100%;
+      height: auto;
+    }
   }
-  .halldesktop {
-    position: absolute;
-    height: 27vh;
-    max-width: 25vw;
-    margin-left: 325px;
+ .left {
+    display: flex;
+    max-height: 70vh;
+    width: auto;
+    flex-direction: column;
+    gap: 10px;
   }
-  .mermaiddesktop {
-    position: absolute;
-    margin-left: 855px;
-    height: 63.4vh;
-    width: 23vw;
-  }
+ .right {
+  img {
+      max-height: 100%;
+      width: auto;
+    }
+ }
+  
   p {
     margin-left: 325px;
     margin-bottom: 20px;
