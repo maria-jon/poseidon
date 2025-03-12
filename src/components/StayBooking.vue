@@ -31,7 +31,7 @@ const checkAvailability = () => {
       'Sorry, this package is currently unavailable on your selected dates. Try adjusting your search.'
   } else {
     errorMessage.value = ''
-    window.location.href = '/next-step'
+    window.location.href = '/stay'
   }
 }
 </script>
