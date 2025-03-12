@@ -14,7 +14,6 @@ const children = ref<number>(0)
 const specialRequest = ref<string>('')
 const errorMessage = ref<string>('')
 
-
 const router = useRouter()
 
 // Function to check availability when the form is submitted
@@ -167,6 +166,7 @@ h1 {
 .form-container {
   width: 48%;
 }
+
 // Image container styles
 .image-container {
   position: relative;
@@ -222,13 +222,16 @@ img {
   @media (max-width: 1024px) {
     width: 100%;
     max-width: 500px;
-
   }
   @media (max-width: 768px) {
     width: 100%;
-    max-width: 500px; 
+    max-width: 500px;
   }
-
+}
+@media (min-width: 1024px) {
+  .form-container {
+    margin: 3rem auto 0 2rem;
+  }
 }
 // Form title styling
 h5 {
