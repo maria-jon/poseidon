@@ -31,7 +31,6 @@ import { RouterLink } from 'vue-router'
   justify-content: center;
   align-items: center;
   background-origin: border-box;
-  margin-top: 3rem;
   overflow: visible;
 
   .menu-container {
@@ -79,12 +78,6 @@ import { RouterLink } from 'vue-router'
     bottom: 0;
     width: 100%;
     left: 0;
-  }
-}
-
-@media (min-width: 768px) {
-  .menu-footer {
-    margin-top: 10rem;
   }
 }
 </style>

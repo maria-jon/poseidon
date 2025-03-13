@@ -21,4 +21,12 @@ header {
   top: 0;
   z-index: 998;
 }
+main {
+  margin-bottom: 3rem;
+}
+
+footer {
+  margin-top: auto;
+  width: 100%;
+}
 </style>

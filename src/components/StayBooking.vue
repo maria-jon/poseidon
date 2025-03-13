@@ -132,7 +132,8 @@ const checkAvailability = () => {
 
 p {
   width: 100%;
-  margin: 20px 0;
+  margin: 1rem 0;
+  padding: 0 1rem;
 
   @media (min-width: 1024px) {
     width: 50%;
@@ -142,7 +143,12 @@ p {
 h1 {
   font-size: 2.5rem;
   font-weight: bold;
+  padding: 0 1rem;
+
+  @media (min-width: 1024px) {
+  }
 }
+
 // Description text styling
 .description {
   max-width: 600px; // Limits text width for better readability
@@ -181,6 +187,7 @@ h1 {
 
   @media (min-width: 1024px) {
     max-width: 48%;
+    margin-left: 1rem;
   }
 }
 
@@ -210,7 +217,7 @@ img {
   width: 100%;
   max-width: 100%;
   white-space: nowrap;
-  margin-bottom: 0;
+  margin: 0;
   height: 100px;
 }
 // Form container styling
