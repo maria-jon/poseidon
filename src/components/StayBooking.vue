@@ -149,6 +149,7 @@ const checkAvailability = () => {
   font-weight: bold;
   text-align: left;
 }
+
 // Description text styling
 .description {
   max-width: 600px; // Limits text width for better readability
@@ -189,6 +190,7 @@ const checkAvailability = () => {
 
   @media (min-width: 1024px) {
     max-width: 48%;
+    margin-left: 1rem;
   }
 }
 
@@ -218,7 +220,7 @@ img {
   width: 100%;
   max-width: 100%;
   white-space: nowrap;
-  margin-bottom: 0;
+  margin: 0;
   height: 100px;
 }
 // Form container styling
