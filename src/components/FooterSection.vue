@@ -81,4 +81,10 @@ import { RouterLink } from 'vue-router'
     left: 0;
   }
 }
+
+@media (min-width: 768px) {
+  .menu-footer {
+    margin-top: 10rem;
+  }
+}
 </style>
