@@ -41,6 +41,7 @@ const checkAvailability = () => {
 </script>
 
 <template>
+  <div class="center">
   <div class="container">
     <div class="text-booking"><h1>Book your stay</h1>
     <p>
@@ -120,16 +121,20 @@ const checkAvailability = () => {
       </div>
     </div>
   </div>
+  </div>
 </template>
 <style scoped lang="scss">
 //booking container
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
 .container {
   display: flex;
   flex-direction: column;
   align-items: center; 
   justify-content: center;
-  min-height: 100vh; 
-  text-align: center;
   padding: 2rem;
   margin: $margin-xsmall;
   overflow: hidden;
@@ -164,7 +169,6 @@ const checkAvailability = () => {
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
-  max-width: 1200px;
   gap: 20px;
 
 
