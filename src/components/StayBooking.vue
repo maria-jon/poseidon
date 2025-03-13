@@ -122,6 +122,7 @@ const checkAvailability = () => {
   </div>
 </template>
 <style scoped lang="scss">
+//booking container
 .container {
   display: flex;
   flex-direction: column;
