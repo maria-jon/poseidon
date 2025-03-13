@@ -15,7 +15,7 @@ onUnmounted(() => {
 })
 const handleWindowSizeChange = () => {
   let viewport = window.innerWidth
-  if (viewport > 1024) {
+  if (viewport > 1023) {
     desktop.value = true
     menuOpen.value = true
   } else {

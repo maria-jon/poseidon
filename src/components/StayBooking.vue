@@ -131,11 +131,11 @@ const checkAvailability = () => {
 }
 
 p {
-  width: 50%;
+  width: 100%;
   margin: 20px 0;
 
-  @media (max-width: 1024px) {
-    width: 100%; // Full width on smaller screens
+  @media (min-width: 1024px) {
+    width: 50%;
   }
 }
 // Heading styles
@@ -158,7 +158,7 @@ h1 {
   align-items: flex-start;
   gap: 20px;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     flex-direction: column; // Stack elements on smaller screens
     align-items: center;
   }
