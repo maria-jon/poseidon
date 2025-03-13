@@ -22,21 +22,22 @@ import { RouterLink } from 'vue-router'
 </template>
 <style scoped lang="scss">
 @import '@/style/variables.scss';
+
 .menu-footer {
   background-color: $color-primary-medium;
   color: #fff;
-  min-height: 200px;
   width: 100vw;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   background-origin: border-box;
   margin-top: 3rem;
   overflow: visible;
+
   .menu-container {
-    margin-bottom: 1rem;
+    width: 100%;
   }
+
   .menu-list {
     list-style: none;
     margin-top: 1rem;
@@ -45,11 +46,21 @@ import { RouterLink } from 'vue-router'
     justify-content: center;
     gap: 1.5rem;
     padding: 0;
+    flex-direction: column;
   }
+
+  @media (min-width: 768px) {
+    .menu-list {
+      flex-direction: row;
+    }
+  }
+
   a {
     color: #fff;
     display: inline-block;
     font-size: 1.3rem;
+    text-align: center;
+
     &:hover {
       color: $color-primary-light;
       text-decoration: none;
@@ -58,24 +69,16 @@ import { RouterLink } from 'vue-router'
 
   .privacy-text {
     text-align: center;
-    position: absolute;
     font-weight: 400;
     font-size: 1rem;
     color: #fff;
     background-color: $color-primary-dark;
     padding: 0.5rem;
+    padding-bottom: 1rem;
+    margin-top: auto;
     bottom: 0;
     width: 100%;
     left: 0;
-  }
-}
-
-@media (max-width: 768px) {
-  .menu-footer ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.7rem;
-    min-height: 200px;
   }
 }
 </style>
