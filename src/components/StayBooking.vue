@@ -123,10 +123,11 @@ const checkAvailability = () => {
 </template>
 <style scoped lang="scss">
 .container {
-  padding: 40px;
+  padding: 0.5rem;
   background: $color-background-light;
   font-weight: 400;
   text-align: left;
+  width: 100%;
 }
 
 p {
@@ -150,6 +151,7 @@ h1 {
 }
 // Booking section layout
 .booking {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -171,13 +173,17 @@ h1 {
 .image-container {
   position: relative;
   flex: 1;
-  max-width: 48%;
-  min-width: 380px;
+  width: 100%;
 
-  @media (max-width: 1024px) {
-    max-width: 100%; // Full width on smaller screens
+  @media (min-width: 768px) {
+    max-width: 80%;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 48%;
   }
 }
+
 // Image styling
 img {
   width: 100%;
