@@ -42,14 +42,14 @@ const checkAvailability = () => {
 
 <template>
   <div class="container">
-    <h1>Book your stay</h1>
+    <div class="text-booking"><h1>Book your stay</h1>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
       labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
       laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
       voluptate velit esse cillum dolore eu fugiat nulla pariatur.
     </p>
-
+  </div>
     <div class="booking">
       <div class="image-container">
         <h2>Check availability</h2>
@@ -123,25 +123,31 @@ const checkAvailability = () => {
 </template>
 <style scoped lang="scss">
 .container {
-  padding: 0.5rem;
-  background: $color-background-light;
-  font-weight: 400;
-  text-align: left;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  min-height: 100vh; 
+  text-align: center;
+  padding: 2rem;
+  margin: $margin-xsmall;
+  overflow: hidden;
 }
 
-p {
+.text-booking p {
   width: 100%;
   margin: 20px 0;
+  text-align: left;
 
   @media (min-width: 1024px) {
     width: 50%;
   }
 }
 // Heading styles
-h1 {
+.text-booking h1 {
   font-size: 2.5rem;
   font-weight: bold;
+  text-align: left;
 }
 // Description text styling
 .description {
@@ -149,14 +155,16 @@ h1 {
   font-size: 1rem;
   color: #000;
 }
-// Booking section layout
+
 .booking {
-  width: 100%;
   display: flex;
+  justify-content: center; 
+  align-items: center;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
   gap: 20px;
+
 
   @media (max-width: 1023px) {
     flex-direction: column; // Stack elements on smaller screens
