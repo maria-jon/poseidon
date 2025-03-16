@@ -19,5 +19,5 @@ export default defineConfig({
       },
     },
   },
-  base: '/fed24d-grafiska-verktyg-elddvargskejsarna/',
+  base: '/poseidon/',
 })
