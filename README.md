@@ -2,7 +2,7 @@
 
 ## This project was done as a front-end school assigment for Medieinstitutet Sweden.
 
-The assignment was completed in two teams (see authors). The first team was tasked with designing a responsive and well-defined website of their choice, with an emphasis on consistent colors, typography, and element styling throughout the site. The second team then implemented the design and built the project using Vue as the framework 🚀
+The assignment was completed in two teams (see authors). The first team was tasked with designing a responsive and well-defined website of their choice, with an emphasis on consistent colors, typography, and element styling throughout the site. The second team then implemented the design and built the project using Vue as the framework 🚀 
 
 ### Some of the design elements
 
