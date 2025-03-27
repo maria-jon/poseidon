@@ -19,5 +19,5 @@ export default defineConfig({
       },
     },
   },
-  base: '/poseidon/',
+  base: '/poseidons-retreat/',
 })
